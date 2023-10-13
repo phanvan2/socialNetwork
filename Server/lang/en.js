@@ -5,13 +5,14 @@ export const transValidation = {
 };
 
 export const transSuccess = {
-    register_user: "The Account has been successfully created.",
-
+    register_user   : "The Account has been successfully created.",
+    login_user      : "Login success", 
     
 }; 
 
 export const transError = {
-    register_user: "Registration failed. Please try again later!",
+    register_user   : "Registration failed. Please try again later!",
+    login_user      : "Login fail", 
 
 
 }

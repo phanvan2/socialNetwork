@@ -20,6 +20,10 @@ UserSchema.statics = {
     createNew(data) {
         return this.create(data) ; 
     },
+    findByEmail(emailUser){
+        return this.findOne({"email": emailUser}).exec();
+    },
+
 }
 export default mongoose.model("user", UserSchema ) ; 
 

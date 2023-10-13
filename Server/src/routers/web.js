@@ -10,7 +10,7 @@ let initRouter = (app) => {
     }); 
 
     router.post("/Auth/register",User.registerUser ) ; 
-    
+    router.post("/Auth/login",User.login); 
     
     return app.use("/", router);
 }

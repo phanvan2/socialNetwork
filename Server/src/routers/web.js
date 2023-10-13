@@ -1,5 +1,6 @@
 import express from "express"; 
 
+import { User } from "../controllers/index";
 
 let router = express.Router(); 
 
@@ -8,6 +9,7 @@ let initRouter = (app) => {
         res.send("xin chào mọi người");
     }); 
 
+    router.post("/Auth/register",User.registerUser ) ; 
     
     
     return app.use("/", router);

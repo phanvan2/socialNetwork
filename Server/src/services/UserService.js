@@ -58,6 +58,7 @@ let loginUser = (item) => {
     })
 }; 
 
+//https://viblo.asia/p/passport-nodejs-07LKXAR4ZV4
 
 
 export default {registerUser, loginUser} ;

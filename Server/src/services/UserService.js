@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt" ; 
 import UserModel from "../models/UserModel";
+import jwt from "jsonwebtoken";
 
 let registerUser =  (item ) => {
     return new Promise(async (resolve, reject) => {
@@ -27,10 +28,12 @@ let loginUser = (item) => {
     return new Promise(async (resolve, reject) => {
         try {
             console.log("hello login"); 
-            let userItem = await UserModel.findByEmail( item.email); 
+            let userItem = await UserModel.findByEmail(item.email); 
             console.log(userItem);
             if(userItem){
-                let checkPass = bcrypt.compareSync(item.password + "", userItem.password + "");
+                let checkPass = await userItem.comparePassword(item.password) ; 
+                console.log(checkPass); 
+
                 if(checkPass){
                     console.log("check pass thànhc ông") ; 
                     let userInfor = {
@@ -44,21 +47,66 @@ let loginUser = (item) => {
                         gender: userItem.gender,
                         
                     }; 
-                    resolve(userInfor);
+                    return resolve(userInfor);
                 }else{
-                    resolve(false);
+                    return resolve(false);
                 }
             }else{
-                resolve(false);
+                return resolve(false);
             }
         } catch (error) {
-            resolve(false); 
+            console.log(error) ; 
+            return resolve(false); 
 
         }
     })
 }; 
 
-//https://viblo.asia/p/passport-nodejs-07LKXAR4ZV4
+let updateTokenVerify = (email) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let checkMail = await UserModel.findByEmail(email); 
+            console.log(checkMail) ; 
+            if(checkMail)
+                if(!checkMail.isActive){
+                    let token = jwt.sign({id: checkMail._id, email: email}, process.env.JWT_KEYMAIL, { expiresIn: '1h' });
 
+                    let resultUpdate = await UserModel.updateTokenByEmail( checkMail._id, token) ; 
+                    console.log("hmm"); 
+                    console.log(resultUpdate)
+                    return resolve({data: resultUpdate, token: token}) ; 
+                }
 
-export default {registerUser, loginUser} ;
+                
+            return resolve(false); 
+        } catch (error) {
+            console.log(error) ; 
+            return resolve(false); 
+
+        }
+    })
+}; 
+
+let verifyEmail = (token) => {
+    return new Promise((resolve, reject) => {
+        try {
+            jwt.verify(token, process.env.JWT_KEYMAIL, async(err, decoded) => {
+                if(err) resolve(false) ;
+                else {
+                    let result = await UserModel.activeEmail(decoded.id, token, decode.email); 
+                    if(result)
+                        resolve(true) ; 
+                    else 
+                        resolve(false); 
+                }
+            });
+
+         } catch (error) {
+            console.log(error) ; 
+            return resolve(false); 
+
+        }
+    })  
+}
+
+export default {registerUser, loginUser, updateTokenVerify, verifyEmail} ;

@@ -26,5 +26,5 @@ app.use(express.urlencoded({ extended: true }));
 
 initRoutes(app);
 
-app.listen(5000);
+app.listen(process.env.APP_HOST);
 

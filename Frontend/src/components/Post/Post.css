@@ -1,0 +1,39 @@
+.Post{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--cardColor);
+}
+
+.Post>img{
+    width: 100%;
+    max-height: 20rem;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.postReact{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.Post>div>input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 95%;
+    background-color: var(--inputColor);
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.Post>div>svg{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}

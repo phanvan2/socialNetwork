@@ -10,12 +10,15 @@ let registerUser = async(req , res) => {
     if(_.isEmpty(req.body)){
         res.send({data: false, message:transValidation.data_empty})
     }else { 
-
+        console.log(req.body);
         let result = await User.registerUser(req.body); 
+        console.log(result) ; 
         if(result){
+            console.log("đăng ký thahf công");
             res.status(200).send({data: true, message: transSuccess.register_user}); 
 
         }else{
+            console.log("đăng ký thất bại")
             res.send({data: false, message:transError.register_user}); 
 
         }
@@ -104,7 +107,23 @@ let verifyEmail = async(req, res) => {
     }
 }
 
+let getUserById = async(req, res) => {
+    if(req.params.id){
+        let result = await User.getUserById(req.params.id) ; 
+        if(result) 
+            res.send({data: result, message: ""}) ;
+        else{
+            res.send({data: false, message: transError.account_notFound}) ; 
+        }
+    }
+}
 
 
 
-export default {registerUser, login, sendAcitveEmail, verifyEmail} ; 
+export default {
+    registerUser, 
+    login, 
+    sendAcitveEmail, 
+    verifyEmail, 
+    getUserById
+} ; 

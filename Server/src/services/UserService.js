@@ -5,18 +5,25 @@ import jwt from "jsonwebtoken";
 let registerUser =  (item ) => {
     return new Promise(async (resolve, reject) => {
         try{
-            let saltRounds = 7 ; 
-            const salt = bcrypt.genSaltSync(saltRounds);
-
-            let data = {
-                email:      item.email,
-                lastName:   item.lasteName,
-                firstName:  item.firstName,
-                password:bcrypt.hashSync(item.password + "",salt),
-                gender:     item.gender, 
+            let userItem = await UserModel.findByEmail(item.email); 
+            if(userItem){
+                resolve(false) ; 
+            }else{
+                let saltRounds = 7 ; 
+                const salt = bcrypt.genSaltSync(saltRounds);
+    
+                let data = {
+                    email:      item.email,
+                    lastName:   item.lastName,
+                    firstName:  item.firstName,
+                    password:bcrypt.hashSync(item.password + "",salt),
+                    gender:     item.gender, 
+                }
+                let result = await UserModel.createNew(data); 
+                resolve(result); 
             }
-            let result = await UserModel.createNew(data); 
-            resolve(result); 
+
+           
         }catch(err){
             reject(err); 
         }
@@ -37,7 +44,7 @@ let loginUser = (item) => {
                 if(checkPass){
                     console.log("check pass thànhc ông") ; 
                     let userInfor = {
-                        idUser : userItem._id,
+                        _id : userItem._id,
                         firstName: userItem.firstName,
                         lastName: userItem.lastName,
                         email: userItem.email,
@@ -109,4 +116,19 @@ let verifyEmail = (token) => {
     })  
 }
 
-export default {registerUser, loginUser, updateTokenVerify, verifyEmail} ;
+let getUserById = (id) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let userInfo = await UserModel.findById(id); 
+            console.log(userInfo) ; 
+            if(userInfo)
+                return resolve(userInfo) ;     
+            return resolve(false); 
+        } catch (error) {
+            console.log(error) ; 
+            return resolve(false); 
+
+        }
+    })
+}
+export default {registerUser, loginUser, updateTokenVerify, verifyEmail, getUserById} ;

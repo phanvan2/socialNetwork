@@ -26,6 +26,13 @@ UserSchema.statics = {
         return this.findOne({"email": emailUser}).exec();
     },
 
+    findById(id){
+        return this.find({_id: id, isActive: true },"_id email lastName firstName avatar gender createAt").exec(); 
+    },
+
+
+
+
     updateTokenByEmail(id, token){
         return this.findByIdAndUpdate(id, {"verifyToken": token}).exec(); 
     },
@@ -36,11 +43,31 @@ UserSchema.statics = {
             "email": email, 
             "verifyToken": token
         }, {"isActive": true}). exec() ; 
-    }
+    },
 
     // updatePassword(id, hashedPassword){
     //     return this.findByIdAndUpdate(id, {"local.password": hashedPassword}).exec();
     // },
+
+    /**
+     * find all user for add contact
+     * @param {array: deprecated UserIds } deprecatedUserIds 
+     * @param {sring: keyword search} keyword 
+     */
+    findAllForAddContact(deprecatedUserIds, keyword){
+        return this.find({
+            $and: [
+                {"_id": {$nin: deprecatedUserIds}},
+                {"isActive": true},
+                {$or:[
+                    {"lastName": {"$regex": new RegExp(keyword, "i")}},
+                    {"firstName": {"$regex": new RegExp(keyword, "i")}},
+                    {"email": {"$regex": new RegExp(keyword, "i")}}
+                ]}
+            ]
+        }, {_id: 1, email: 1,lastName: 1, firstName: 1,avatar: 1}).exec();
+    },
+
 }
 
 UserSchema.methods = {

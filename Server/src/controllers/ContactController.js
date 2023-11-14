@@ -11,7 +11,7 @@ let findUserContact = async (req, res) =>{
             let req_user = jwt.verify(req.query.user_token, process.env.JWT_KEY);
             let currentUserId  = req_user._id; 
             let keyword = req.params.keyword ; 
-            
+    
             let users = await Contact.findUserContact(currentUserId, keyword);
             if(users.length > 0){
                 return res.status(200).send({data: users, message:transSuccess.findContact }); 
@@ -29,7 +29,10 @@ let findUserContact = async (req, res) =>{
 };
 
 let addNew = async (req, res) =>{
+    console.log("add - new controller");
+    console.log(req);
     if(!_.isEmpty(req.body)){
+        console.log(req.body);
         try{
             let req_user = jwt.verify(req.body.user_token, process.env.JWT_KEY);
             let currentUserId  = req_user._id; 
@@ -52,7 +55,7 @@ let removeContact = async(req, res) => {
         let currentUserId  = req.user._id; 
         let contactId = req.body.uid; 
         // console.log(req);
-        let removeContact = await contact.removeContact(currentUserId, contactId) ; 
+        let removeContact = await Contact.removeContact(currentUserId, contactId) ; 
        // console.log(removeReq) ; 
         //console.log("remove contact controller")
         return res.status(200).send({success: !!removeContact}) ; 
@@ -66,7 +69,7 @@ let removeRequestContactSent = async (req, res) =>{
         let currentUserId  = req.user._id; 
         let contactId = req.body.uid; 
 
-        let removeReq = await contact.removeRequestContactSent(currentUserId, contactId) ; 
+        let removeReq = await Contact.removeRequestContactSent(currentUserId, contactId) ; 
        // console.log(removeReq) ; 
         //console.log("remove contact controller")
         return res.status(200).send({success: !!removeReq}) ; 
@@ -81,7 +84,7 @@ let removeRequestContactReceived = async (req, res) =>{
         let currentUserId  = req.user._id; 
         let contactId = req.body.uid; 
 
-        let removeReq = await contact.removeRequestContactReceived(currentUserId, contactId) ; 
+        let removeReq = await Contact.removeRequestContactReceived(currentUserId, contactId) ; 
        // console.log(removeReq) ; 
         //console.log("remove contact controller")
         return res.status(200).send({success: !!removeReq}) ; 
@@ -117,7 +120,7 @@ let readMoreContacts = async (req, res) => {
         // console.log(skipNumberContacts);
         
         // get more items 
-        let newContacts = await contact.readMoreContacts(req.user._id, skipNumberContacts);
+        let newContacts = await Contact.readMoreContacts(req.user._id, skipNumberContacts);
         return res.status(200).send(newContacts); 
 
     } catch (error) {
@@ -133,7 +136,7 @@ let readMoreContactsSent = async (req, res) => {
         // console.log(skipNumberContacts);
         
         // get more items 
-        let newContacts = await contact.readMoreContactsSent(req.user._id, skipNumberContacts);
+        let newContacts = await Contact.readMoreContactsSent(req.user._id, skipNumberContacts);
         return res.status(200).send(newContacts); 
 
     } catch (error) {
@@ -150,7 +153,7 @@ let readMoreContactsReceived = async (req, res) => {
         // console.log(skipNumberContacts);
         
         // get more items 
-        let newContacts = await contact.readMoreContactsSent(req.user._id, skipNumberContacts);
+        let newContacts = await Contact.readMoreContactsSent(req.user._id, skipNumberContacts);
         return res.status(200).send(newContacts); 
 
     } catch (error) {
@@ -177,7 +180,7 @@ let searchFriends = async (req, res) =>{
 
         console.log(currentUserId)
         console.log(keyword);
-        let users = await contact.searchFriends(currentUserId, keyword);
+        let users = await Contact.searchFriends(currentUserId, keyword);
         console.log(users);
         // console.log("user"+users);
         return res.render("main/groupChat/sections/_searchFriends", {users}); 

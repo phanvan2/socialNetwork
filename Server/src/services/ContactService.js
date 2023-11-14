@@ -27,10 +27,12 @@ let findUserContact =  (currentUserId, keyword) =>{
 
 
 let addNew =  (currentUserId, contactId) =>{
+    console.log("add new service")
     return new Promise(async(resolve, reject) =>{
-        let contactExists = await ContactModel.checkExists(currentUserId, contactId); 
+        let contactExists = await ContactModel.checkExists(currentUserId, contactId);
+        console.log(contactExists); 
         if(contactExists){
-            return reject(false) ; 
+            return resolve(false) ; 
         }
         
         let newContactItem = {

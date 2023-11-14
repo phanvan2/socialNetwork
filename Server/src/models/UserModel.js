@@ -26,7 +26,7 @@ UserSchema.statics = {
         return this.findOne({"email": emailUser}).exec();
     },
 
-    findById(id){
+    findUserById(id){
         return this.find({_id: id, isActive: true },"_id email lastName firstName avatar gender createAt").exec(); 
     },
 

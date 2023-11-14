@@ -119,7 +119,7 @@ let verifyEmail = (token) => {
 let getUserById = (id) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let userInfo = await UserModel.findById(id); 
+            let userInfo = await UserModel.findUserById(id); 
             console.log(userInfo) ; 
             if(userInfo)
                 return resolve(userInfo) ;     

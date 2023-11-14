@@ -13,6 +13,7 @@ let initRouter = (app) => {
     router.post("/auth/login",User.login); 
     router.get("/auth/verifyEmail/:token_verify", User.verifyEmail); 
     router.post("/auth/request-active-Email", User.sendAcitveEmail); 
+    router.get("/check/token/:token", User.checkExpiredToken);
 
     router.get("/user/:id", User.getUserById);
     

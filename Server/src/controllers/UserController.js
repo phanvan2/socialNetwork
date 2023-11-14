@@ -37,13 +37,10 @@ let login = async(req, res) => {
     }else if(_.isEmpty(req.body)){
         res.send({data: false, message:transValidation.data_empty}) ; 
     }else {
-        console.log(req.body.email) ;
         try {
             let result = await User.loginUser(req.body); 
             if(result){
-                console.log("kết quả") ; 
-                console.log(result) ;
-                let token = jwt.sign(result, process.env.JWT_KEY, { expiresIn: '1h' });
+                let token = jwt.sign(result, process.env.JWT_KEY, { expiresIn: '5h' });
                 res.status(200).send({data:result, token: token, message: transSuccess.login_user}); 
     
             }else{
@@ -118,6 +115,18 @@ let getUserById = async(req, res) => {
     }
 }
 
+let checkExpiredToken = async(req, res) => {
+    if(!_.isEmpty(req.params.token)){
+        try {
+            let result = jwt.verify(req.params.token, process.env.JWT_KEY);
+            res.status(200).send({data:result}); 
+        } catch(err) {
+            res.send( {data: false}); 
+        }
+    }else{
+        res.send( {data: false}); 
+    }
+}
 
 
 export default {
@@ -125,5 +134,6 @@ export default {
     login, 
     sendAcitveEmail, 
     verifyEmail, 
-    getUserById
+    getUserById,
+    checkExpiredToken
 } ; 

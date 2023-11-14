@@ -1,13 +1,32 @@
 import  express  from "express";
 import cors from "cors";
 import * as dotenv from 'dotenv'; 
+import { Server } from "socket.io";
+import http from "http";
 
 
 import initRoutes  from "./routers/web"; 
 import connectDB from "./config/connectDB";
-
+import initSockets from "./sockets/index"; 
 
 const app = express();
+let server = http.createServer(app) ; 
+
+
+let clientId = [];
+
+let io = new Server(server, {
+    cors: {
+        origin: "http://localhost:3000",
+        methods: ["GET", "POST"],
+        credentials: true
+      }
+});
+
+
+  
+
+
 // bb.extend(app);
 
 // const upload = multer();
@@ -21,10 +40,15 @@ connectDB()
     .catch((err) => console.log(err)) ; 
 
 app.use(cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 initRoutes(app);
+initSockets(io);
 
-app.listen(process.env.APP_HOST);
+
+// server.listen(4000,()=> {console.log("hêòlakf")}); 
+
+server.listen(process.env.APP_HOST);
 

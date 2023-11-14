@@ -12,8 +12,8 @@ export const Auth = () => {
     const [isSignUp, setIsSignUp] = useState(false)
 
     const [data, setData] = useState({
-        firstname: "",
-        lastname: "",
+        firstName: "",
+        lastName: "",
         password: "",
         confirmpassword: "",
         email: ""
@@ -39,8 +39,8 @@ export const Auth = () => {
     const resetForm = () => {
         setConfirmPassword(true)
         setData({
-            firstname: "",
-            lastname: "",
+            firstName: "",
+            lastName: "",
             password: "",
             confirmpassword: "",
             email: ""
@@ -63,13 +63,13 @@ export const Auth = () => {
                     {isSignUp &&
                         <div>
                             <input type="text" placeholder='First Name'
-                                className='infoInput' name='firstname'
+                                className='infoInput' name='firstName'
                                 onChange={handleChange}
-                                value={data.firstname} />
+                                value={data.firstName} />
                             <input type="text" placeholder='Last Name'
-                                className='infoInput' name='lastname'
+                                className='infoInput' name='lastName'
                                 onChange={handleChange}
-                                value={data.lastname} />
+                                value={data.lastName} />
                         </div>
                     }
 

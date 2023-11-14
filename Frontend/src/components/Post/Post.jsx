@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux'
 import { likePost } from '../../api/PostRequest'
 import { UilMessage } from '@iconscout/react-unicons'
 import axios from 'axios'
-import userInfoStore from '../../store'
+import {userInfoStore} from '../../store';
 
 export const Post = ({ data }) => {
   const [hideInputCmt, setHideInputCmt] = useState(false)

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import {uploadImage} from '../../actions/UploadAction'
 import { updateUser } from '../../actions/UserAction';
-import userInfoStore from '../../store';
+import {userInfoStore} from '../../store';
 
 const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const theme = useMantineTheme();

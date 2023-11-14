@@ -9,7 +9,7 @@ import { UilTimes } from "@iconscout/react-unicons"
 import { useDispatch, useSelector } from 'react-redux'
 import { uploadImage , uploadPost } from '../../actions/UploadAction'
 import axios from 'axios'
-import userInfoStore from '../../store'
+import {userInfoStore} from '../../store';
 
 const PostShare = (props) => {
     // const loading = false

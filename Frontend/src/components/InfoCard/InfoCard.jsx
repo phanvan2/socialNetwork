@@ -4,7 +4,7 @@ import { UilPen } from '@iconscout/react-unicons'
 import ProfileModal from '../ProfileModal/ProfileModal';
 import { useParams } from "react-router-dom"
 import { useSelector } from 'react-redux'
-import userInfoStore from '../../store';
+import {userInfoStore} from '../../store';
 
 export const InfoCard = () => {
 

@@ -3,13 +3,20 @@ import { Auth } from "./pages/Auth/Auth";
 import { Home } from "./pages/home/Home";
 import { Profile } from "./pages/Profile/Profile";
 import {alertt_off} from "./actions/AlertAction" ;
+import { userOfflineOnline } from "./sockets/userOnlineOffline";
+import { getRequestFriend } from "./sockets/getRequestFriend";
+import {socketStore} from "../src/store"; 
+import * as API from "./api/AuthRequest"; 
 
 import {Routes , Route , Navigate} from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import Chating from "./pages/Chating/Chating";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { io } from "socket.io-client";
+import { logOut } from "./actions/AuthAction";
+
 
 
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -19,9 +26,37 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 function App() {
   const user = useSelector((state) => state.authReducer.authData)
   const open = useSelector((state) => state.alertReducer.open)
+  const currentUser =JSON.parse(localStorage.getItem("profile"))
+
   const dispatch = useDispatch();
 
-  console.log(open);
+
+
+  const socket = io("http://localhost:5000", {
+    autoConnect: false,
+    auth: {
+      token: "ahihi",
+    },
+  });
+  const setSocket = socketStore((state)=> state.setSocket)
+  const check_token = async() => {
+    if(currentUser){
+      let check =  await API.checkExpiredToken(currentUser.token);
+      if(!check.data){
+        dispatch(logOut());
+      }else{
+      };
+    }
+  }
+  useEffect(() => {
+    check_token(); 
+    setSocket(socket);
+  }, []);
+
+   
+
+  userOfflineOnline(user);
+  getRequestFriend(socket);
 
   return (
     <div className="App">

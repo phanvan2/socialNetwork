@@ -5,16 +5,17 @@ import Profile from '../../img/default.png'
 import './ProfileCard.css'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from "axios"
-import userInfoStore from '../../store'
+import {userInfoStore} from '../../store';
 import message from '../../img/message.png'
 
 export const ProfileCard = ({ location }) => {
 
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER
-    const  user  = useSelector(state => state.authReducer.authData)
-    console.log(useSelector(state => state.authReducer.authData))
+    const  currentUser  = useSelector(state => state.authReducer.authData).data ; 
+    console.log(currentUser);
     const otherUserInfor = userInfoStore((state) => state.otherUserInfor)
-    const userInfo = userInfoStore((state) => state.userInfo)
+    const userInfo = userInfoStore((state) => state.userInfo);
+    console.log(location);
     const posts = userInfoStore((state) => state.posts)
 
     let navigate = useNavigate();
@@ -23,7 +24,7 @@ export const ProfileCard = ({ location }) => {
 
     const handleInbox = () => {
         axios.post(`${process.env.REACT_APP_API_URL}/chat`, {
-            senderId: user._id,
+            senderId: currentUser._id,
             receiverId: id
         })
             .then(function (response) {
@@ -41,16 +42,16 @@ export const ProfileCard = ({ location }) => {
     return (
         <div className="ProfileCard">
             <div className="ProfileImages">
-                <img src={location === "homePage" ? userInfo.coverPicture ? publicFolder + userInfo.coverPicture : Cover :
+                <img src={location === "homePage" ? currentUser.coverPicture ? publicFolder + currentUser.coverPicture : Cover :
                     otherUserInfor.coverPicture ? publicFolder + otherUserInfor.coverPicture : Cover} alt='' />
-                <img src={location === "homePage" ? userInfo.profilePicture ? publicFolder + userInfo.profilePicture : Profile :
-                    otherUserInfor.profilePicture ? publicFolder + otherUserInfor.profilePicture : Profile} alt='' />
+                <img src={location === "homePage" ? currentUser.profilePicture ? publicFolder + currentUser.profilePicture : Profile :
+                    currentUser.profilePicture ? publicFolder + currentUser.profilePicture : Profile} alt='' />
             </div>
             <div className="ProfileName">
-                <span>{location === "homePage" ? userInfo.firstname : otherUserInfor.firstname} {location === "homePage" ? userInfo.lastname : otherUserInfor.lastname}</span>
+                <span>{location === "homePage" ? currentUser.firstName : otherUserInfor.firstName} {location === "homePage" ? currentUser.lastName : otherUserInfor.lastName} </span>
                 <span>{location === "homePage" ? userInfo.workAt ? userInfo.workAt : "Write about yourself" : otherUserInfor.workAt ? otherUserInfor.workAt : "Write about yourself"}</span>
 
-                {id && user._id !== otherUserInfor._id ? <img style={{width : 20 , height : 20 , cursor : "pointer"}} src={message} onClick={handleInbox} /> : <></>}
+                {id && currentUser._id !== otherUserInfor._id ? <img style={{width : 20 , height : 20 , cursor : "pointer"}} src={message} onClick={handleInbox} /> : <></>}
 
             </div>
             <div className="FollowStatus">
@@ -81,7 +82,7 @@ export const ProfileCard = ({ location }) => {
                 <hr />
             </div>
             {location === "profilePage" ? "" : <span>
-                <Link style={{ textDecoration: "none", color: "inherit" }} to={`/profile/${user._id}`}> My profile</Link>
+                <Link style={{ textDecoration: "none", color: "inherit" }} to={`/profile/${currentUser._id}`}> My profile</Link>
             </span>}
         </div>
     )

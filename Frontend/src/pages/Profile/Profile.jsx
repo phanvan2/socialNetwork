@@ -5,11 +5,11 @@ import PostSide from '../../components/PostSide/PostSide'
 import { ProfileCard } from '../../components/ProfileCard/ProfileCard'
 import { ProfileLeft } from '../../components/ProfileLeft/ProfileLeft'
 import { RightSide } from '../../components/RightSide/RightSide'
-import userInfoStore from '../../store'
+import {userInfoStore} from '../../store';
 import './Profile.css'
 
 export const Profile = () => {
-  const setOtherUserInfo = userInfoStore((state) => state.setOtherUserInfo)
+  const setOtherUserInfor = userInfoStore((state) => state.setOtherUserInfor)
   const setPosts = userInfoStore((state) => state.setPosts)
   const { id } = useParams();
   const [loadPage , setLoadPage] = useState(0)
@@ -19,7 +19,7 @@ export const Profile = () => {
   useEffect(() => {
     axios.get(process.env.REACT_APP_API_URL + `/user/${id}`)
       .then(res => {
-        setOtherUserInfo(res.data)
+        setOtherUserInfor(res.data.data[0])
       })
       .catch(error => console.log(error));
 

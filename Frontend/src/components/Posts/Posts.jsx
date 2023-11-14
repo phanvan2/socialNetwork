@@ -4,7 +4,7 @@ import { Post } from '../Post/Post'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios';
 import { useParams } from 'react-router-dom'
-import userInfoStore from '../../store'
+import {userInfoStore} from '../../store';
 
 const Posts = ({ location }) => {
   const posts = userInfoStore((state) => state.posts)

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './FollowersCard.css'
-import { User } from '../User/User'
+// import { User } from '../User/User'
 import axios from "axios"
 import { useSelector } from 'react-redux'
 
@@ -22,11 +22,11 @@ export const FollowersCard = () => {
     <div className='FollowersCard'>
         <h3>You may know</h3>
 
-        {persons.map((person , id) => {
+        {/* {persons.map((person , id) => {
             return (
                     <User person={person} key={id}/>
                 )
-            })}
+            })} */}
     </div>
   )
 }

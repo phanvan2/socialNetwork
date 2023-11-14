@@ -1,7 +1,8 @@
-import { combineReducers } from "redux"
+import { combineReducers } from "redux";
 
-import authReducer from './authReducer'
-import postReducer from "./postReducer"
-import alertReducer from "./alertReducer"
+import authReducer from './authReducer';
+import postReducer from "./postReducer";
+import alertReducer from "./alertReducer";
+import contactFind from "./contactReducer";
 
-export const reducers = combineReducers({authReducer , postReducer, alertReducer})
+export const reducers = combineReducers({authReducer , postReducer, alertReducer, contactFind})

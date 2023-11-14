@@ -9,3 +9,7 @@ export const logIn = (formData) =>{
 export const signUp = (formData) =>{
     return API.post('/auth/register' , formData)
 }
+
+export const checkExpiredToken = (token) => {
+    return API.get(`/check/token/${token}`)
+}

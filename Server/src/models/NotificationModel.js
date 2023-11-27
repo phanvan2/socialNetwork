@@ -76,7 +76,9 @@ NotificationShema.statics = {
 
 const NOTIFICATION_TYPES = {
     ADD_CONTACT: "add_contact",
-    APPROVE_CONTACT: "approve_contact"
+    APPROVE_CONTACT: "approve_contact",
+    MENTION_YOU: "mention_you_comment",
+    REGISTER_SUCCESS: "register_success",
 }; 
 
 

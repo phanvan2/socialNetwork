@@ -91,3 +91,8 @@
     margin-bottom: 1rem;
     cursor: pointer;
 }
+
+.action-btn-contact{
+    display: flex;
+    justify-content: center !important;
+}

@@ -12,6 +12,8 @@ import initSockets from "./sockets/index";
 const app = express();
 let server = http.createServer(app) ; 
 
+app.use(express.static("./src/public")); 
+app.use('/images' , express.static('images'))
 
 let clientId = [];
 

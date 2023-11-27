@@ -1,6 +1,8 @@
 import bcrypt from "bcrypt" ; 
-import UserModel from "../models/UserModel";
 import jwt from "jsonwebtoken";
+
+import UserModel from "../models/UserModel";
+import ContactModel from "../models/ContactModel";
 
 let registerUser =  (item ) => {
     return new Promise(async (resolve, reject) => {
@@ -116,13 +118,35 @@ let verifyEmail = (token) => {
     })  
 }
 
-let getUserById = (id) => {
+let getUserById = (id, currentUserId = false) => {
     return new Promise(async (resolve, reject) => {
         try {
+            let checkExistsContact = "Add Friend"   ; // 0 chưa kết bạn , 1 là chờ xác nhận, 2 là gửi request yêu cầu kết bạn, 3 là friend.  
+
+            if(currentUserId){
+                let check = await ContactModel.checkExists(currentUserId, id) ; 
+
+
+                check ? check.status ? checkExistsContact = "Friend": // check status == true => là bạn bè
+                    check.userId == currentUserId ? checkExistsContact = "Cancel request Friend" : // currentUserId == userId => là người gửi yêu cầu kết bạn
+                    checkExistsContact = "Confirm friend" : // currentUserId != userid => là người nhận 
+                checkExistsContact = "Add Friend" ; 
+            }
             let userInfo = await UserModel.findUserById(id); 
-            console.log(userInfo) ; 
+ 
+            let response_user = {
+                _id: userInfo[0]._id,
+                email: userInfo[0].email,
+                lastName: userInfo[0].lastName,
+                firstName: userInfo[0].fistName,
+                avatar: userInfo[0].avatar,
+                gender: userInfo[0].gender,
+                statusFriend: checkExistsContact
+
+            };
+
             if(userInfo)
-                return resolve(userInfo) ;     
+                return resolve(response_user) ;     
             return resolve(false); 
         } catch (error) {
             console.log(error) ; 

@@ -3,9 +3,13 @@ import { Auth } from "./pages/Auth/Auth";
 import { Home } from "./pages/home/Home";
 import { Profile } from "./pages/Profile/Profile";
 import {alertt_off} from "./actions/AlertAction" ;
-import { userOfflineOnline } from "./sockets/userOnlineOffline";
+
+import { initSocket } from "./sockets/initSocket";
 import { getRequestFriend } from "./sockets/getRequestFriend";
-import {socketStore} from "../src/store"; 
+import { approveRequestContactReceived } from "./sockets/approveRequestContactReceived";
+import { userOfflineOnline } from "./sockets/userOfflineOnline";
+
+import {socketStore, notificationStore, friendsOnlineStore} from "../src/store"; 
 import * as API from "./api/AuthRequest"; 
 
 import {Routes , Route , Navigate} from 'react-router-dom'
@@ -25,12 +29,17 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData)
+  const messsNoti = useSelector((state) => state.alertReducer.message)
   const open = useSelector((state) => state.alertReducer.open)
-  const currentUser =JSON.parse(localStorage.getItem("profile"))
+  const currentUser = JSON.parse(localStorage.getItem("profile"))
 
   const dispatch = useDispatch();
 
+  const setSocket = socketStore((state)=> state.setSocket) ; 
 
+  const setFriendsOnline = friendsOnlineStore((state) => state.setFriendsOnline) ; 
+  const addFriendOnline = friendsOnlineStore((state) => state.addFriendOnline) ; 
+  const removeFriendOffline = friendsOnlineStore((state) => state.removeFriendOffline); 
 
   const socket = io("http://localhost:5000", {
     autoConnect: false,
@@ -38,11 +47,10 @@ function App() {
       token: "ahihi",
     },
   });
-  const setSocket = socketStore((state)=> state.setSocket)
   const check_token = async() => {
     if(currentUser){
       let check =  await API.checkExpiredToken(currentUser.token);
-      if(!check.data){
+      if(!check.data.data){
         dispatch(logOut());
       }else{
       };
@@ -53,10 +61,13 @@ function App() {
     setSocket(socket);
   }, []);
 
+
    
 
-  userOfflineOnline(user);
-  getRequestFriend(socket);
+  initSocket(user);
+  getRequestFriend(socket,  notificationStore((state)=> state.addNotification), dispatch);
+  approveRequestContactReceived(socket,    notificationStore((state)=> state.addNotification), dispatch);
+  userOfflineOnline(socket, setFriendsOnline, addFriendOnline , removeFriendOffline);
 
   return (
     <div className="App">
@@ -80,7 +91,7 @@ function App() {
             }} >
                 <Alert
                         severity="success" sx={{ width: '100%' }}>
-                    This is a success message!
+                    {messsNoti}
                 </Alert>
             </Snackbar>
     </div>

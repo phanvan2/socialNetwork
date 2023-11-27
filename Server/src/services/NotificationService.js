@@ -14,12 +14,18 @@ let getNotifications = (currentUserId) => {
         try{
             let notifications  = await NotificationModel.model.getByUserIdAndLimit(currentUserId, LIMIT_NUMBER_TAKEN); 
             resolve(notifications);
-            // let getNotifiContents = notifications.map( async(notification) => {
-            //     let sender = await UserModel.getNormalUserDataById(notification.senderId) ;
-            //      return NotificationModel.contents.getContent(notification.type, notification.isRead, sender._id, sender.username, sender.avatar )
-            // }) ; 
+            let getNotifiContents = notifications.map( async(notification) => {
+                let sender = await UserModel.findUserById(notification.senderId) ;
+                 return {
+                    type: notification.type, 
+                    isRead: notification.isRead, 
+                    _id: sender._id,
+                    firstName: sender.username, 
+                    avatar: sender.avatar }
 
-            // resolve(await Promise.all(getNotifiContents));
+            }) ; 
+
+            resolve(await Promise.all(getNotifiContents));
 
         }catch(err){
             reject(err); 
@@ -57,12 +63,14 @@ let readMore = (currentUserId, skipNumberNotification) => {
            let newNotifications = await NotificationModel.model.readMore(currentUserId, skipNumberNotification, LIMIT_NUMBER_TAKEN); 
             let getNotifiContents = newNotifications.map( async(notification) => {
                 let sender = await UserModel.findUserById(notification.senderId) ;
-                return { 
+                return {
+                    _id: notification._id, 
                     type: notification.type, 
                     isRead: notification.isRead, 
                     idSender: sender[0]._id, 
                     firstNameSender: sender[0].firstName, 
-                    avatarSender: sender[0].avatar  
+                    avatarSender: sender[0].avatar, 
+                    createAt: notification.createAt
                     }
             }) ; 
             resolve(await Promise.all(getNotifiContents));

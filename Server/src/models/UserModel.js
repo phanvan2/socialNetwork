@@ -68,6 +68,24 @@ UserSchema.statics = {
         }, {_id: 1, email: 1,lastName: 1, firstName: 1,avatar: 1}).exec();
     },
 
+
+       
+    /**
+     * 
+     * @param {array: friend UserIds } friendIds 
+     */
+    getListFriends(friendIds){
+        return this.find({
+            $and: [
+                {"_id": {$in: friendIds}},
+                {"isActive": true}
+               
+            ]
+        }, {_id: 1, email: 1,lastName: 1, firstName: 1,avatar: 1}).exec();
+    },
+
+
+
 }
 
 UserSchema.methods = {

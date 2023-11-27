@@ -26,10 +26,7 @@ export const Auth = () => {
     console.log("loading "+loading) ; 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("submite") ; 
-        console.log("loading "+loading) ; 
         if (isSignUp) {
-            console.log("loading "+loading) ; 
             data.password === data.confirmpassword ? dispatch(signUp(data)) : setConfirmPassword(false);
         } else {
             dispatch(logIn(data))

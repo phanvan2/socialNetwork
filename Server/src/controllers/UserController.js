@@ -106,7 +106,18 @@ let verifyEmail = async(req, res) => {
 
 let getUserById = async(req, res) => {
     if(req.params.id){
-        let result = await User.getUserById(req.params.id) ; 
+        let currentUserId = false; 
+        if(req.query.user_token){
+            try {
+ 
+                let currentUser = jwt.verify(req.query.user_token, process.env.JWT_KEY);
+                currentUserId = currentUser._id ; 
+            } catch (error) {
+                
+            }
+        }
+        let result = await User.getUserById(req.params.id, currentUserId) ; 
+        
         if(result) 
             res.send({data: result, message: ""}) ;
         else{

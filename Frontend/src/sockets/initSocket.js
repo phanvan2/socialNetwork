@@ -1,7 +1,7 @@
 import { socketStore } from "../store";
 
 
-export const userOfflineOnline = (user) => {
+export const initSocket = (user) => {
     const socket_ = socketStore((state) => state.socket);
 
     if(user) {
@@ -10,6 +10,9 @@ export const userOfflineOnline = (user) => {
             socket_.auth.token = user.token;
             socket_.connect();
             // setSocket(socket);
+
+
+
         } catch (error) {
 
         }
@@ -25,5 +28,6 @@ export const userOfflineOnline = (user) => {
         // setSocket(socket); 
     }
 }
+
 
  

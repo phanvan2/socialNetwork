@@ -10,27 +10,18 @@ let addNewContact = (io) => {
     let clients = {} ; 
     io.on("connection", (socket) => {
         try {
-            console.log("conncec add new con tact");
 
-             // pussh socket id to array
         let req_user = socket.handshake.auth.token;
         let sender = (jwt.verify(req_user, process.env.JWT_KEY));
-        console.log(sender);
         clients = pushSocketIdToArray(clients, sender._id, socket.id) ; 
 
-        socket.on("add-new-contact", (data) => {
-            console.log("servẻ vừa nhận đc yêu cầu kết bạn");
-            console.log(data); 
-           // console.log(socket.request.user) ; 
-            let currentUser = {
-                id: sender._id,
-                username: sender.firstName,
-                email: sender.email
+        socket.on("add-new-contact", (data) => { 
+            console.log("server nhận đc rùi")
+            let newNotification = (data.newNotification) ; 
+            console.log(newNotification); 
 
-            };
-
-            if( clients[data.contactId]){
-                emitNotifyToArray(clients, data.contactId, io, "response-add-new-contact", currentUser); 
+            if( clients[newNotification.contactId]){
+                emitNotifyToArray(clients, newNotification.contactId, io, "response-add-new-contact",newNotification); 
             }
 
         }); 

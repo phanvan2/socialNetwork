@@ -1,0 +1,13 @@
+.status-user{
+    font-size: 12px;
+    
+}
+.user-online{
+    color: #1976d2 ;
+
+}
+
+.user-offline{
+    color: #741094 ;
+
+}

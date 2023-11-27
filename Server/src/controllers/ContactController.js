@@ -29,16 +29,14 @@ let findUserContact = async (req, res) =>{
 };
 
 let addNew = async (req, res) =>{
-    console.log("add - new controller");
-    console.log(req);
+
     if(!_.isEmpty(req.body)){
         console.log(req.body);
         try{
             let req_user = jwt.verify(req.body.user_token, process.env.JWT_KEY);
-            let currentUserId  = req_user._id; 
             let contactId = req.body.contactId; 
 
-            let newContact = await Contact.addNew(currentUserId, contactId) ; 
+            let newContact = await Contact.addNew(req_user, contactId) ; 
         //  console.log(newContact) ; 
             return res.status(200).send({data: newContact, message: transSuccess.sendReqContact}) ; 
         }catch(error){
@@ -94,23 +92,24 @@ let removeRequestContactReceived = async (req, res) =>{
 };
 
 let approveRequestContactReceived = async (req, res) =>{
-    if(!_.isEmpty(req.body)){
+    console.log("controller contact approve") ; 
+    console.log(req.bođy);  
 
+    if(!_.isEmpty(req.body)){
+        console.log(req.body);  
         try{
             let req_user = jwt.verify(req.body.user_token, process.env.JWT_KEY);
 
             let currentUserId  = req_user._id; 
             let contactId = req.body.contactId; 
-
-            console.log(req_user)
-            console.log(contactId);
             let approveReq = await Contact.approveRequestContactReceived(currentUserId, contactId) ; 
         
-            return res.status(200).send({success: !!approveReq}) ; 
+            return res.status(200).send(approveReq) ; 
         }catch(error){
             return res.status(500).send(error);
         }
     }
+    return res.send("lỗi rùi "); 
 };
 
 let readMoreContacts = async (req, res) => {
@@ -162,30 +161,21 @@ let readMoreContactsReceived = async (req, res) => {
     }
 };
 
-let searchFriends = async (req, res) =>{
-    let errorArr = [];
-    let validationErrors = validationResult(req); 
-
-    if(!validationErrors.isEmpty()){
-        let errors = Object.values(validationErrors.mapped());
-        errors.forEach(item => {
-            errorArr.push(item.msg) ; 
-        }) ; 
-        return res.status(500).send(errorArr);
-    }
+let getlistFriends = async (req, res) =>{
+    console.log("get list friend controller");
+    console.log(req.query) ; 
     try{
-        let currentUserId  = req.user._id; 
-        let keyword = req.params.keyword ; 
-        console.log("search friends Contact controller");
-
-        console.log(currentUserId)
-        console.log(keyword);
-        let users = await Contact.searchFriends(currentUserId, keyword);
+        let req_user = jwt.verify(req.query.user_token, process.env.JWT_KEY);
+        console.log(req_user) ;
+        let currentUserId  = req_user._id; 
+    
+        let users = await Contact.getListFriends(currentUserId);
         console.log(users);
         // console.log("user"+users);
-        return res.render("main/groupChat/sections/_searchFriends", {users}); 
+        return res.status(200).send(users); 
     }catch(error){
-        return res.status(500).send(error);
+        console.log(error);
+        return res.send({data: false});
     }
 };
 
@@ -200,6 +190,6 @@ export default{
     readMoreContactsReceived: readMoreContactsReceived, 
     approveRequestContactReceived: approveRequestContactReceived,
     removeContact: removeContact,
-    searchFriends: searchFriends
+    getlistFriends: getlistFriends
 
 }

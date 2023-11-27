@@ -15,26 +15,21 @@ let userOfflineOnline = (io) => {
 
             // pussh socket id to array
             clients = pushSocketIdToArray(clients, user_id, socket.id) ; 
-            // console.log("groupid: " + socket.request.user.chatGroupIds) ;
-            // socket.request.user.chatGroupIds.forEach(group => {
-            //     clients = pushSocketIdToArray(clients, group._id, socket.id) ; 
-            // })
-            // let listUsersOnline = Object.keys(clients);
-            // //step 01: Emit to user after login or f5 web page
-            // socket.emit("server-send-list-users-online", listUsersOnline);
 
-            // //step 02: Emit to all another users when has new user online
-            // socket.broadcast.emit("server-send-when-new-user-online", user_id); 
+            let listUsersOnline = Object.keys(clients);
+            //step 01: Emit to user after login or f5 web page
+            socket.emit("server-send-list-users-online", listUsersOnline);
+
+            //step 02: Emit to all another users when has new user online
+            socket.broadcast.emit("server-send-when-new-user-online", user_id); 
             socket.on("disconnect", () => {
                 console.log(`thằng nào vừa disconect`);
                 // remove socketId when socket disconnect
 
                 clients = removeSocketIdFromArray(clients,user_id, socket ); 
-                // socket.request.user.chatGroupIds.forEach(group => {
-                //     clients = removeSocketIdFromArray(clients, group._id, socket) ; 
-                // });
+
                 // step 03: emit to all another user when  has new user offline
-                // socket.broadcast.emit("server-send-when-new-user-offline", user_id); 
+                socket.broadcast.emit("server-send-when-new-user-offline", user_id); 
                 console.log(clients); 
 
             }); 

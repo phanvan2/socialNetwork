@@ -26,28 +26,31 @@ let findUserContact =  (currentUserId, keyword) =>{
 }
 
 
-let addNew =  (currentUserId, contactId) =>{
+let addNew =  (req_user, contactId) =>{
     console.log("add new service")
     return new Promise(async(resolve, reject) =>{
-        let contactExists = await ContactModel.checkExists(currentUserId, contactId);
-        console.log(contactExists); 
+        let contactExists = await ContactModel.checkExists(req_user._id, contactId);
         if(contactExists){
             return resolve(false) ; 
         }
         
         let newContactItem = {
-            userId: currentUserId,
+            userId: req_user._id,
             contactId: contactId
         };
 
         let newContact = await ContactModel.createNew(newContactItem) ; 
-        
+
+
+
         let notificationItem = {
-            senderId: currentUserId,
+            senderId: req_user._id,
             receiverId: contactId,
             type: NotificationModel.types.ADD_CONTACT,
         };
         await  NotificationModel.model.createNew(notificationItem);
+
+        
 
         
         resolve(newContact) ; 
@@ -113,7 +116,7 @@ let approveRequestContactReceived =  (currentUserId, contactId) =>{
         };
         await  NotificationModel.model.createNew(notificationItem);
         
-        resolve(true) ;
+        resolve(approveReq) ;
     
     }); 
 };
@@ -280,7 +283,9 @@ let readMoreContactsSent = (currentUserId, skipNumberContacts) => {
     }) ;
 };
 
-let searchFriends =  (currentUserId, keyword) =>{
+let getListFriends =  (currentUserId) =>{
+    console.log("getlít friend service "); 
+    console.log(currentUserId);
     return new Promise(async(resolve, reject) =>{
         let friendIds  = [];
         let friends = await ContactModel.getFriends(currentUserId);
@@ -290,18 +295,15 @@ let searchFriends =  (currentUserId, keyword) =>{
             friendIds.push(item.contactId);
 
         });
-        console.log("ahihi");
 
-        console.log(friends);
-
-
+     
         friendIds = _.uniqBy(friendIds);
-        console.log("uniqBy");
-        console.log(friends);
+
 
         friendIds = friendIds.filter(userId => userId != currentUserId);
-        console.log(friends);
-        let users = await UserModel.findAllToAddGroupChat(friendIds, keyword);
+        console.log(friendIds); 
+
+        let users = await UserModel.getListFriends(friendIds);
         resolve(users) ; 
     }); 
 };
@@ -325,5 +327,5 @@ export default  {
     readMoreContactsReceived: readMoreContactsReceived, 
     approveRequestContactReceived: approveRequestContactReceived,
     removeContact: removeContact,
-    searchFriends: searchFriends
+    getListFriends: getListFriends
 }

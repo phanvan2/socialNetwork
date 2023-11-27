@@ -8,6 +8,9 @@ export const transSuccess = {
     login_user      : "Login success", 
     sendVerifyEmail : "Email sent, Please check your email",
     aciveEmail      : "You have successfully verified your account, please return to the home page to continue using the application",
+    addNewPost      : "post successfully",
+
+    
 
     findContact     : "",
     sendReqContact  : "Sent friend request successfully",
@@ -18,12 +21,14 @@ export const transError = {
     login_user      : "Login fail", 
     sendVerifyEmail : "Error sending email or account does not exist! Please try again later",
     aciveEmail      : "Verification failed! Please try again later",
+    addNewPost      : "Posting failed",
 
     findContact     : "No result is found",
     sendReqContact  : "Error, unable to send friend request, please try again later!",
 
     account_notFound: "Account not found",
-
+    image_type       :"Image format error",
+    image_size       :"Image size is larger than allowed",
     error_: "Unknown error! please try again later,",
 }
 

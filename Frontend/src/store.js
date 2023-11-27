@@ -18,3 +18,23 @@ export const socketStore = create((set) => ({
 
 })); 
 
+
+export const notificationStore = create((set) => ({
+  notifications: [],
+  setNotification: (data) => set((state) => ({ notifications: data })),
+  addNotification: (data) => set((state) => ({ notifications: [data, ...state.notifications] })),
+
+})); 
+
+export const friendsStore = create((set) =>({
+  friends: [],
+  setFriends: (data) => set((state) => ({friends: data})),
+})); 
+
+export const friendsOnlineStore =create((set) =>({
+  friendsOnline: [],
+  setFriendsOnline: (data) => set((state) => ({friendsOnline: data})),
+  addFriendOnline: (data) => set((state)=>  ({friendsOnline : [data , ...state.friendsOnline]})),
+  removeFriendOffline: (data) => set((state)=>  ({friendsOnline : state.friendsOnline.filter((value)=> value != data)})),
+})); 
+

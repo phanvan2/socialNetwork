@@ -1,22 +1,68 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "./Noti.css";
 
-import axios from "axios"
-import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-export const Noti = () => {
+
+import { convertTimestampToHumanTime, NOTIFICATIONTYPES } from '../../helpers/helper';
+
+import ProfileImage from '../../img/default.png'
+
+export const Noti = (props) => {
+    let notification = props.notification; 
+    let navigate = useNavigate();
+
+    const sendToProfile = (userIđ) => {
+        let path = `/profile/${userIđ}`;
+        navigate(path);
+    }
 
   return (
         <div className='notif' style={{cursor : 'pointer'}}>
-            <div>
-                <img src='../../img/default.png' alt="" className='notifImg' />
-                <div className='notif-title'>
-                    Văn PHùng vừa gửi lời mời kết bạn..
-                    <span className='notif-time'>
-                        4 phuts truorwc
-                    </span>
+            {(notification.type === NOTIFICATIONTYPES.ADD_CONTACT) ?(
+                <div onClick={()=> sendToProfile(notification.idSender)}>
+                    <img src={ProfileImage} alt="" className='notifImg' />
+                    <div className='notif-title'>
+                        <span>{notification.firstNameSender} just sent a friend request.</span>
+                        <span className='notif-time'>
+                            {convertTimestampToHumanTime(notification.createAt)}
+                        </span>
+                    </div>
                 </div>
-            </div>
+            ):(notification.type === NOTIFICATIONTYPES.APPROVE_CONTACT) ? (
+                <div>
+                    <img src={ProfileImage} alt="" className='notifImg' />
+                    <div className='notif-title'>
+                        <span>{notification.firstNameSender} accepted your friend request.</span>
+                        <span className='notif-time'>
+                            {convertTimestampToHumanTime(notification.createAt)}
+                        </span>
+                    </div>
+                </div>
+            ):(notification.type === NOTIFICATIONTYPES.MENTION_YOU) ? (
+                <div>
+                    <img src={ProfileImage} alt="" className='notifImg' />
+                    <div className='notif-title'>
+                        <span>{notification.firstNameSender}  mentioned you in a comment.</span>
+                        <span className='notif-time'>
+                            {convertTimestampToHumanTime(notification.createAt)}
+                        </span>
+                    </div>
+                </div> 
+            ):(notification.type === NOTIFICATIONTYPES.REGISTER_SUCCESS) ? (
+                <div>
+                    <img src={ProfileImage} alt="" className='notifImg' />
+                    <div className='notif-title'>
+                        <span>Congratulations, you have successfully registered an account. Please activate your account.....</span>
+                        <span className='notif-time'>
+                            {convertTimestampToHumanTime(notification.createAt)}
+                        </span>
+                    </div>
+                </div> 
+            ):<div></div>}
+
+
         </div>
   )
 }
+

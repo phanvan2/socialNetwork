@@ -31,9 +31,7 @@ export const InfoCard = () => {
                 <span>
                     <b>Status </b>
                 </span>
-                {otherUserInfor.relationship ? (
-                    <span>{otherUserInfor.relationship}</span>
-                ) : ""}
+             
 
             </div>
 
@@ -41,26 +39,20 @@ export const InfoCard = () => {
                 <span>
                     <b>Country </b>
                 </span>
-                {otherUserInfor.country ? (
-                    <span>{otherUserInfor.country}</span>
-                ) : ""}
+               
             </div>
 
             <div className="info">
                 <span>
                     <b>Live in </b>
                 </span>
-                {otherUserInfor.livesin ? (
-                    <span>{otherUserInfor.livesin}</span>
-                ) : ""}
+               
             </div>
             <div className="info">
                 <span>
                     <b>Works at </b>
                 </span>
-                {otherUserInfor.workAt ? (
-                    <span>{otherUserInfor.workAt}</span>
-                ) : ""}
+             
             </div>
         </div>
     )

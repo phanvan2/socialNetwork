@@ -49,10 +49,6 @@ const LogoSearch = () => {
 
   React.useEffect(()=> {
     dispatch(findContact(txtSearch, userToken))
-    console.log("tìm kiếm contact"); 
-
-    console.log(contactFind);
-
   }, [txtSearch])
 
   React.useEffect(() => {

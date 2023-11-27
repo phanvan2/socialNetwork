@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import ProfileImage from '../../img/default.png'
 import { socketStore } from '../../store.js';
 import * as ContactApi from "../../api/contactRequest.js"
+import { NOTIFICATIONTYPES } from '../../helpers/helper.js'
 
 const  UserSearch = (props) => {
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -12,21 +13,9 @@ const  UserSearch = (props) => {
     const socket_ = socketStore((state) => state.socket);
 
     const user  = useSelector((state) => state.authReducer.authData)
-    // const [following, setFollowing] = useState(person.followers.includes(user._id))
-    // const handleFollow = () => {
-    //     let strFollow = following ? "unfollow" : "follow"
 
-    //     axios.put(process.env.REACT_APP_API_URL + `/user/${person._id}/${strFollow}`, { currentUserId: user._id })
-    //         .then(res => {
-    //             console.log(res.data);
-    //         })
-    //         .catch(error => console.log(error));
-
-    //     setFollowing((pev) => !pev)
-    // }
     let navigate = useNavigate();
     const sendToProfile = (_id) => {
-        console.log(_id);
         let path = `/profile/${_id}`;
         navigate(path);
     }
@@ -34,7 +23,18 @@ const  UserSearch = (props) => {
     const handleAddContact = async(contactId)=> {
         const data = await ContactApi.addContact(user.token, contactId);
         if(data){
-            socket_.emit("add-new-contact", {contactId: contactId}) 
+
+            let newNotification = {
+                type: NOTIFICATIONTYPES.ADD_CONTACT, 
+                isRead: false, 
+                idSender: user.data._id, 
+                contactId: data.data.data.contactId,
+                firstNameSender: user.data.firstName, 
+                avatarSender: user.data.avatar, 
+                createAt: data.data.data.createAt 
+            }
+          
+            socket_.emit("add-new-contact", {newNotification: newNotification}) 
         }
     }
     return (

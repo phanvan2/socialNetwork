@@ -9,6 +9,9 @@ import {userInfoStore} from '../../store';
 import './Profile.css'
 
 export const Profile = () => {
+
+  const currentUser = JSON.parse(localStorage.getItem("profile"))
+
   const setOtherUserInfor = userInfoStore((state) => state.setOtherUserInfor)
   const setPosts = userInfoStore((state) => state.setPosts)
   const { id } = useParams();
@@ -17,16 +20,20 @@ export const Profile = () => {
   
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + `/user/${id}`)
+    axios.get(process.env.REACT_APP_API_URL + `/user/${id}?user_token=${currentUser.token}`)
       .then(res => {
-        setOtherUserInfor(res.data.data[0])
+
+        if(res.data){
+
+          setOtherUserInfor(res.data.data)
+        }
       })
       .catch(error => console.log(error));
 
-    axios.get(process.env.REACT_APP_API_URL + `/post/${id}/timeline`)
+    axios.get(process.env.REACT_APP_API_URL + `/post/get-by-idUser/${id}`)
       .then(res => {
-        res.data.pop();
-        setPosts(res.data)
+        if(!res.data)
+          setPosts(res.data.data)
       })
       .catch(error => console.log(error));
   }, [id])

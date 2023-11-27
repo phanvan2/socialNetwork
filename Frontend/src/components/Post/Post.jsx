@@ -11,11 +11,13 @@ import { UilMessage } from '@iconscout/react-unicons'
 import axios from 'axios'
 import {userInfoStore} from '../../store';
 
+import { convertTimestampToHumanTime } from '../../helpers/helper'
+
 export const Post = ({ data }) => {
   const [hideInputCmt, setHideInputCmt] = useState(false)
   const  user  = useSelector((state) => state.authReducer.authData)
-  const [liked, setLiked] = useState(data.likes.includes(user._id))
-  const [likes, setLikes] = useState(data.likes.length)
+  const [liked, setLiked] = useState()
+  const [likes, setLikes] = useState()
   const [contentCmt, setContentCmt] = useState()
   const [listCmt , setListCmt] = useState(data.comment ? data.comment : [])
   const userInfo = userInfoStore((state) => state.userInfo)
@@ -51,7 +53,9 @@ export const Post = ({ data }) => {
 
   return (
     <div className='Post'>
-      <img src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""} alt="" />
+      <span>{data.desc}</span>
+
+      <img src={data.image ? "http://localhost:5000/images/posts/" + data.image : ""} alt="" />
 
       <div className="postReact">
         <img src={liked ? Like : NotLike} alt="" style={{ "cursor": "pointer" }} onClick={handleLiked} />
@@ -62,8 +66,8 @@ export const Post = ({ data }) => {
       <span style={{ color: "var(--gray)", fontSize: "12px" }}>{likes} Likes</span>
 
       <div className="detail">
-        <span><b>{data.name}</b></span>
-        <span>{data.desc}</span>
+        <span><b>{data.lastName} </b></span><br/>
+        <span>{convertTimestampToHumanTime(data.creatAt)}</span>
       </div>
       <span style={{ fontSize: "20px", fontWeight: "bold" }}>Comment</span>
       {hideInputCmt && (

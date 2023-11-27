@@ -1,4 +1,4 @@
-export const alertt_success = (message)=> async (dispatch) =>{
+export const alertt_success = (message)=> async (dispatch) =>{   
     dispatch({
         type : "ALERT_ON",
         data : message

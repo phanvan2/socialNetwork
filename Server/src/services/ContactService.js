@@ -61,7 +61,7 @@ let addNew =  (req_user, contactId) =>{
 let removeContact = (currentUserId, contactId) => {
     return new Promise(async(resolve, reject) =>{
         let removeContact = await ContactModel.removeContact(currentUserId, contactId); 
-        if ( removeContact.result.n === 0){
+        if ( removeContact.deletedCount === 0){
             reject(false) ; 
         } 
         
@@ -74,10 +74,10 @@ let removeRequestContactSent =  (currentUserId, contactId) =>{
   //  console.log("remove contact service"); 
     return new Promise(async(resolve, reject) =>{
         let removeReq = await ContactModel.removeRequestContactSent(currentUserId, contactId); 
-        if ( removeReq.result.n === 0){
-            reject(false) ; 
+        if ( removeReq.deletedCount === 0){
+            resolve(false) ; 
         } 
-        // remove notification
+        //remove notification
         let notifTypeAddContact = NotificationModel.types.ADD_CONTACT; 
         await NotificationModel.model.removeRequestContactSentNotification(currentUserId, contactId, notifTypeAddContact); 
         resolve(true) ;
@@ -86,15 +86,12 @@ let removeRequestContactSent =  (currentUserId, contactId) =>{
 };
 
 let removeRequestContactReceived =  (currentUserId, contactId) =>{
-//  console.log("remove contact service"); 
     return new Promise(async(resolve, reject) =>{
         let removeReq = await ContactModel.removeRequestContactReceived(currentUserId, contactId); 
-        if ( removeReq.result.n === 0){
-            reject(false) ; 
+        if ( removeReq.deletedCount === 0){
+            resolve(false) ; 
         } 
-        // remove notification
-        //let notifTypeAddContact = NotificationModel.types.ADD_CONTACT; 
-        //await NotificationModel.model.removeRequestContactSentNotification(currentUserId, contactId, notifTypeAddContact); 
+
         resolve(true) ;
     
     }); 
@@ -125,10 +122,8 @@ let getContacts =  (currentUserId) =>{
     //  console.log("remove contact service"); 
     return new Promise(async(resolve, reject) =>{
         try {
-            console.log("get contact services");
-
             let contacts = await ContactModel.getContacts(currentUserId, LIMIT_NUMBER_TAKEN);
-            console.log(contacts);
+
             let users = contacts.map( async(contact) => {
                 console.log(contact._doc.contactId);
     
@@ -137,7 +132,8 @@ let getContacts =  (currentUserId) =>{
                 }else
                     return await UserModel.getNormalUserDataById(contact.contactId);
             }) ; 
-
+            console.log('tessttt'); 
+            console.log(users) ;
 
             resolve(await Promise.all(users));
         } catch (error) {

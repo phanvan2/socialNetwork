@@ -37,6 +37,9 @@ const  UserSearch = (props) => {
             socket_.emit("add-new-contact", {newNotification: newNotification}) 
         }
     }
+
+
+
     return (
         <div>
             <div className='follower' style={{cursor : 'pointer'}}>
@@ -50,6 +53,10 @@ const  UserSearch = (props) => {
                 <button className='button followButton' onClick={()=> handleAddContact(contactUser._id)}>
                     Add friend
                 </button>
+
+
+
+                
             </div>
         </div>
     )

@@ -33,6 +33,7 @@ let postUploadFile = multer({
 
 
 let addNewPost = async(req , res) => {
+    console.log("add new post controllerrrrrrrrr") ; 
     postUploadFile(req, res, async(error) => {
         if(error){
             if(error.message){
@@ -90,8 +91,52 @@ let getPostbyIdUser = async(req, res) => {
     }
 }
 
+let getPostsByFriend = async (req,res) => {
+    if(req.query.user_token){
+        try{
+            let req_user = jwt.verify(req.query.user_token, process.env.JWT_KEY);
+            let currentUserId  = req_user._id;  
+            let posts = await Post.getPostsByFriend(currentUserId);
+            res.send(posts);
+            // if(posts.length > 0){
+            //     return res.status(200).send(posts); 
+
+            // } else{
+            //     return res.send([]); 
+
+            // }
+        }catch(error){
+            return res.status(500).send(error);
+        }
+    }else{
+        return res.send([]); 
+    }
+}
+
+let searchPost = async(req, res) => {
+    console.log("vào đây đi iêm"); 
+
+    if(req.query.user_token){
+        try{
+            let req_user = jwt.verify(req.query.user_token, process.env.JWT_KEY);
+            let currentUserId  = req_user._id; 
+            let keyword = req.query.keyword ; 
+    
+            let posts = await Post.searchPost(currentUserId, keyword);
+            return res.status(200).send(posts); 
+
+          
+        }catch(error){
+            return res.status(500).send([]);
+        }
+    }else{
+        return res.send([]); 
+    }
+}
 
 export default {
     addNewPost, 
-    getPostbyIdUser
+    getPostbyIdUser, 
+    getPostsByFriend, 
+    searchPost
 } ; 

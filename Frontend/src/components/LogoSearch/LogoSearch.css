@@ -40,3 +40,42 @@
 .s-icon:hover{
     cursor: pointer;
 }
+
+.card-post-search{
+    border-radius: 7px;
+    padding: 5px;
+    margin-top: 7px;
+    display: inline-block ; 
+}
+
+.card-post-search:hover{
+    background-color: rgb(229, 228, 228);
+} 
+.card-post-search .post-search{
+    display: flex;
+    float: left;
+    justify-content: space-between; 
+}   
+.card-post-search .post-search .image-post-search{
+    width: 60p;
+    height: 60px;
+    border-radius: 15px;
+}
+.detail-post-search{
+    padding:10px;
+    width: 290px;
+}
+.detail-post-search .desc-post{
+    font-weight: bold;
+    font-size: 13px;
+
+}   
+
+.detail-post-search .createTime-post{
+    font-size: 11px;
+}
+.btn-view-post-search{
+    padding:11px;
+    margin-right: 45px;
+}
+

@@ -49,45 +49,60 @@ let addNew = async (req, res) =>{
 };
 
 let removeContact = async(req, res) => {
-    try{
-        let currentUserId  = req.user._id; 
-        let contactId = req.body.uid; 
-        // console.log(req);
-        let removeContact = await Contact.removeContact(currentUserId, contactId) ; 
-       // console.log(removeReq) ; 
-        //console.log("remove contact controller")
-        return res.status(200).send({success: !!removeContact}) ; 
-    }catch(error){
-        return res.status(500).send(error);
+    console.log("controler remove contact") ; 
+    console.log(req) ; 
+
+    if(!_.isEmpty(req.body)){
+        console.log(req.body);
+        try{
+            let req_user = jwt.verify(req.body.user_token, process.env.JWT_KEY);
+            let contactId = req.body.contactId; 
+
+            let removeContact = await Contact.removeContact(req_user._id, contactId) ; 
+             console.log(removeContact) ; 
+            return res.status(200).send({data: removeContact, message: transSuccess.sendReqContact}) ; 
+        }catch(error){
+            return res.send(error);
+        }
+    }{
+        return res.send({data:false}) ; 
+
     }
 }
+
 let removeRequestContactSent = async (req, res) =>{
 
-    try{
-        let currentUserId  = req.user._id; 
-        let contactId = req.body.uid; 
+    if(!_.isEmpty(req.body)){
+        try{
+            let req_user = jwt.verify(req.body.user_token, process.env.JWT_KEY);
+            let contactId = req.body.contactId;  
 
-        let removeReq = await Contact.removeRequestContactSent(currentUserId, contactId) ; 
-       // console.log(removeReq) ; 
-        //console.log("remove contact controller")
-        return res.status(200).send({success: !!removeReq}) ; 
-    }catch(error){
-        return res.status(500).send(error);
+            let removeReq = await Contact.removeRequestContactSent(req_user._id, contactId) ; 
+            return res.status(200).send({data: removeReq}) ; 
+        }catch(error){
+            return res.send(error);
+        }
+    }{
+        return res.send({data:false}) ; 
+
     }
 };
 
 let removeRequestContactReceived = async (req, res) =>{
 
-    try{
-        let currentUserId  = req.user._id; 
-        let contactId = req.body.uid; 
+    if(!_.isEmpty(req.body)){
+        try{
+            let req_user = jwt.verify(req.body.user_token, process.env.JWT_KEY);
+            let contactId = req.body.contactId;  
+            
+            let removeReq = await Contact.removeRequestContactReceived(req_user._id, contactId) ; 
+            return res.status(200).send( removeReq) ; 
+        }catch(error){
+            return res.send(error);
+        }
+    }{
+        return res.send(false) ; 
 
-        let removeReq = await Contact.removeRequestContactReceived(currentUserId, contactId) ; 
-       // console.log(removeReq) ; 
-        //console.log("remove contact controller")
-        return res.status(200).send({success: !!removeReq}) ; 
-    }catch(error){
-        return res.status(500).send(error);
     }
 };
 

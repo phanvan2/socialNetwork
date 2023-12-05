@@ -9,24 +9,27 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { useDispatch, useSelector } from 'react-redux'
 
 
-import './LogoSearch.css'
-import Logo from '../../img/logo.png';
-import UserSearch from "../../components/User/UserSearch" ; 
-import { findContact } from '../../actions/ContactAction';
 
-const LogoSearch = () => {
+import './LogoSearch.css'
+import postImage from '../../img/postpic1.jpg';
+import avatar from "../../img/img1.png"
+import UserSearch from "../../components/User/UserSearch" ; 
+import * as PostAPI from "../../api/PostRequest" ; 
+import { convertTimestampToHumanTime } from '../../helpers/helper';
+
+const SearchPost = () => {
 
   const dispatch = useDispatch();
 
   const  userToken  = useSelector(state => state.authReducer.authData).token; 
-  let contactFind = useSelector((state) => state.contactFind.contactfind);
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
   const [txtSearch, setTxtSearch] = React.useState("");
 
+  const [posts, setPosts] = React.useState([]);
+
 
   const handleClickOpen = () => {
-    console.log("oke bro")
     setOpen(true);
     setScroll("paper");
   };
@@ -35,8 +38,12 @@ const LogoSearch = () => {
     setOpen(false);
   };
 
-  const handleSearch = () => {
-    dispatch(findContact(txtSearch, userToken))
+  const handleSearch = async() => {
+    console.log(userToken);
+    console.log(txtSearch) ; 
+    let result = await PostAPI.searchPost(userToken, txtSearch);
+    console.log(result)
+    setPosts(result.data); 
   }
 
   const setValueInputSearch = (e) => {
@@ -47,9 +54,6 @@ const LogoSearch = () => {
 
   const descriptionElementRef = React.useRef(null);
 
-  React.useEffect(()=> {
-    dispatch(findContact(txtSearch, userToken))
-  }, [txtSearch])
 
   React.useEffect(() => {
     if (open) {
@@ -61,13 +65,10 @@ const LogoSearch = () => {
   }, [open]);
   return (
     <>
-      <div className='LogoSearch'>
+      <div className='LogoSearch' onClick={handleClickOpen}>
         {/* <img width={50} height={50} src={Logo} alt='' /> */}
-        <div className='search' onClick={handleClickOpen}>
-          <input type="text" placeholder='#Search Everyone' disabled/>
-          <div className='s-icon'>
-            <UilSearch />
-          </div>
+        <div className='search' >
+          <input type="text" placeholder='#Search Posts'  onClick={handleClickOpen} />
         </div>
       </div>
       <Dialog
@@ -81,38 +82,33 @@ const LogoSearch = () => {
         <DialogTitle id="scroll-dialog-title">
           <div className='search' >
             
-            <input type="text" placeholder='#Search Everyone' className='input-search1' defaultValue={txtSearch} onChange={setValueInputSearch}/>
-            <div className='s-icon' onClick={handleSearch}>
+            <input type="text" placeholder='#Search Posts' className='input-search1' defaultValue={txtSearch} onChange={setValueInputSearch}/>
+            <div className='s-icon' onClick={()=> handleSearch()}>
                 <UilSearch />
               </div>
           </div>
         </DialogTitle>
         <DialogContent dividers={scroll === 'paper'} style={{height:"500px"}}>
         <div className='FollowersCard'>
-
-          { contactFind ? contactFind.data ?contactFind.data.map((contactUser)=> (
-            <>
-              <UserSearch key={contactUser._id} contactUser={contactUser}></UserSearch>
-            </>
-
-          )): 
-            (<>
-            Không tìm thấy kết quả
-            </>):
-             (<>
-              Không tìm thấy kết quả
-              </>)
-          }
-
+          {posts.map((post, index) => (
+            <div className='card-post-search' key={index}>
+              <div className='post-search'>
+                <img src={`http://localhost:5000/images/posts/${post.image}`} alt="" className='image-post-search' />
+                <div className='detail-post-search'>
+                  <span className='desc-post'>{post.desc}</span><br/>
+                  <span className='createTime-post'>{convertTimestampToHumanTime(`${post.creatAt}`)}</span>
+                </div>
+                <div className='btn-view-post-search'>
+                  <Button variant="outlined">View</Button>
+                </div>
+  
+              </div>
+            
+            </div>  
+          ))}
+  
         </div>
-          {/* <DialogContentText
-            id="scroll-dialog-description"
-            ref={descriptionElementRef}
-            tabIndex={-1}
-            height={"400px"}
-          >
-            tìmkiếm gì tìm keiém dê  
-          </DialogContentText> */}
+
         </DialogContent>
         
       </Dialog>
@@ -121,4 +117,6 @@ const LogoSearch = () => {
   )
 }
 
-export default LogoSearch
+export default SearchPost; 
+
+

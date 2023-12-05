@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import axios from "axios"; 
 import Button from '@mui/material/Button';
+import swal from "sweetalert";
 
 import {userInfoStore, socketStore} from '../../store';
 import message from '../../img/message.png'
 import './ProfileCard.css'
 import Cover from '../../img/default.jpg'
 import Profile from '../../img/default.png'; 
-import { STATUS_HANDLE_FRIEND } from '../../helpers/helper';
+import { alertt_success } from '../../actions/AlertAction';
+
+import { STATUS_HANDLE_FRIEND, HANDLE_MY_PROFILE, NOTIFICATIONTYPES } from '../../helpers/helper';
 import * as ContactAPI from "../../api/contactRequest" ; 
-import { NOTIFICATIONTYPES } from '../../helpers/helper.js'
+import * as AuthAPI from "../../api/AuthRequest" ; 
 
 export const ProfileCard = ({ location }) => {
+
+    const dispatch = useDispatch();
 
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
@@ -28,11 +32,10 @@ export const ProfileCard = ({ location }) => {
     const { id } = useParams()
 
 
-    const handleApproveFriend = async () => {
-        console.log("confirm friend qq") ;
+    const handleApproveFriend = async (eBtn) => {
         let data = await ContactAPI.approveRequestContact(currentUser.token,id )  ; 
+        
         if(data){
-            console.log(data); 
             let newNotification = {
                 type: NOTIFICATIONTYPES.APPROVE_CONTACT, 
                 isRead: false, 
@@ -42,24 +45,89 @@ export const ProfileCard = ({ location }) => {
                 avatarSender: currentUser.data.avatar, 
                 createAt: Date.now()
             }
+            eBtn.target.innerText = STATUS_HANDLE_FRIEND.FRIEND ;
+            eBtn.target.value = STATUS_HANDLE_FRIEND.FRIEND ;  
             socket_.emit("approve-request-contact-received", {newNotification: newNotification}) 
         }
-        console.log(data) ;
+    }
+
+    
+    const handleAddContact = async(eBtn)=> {
+        const data = await ContactAPI.addContact(currentUser.token, id); //id of userr contact 
+        if(data){
+            let newNotification = {
+                type: NOTIFICATIONTYPES.ADD_CONTACT, 
+                isRead: false, 
+                idSender: currentUser.data._id, 
+                contactId: data.data.data.contactId,
+                firstNameSender: currentUser.data.firstName, 
+                avatarSender: currentUser.data.avatar, 
+                createAt: data.data.data.createAt 
+            }
+            eBtn.target.innerText = STATUS_HANDLE_FRIEND.REQUEST_FRIEND ;
+            eBtn.target.value = STATUS_HANDLE_FRIEND.REQUEST_FRIEND ;  
+            socket_.emit("add-new-contact", {newNotification: newNotification}) 
+        }
+    }
+
+    const handleRemoveContact = (eBtn) =>{
+        swal({
+            title: "Do you want to delete this contact?",
+            icon: "warning",
+            
+            buttons: true,
+            dangerMode: true,
+
+          }).then(async (btnAction)=> {
+            if(btnAction){
+                const data = await ContactAPI.removeContact(currentUser.token, id); //id of userr contact 
+                console.log(data); 
+                if(data.data){
+                    eBtn.target.innerText = STATUS_HANDLE_FRIEND.ADD_FRIEND ;
+                    eBtn.target.value = STATUS_HANDLE_FRIEND.ADD_FRIEND ;  
+                    dispatch(alertt_success("You have just successfully deleted this friend"));
+
+                }
+            }
+          });       
+
+    }
+
+    const handleRemoveReqContactSent = async(eBtn) =>{
+        const data = await ContactAPI.removeReqContactSent(currentUser.token, id); //id of userr contact 
+        if(data.data){
+            eBtn.target.innerText = STATUS_HANDLE_FRIEND.ADD_FRIEND ;
+            eBtn.target.value = STATUS_HANDLE_FRIEND.ADD_FRIEND ;  
+
+        }
+        
+
+    }
+
+    const handleVerifyEmail = async() => {
+        AuthAPI.verifyEmail(currentUser.token) ; 
     }
     const handleFriend = (e) => {
         switch (e.target.value) {
             case STATUS_HANDLE_FRIEND.ADD_FRIEND:
-                
+                handleAddContact(e) 
                 break;
-            case STATUS_HANDLE_FRIEND.FRIEND:
-            
+            case STATUS_HANDLE_FRIEND.FRIEND: // hủy kết bạn 
+                handleRemoveContact(e)
                 break;
-            case STATUS_HANDLE_FRIEND.REQUEST_FRIEND:
-
+            case STATUS_HANDLE_FRIEND.REQUEST_FRIEND:// 
+                handleRemoveReqContactSent(e);
                 break;
             case STATUS_HANDLE_FRIEND.CONFIRM_FRIEND:
-                handleApproveFriend();
+                handleApproveFriend(e);
                 break;
+            case HANDLE_MY_PROFILE.UPDATE_PROFILE:
+
+                break;
+            case HANDLE_MY_PROFILE.VERIFY_EMAIL:
+                handleVerifyEmail() ; 
+                break;
+            
         
             default:
                 break;
@@ -105,9 +173,15 @@ export const ProfileCard = ({ location }) => {
                     <div className='action-btn-contact'>
                         { currentUser.data._id !== otherUserInfor._id ?(
                         <Button  variant="contained" onClick={handleFriend} value={otherUserInfor.statusFriend}>{otherUserInfor.statusFriend}</Button>
-                        ):(<></>)                           
+                        ): currentUser.data.isActive ? (
+                            <Button  variant="contained" onClick={handleFriend} value={HANDLE_MY_PROFILE.UPDATE_PROFILE}>Update profile</Button>
+                        ):(
+                        <>
+                            <Button  variant="contained" onClick={handleFriend} value={HANDLE_MY_PROFILE.VERIFY_EMAIL}>Verify Email</Button>
+                        </>
+                         
+                        )                         
                     }
-
                     </div>
                 }
 

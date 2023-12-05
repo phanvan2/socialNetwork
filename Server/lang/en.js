@@ -14,6 +14,7 @@ export const transSuccess = {
 
     findContact     : "",
     sendReqContact  : "Sent friend request successfully",
+    removeFriend   : "You have successfully deleted this friend",
 }; 
 
 export const transError = {
@@ -30,6 +31,8 @@ export const transError = {
     image_type       :"Image format error",
     image_size       :"Image size is larger than allowed",
     error_: "Unknown error! please try again later,",
+    removeFriend   : "You have failed to delete this friend",
+
 }
 
 export const transMail = {

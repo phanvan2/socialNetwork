@@ -24,6 +24,12 @@ PostSchema.statics = {
     getPostbyIdUser(idUser){
         return this.find({"userId": idUser}).exec();
 
+    },
+    getPostsByFriend(idFriends){
+        return this.find({"userId": {$in: idFriends}}); 
+    }, 
+    searchPost(data){
+        return this.find({"desc": {"$regex": new RegExp( data.keyword, "i")}}).exec();
     }
 
 }

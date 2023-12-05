@@ -13,3 +13,7 @@ export const signUp = (formData) =>{
 export const checkExpiredToken = (token) => {
     return API.get(`/check/token/${token}`)
 }
+
+export const verifyEmail = (token) => {
+    return API.post(`/auth/request-active-Email`, {token: token})
+}

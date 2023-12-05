@@ -7,8 +7,10 @@ import { UilLocationPoint } from "@iconscout/react-unicons"
 import { UilSchedule } from "@iconscout/react-unicons"
 import { UilTimes } from "@iconscout/react-unicons"
 import { useDispatch, useSelector } from 'react-redux'
+import { addNewPost } from '../../api/PostRequest'
+
 import { uploadImage , uploadPost } from '../../actions/UploadAction'
-import axios from 'axios'
+
 import {userInfoStore} from '../../store';
 
 const PostShare = (props) => {
@@ -24,7 +26,8 @@ const PostShare = (props) => {
     const dispatch = useDispatch()
     const onChangeImage = (event)=>{
         if (event.target.files && event.target.files[0]) {
-            let img = event.target.files[0]
+            let img = event.target.files[0]; 
+                        
             setImage(img)
         }
     }
@@ -37,32 +40,31 @@ const PostShare = (props) => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
+        const formData = new FormData();
+        formData.append("user_token", user.token) ; 
+        formData.append("desc", desc.current.value) ; 
+        formData.append("post_image", image) ; 
 
-        const newPost = {
-            userId : user._id,
-            desc : desc.current.value
-        }
+       
 
-        if (image) {
-            const data = new FormData()
-            const filename = Date.now() + image.name
+        // if (image) {
+        //     const data = new FormData()
+        //     const filename = Date.now() + image.name
+        //     console.log("----------"); 
+        //     console.log(data); 
+        //     data.append('name' , filename)
+        //     data.append('file' , image)
 
-            data.append('name' , filename)
-            data.append('file' , image)
-
-            newPost.image = filename
-            try {
-                dispatch(uploadImage(data))
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        axios.post(process.env.REACT_APP_API_URL + `/post`,newPost)
-            .then(res => {
-                addPosts(res.data)
-            })
-        .catch(error => console.log(error));
-        
+        //     newPost.image = filename
+        //     try {
+        //         dispatch(uploadImage(data))
+        //     } catch (error) {
+        //         console.log(error);
+        //     }
+        // }
+        addNewPost(formData).then(res => {
+            addPosts(res.data)
+        })
         reset()
     }
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER

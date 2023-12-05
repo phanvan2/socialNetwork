@@ -3,6 +3,9 @@ import bcrypt from "bcrypt" ;
 import PostModel from "../models/PostModel";
 import UserModel from "../models/UserModel";
 
+import ResearchService from "./ResearchService";
+import ContactService from "./ContactService";
+
 let addNewPost =  (item ) => {
     return new Promise(async (resolve, reject) => {
         try{
@@ -58,5 +61,47 @@ let getPostbyIdUser = (idUser) => {
     })
 }
 
+let getPostsByFriend = (idUser) => {
+    return new Promise(async (resolve, reject) => {
+        try{
+            let contacts = await ContactService.getListFriends(idUser);
+            console.log("dddd");
+            console.log(contacts) ;
+            let idFriends =  contacts.map( (value) => {
+                console.log("map");
+                console.log(value) ;
+                return (value._id); 
+            })
+            console.log("Post service")
+            console.log(idFriends) ;
+            let result = await PostModel.getPostsByFriend(idFriends)  ;
+            resolve(result);
 
-export default {addNewPost, getPostbyIdUser} ;
+           
+        }catch(err){
+            reject(err); 
+        }
+    
+    })
+}
+
+let searchPost =(currentUserId, keyword) => {
+    return new Promise(async (resolve, reject) => {
+        try{
+            let data = {
+                idUser: currentUserId, 
+                keyword: keyword
+            }
+            await ResearchService.addNewResearch(currentUserId, keyword);
+            let result = await PostModel.searchPost(data)  ;
+            resolve(result);
+
+           
+        }catch(err){
+            reject(err); 
+        }
+    
+    })
+}
+
+export default {addNewPost, getPostbyIdUser , getPostsByFriend ,searchPost} ;

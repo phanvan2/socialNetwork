@@ -57,7 +57,7 @@ ContactShema.statics = {
      * @param {*} contactId 
      */
     removeContact(userId, contactId){
-        return this.remove({
+        return this.deleteOne({
             $or:[
                 {$and: [
                     {"userId": userId},
@@ -71,7 +71,7 @@ ContactShema.statics = {
 
                 ]}
             ]
-        }).exec();
+        });
 
     },
 
@@ -83,7 +83,7 @@ ContactShema.statics = {
     removeRequestContactSent(userId, contactId){
         // console.log("remove contact model");
         // console.log(userId + "vvvv" + contactId) ; 
-        return this.remove({
+        return this.deleteOne({
             $and:[
                 {"userId": userId},
                 {"contactId": contactId},
@@ -98,12 +98,12 @@ ContactShema.statics = {
      * @param {string} contactId 
      */
     removeRequestContactReceived(userId, contactId){
-        // console.log("remove contact model");
-        // console.log(userId + "vvvv" + contactId) ; 
-        return this.remove({
+  
+        return this.deleteOne({
             $and:[
             {"contactId": userId},
-            {"userId": contactId}
+            {"userId": contactId},
+            {"status": false}
             ]
         }).exec();
     },
@@ -135,7 +135,6 @@ ContactShema.statics = {
      * @returns 
      */
     getContacts(userId, limit){
-        console.log("getcontact model");
         return this.find({
             $and:[
                 {$or: [

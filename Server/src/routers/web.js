@@ -1,6 +1,6 @@
 import express from "express"; 
 
-import { User, Contact, Notification, Post } from "../controllers/index";
+import { User, Contact, Notification, Post, Research } from "../controllers/index";
 import getFileImage from "../helpers/fileHelper" ; 
 
 let router = express.Router(); 
@@ -20,9 +20,9 @@ let initRouter = (app) => {
     
     router.get("/contact/find-users/:keyword",  Contact.findUserContact);
     router.post("/contact/add-new", Contact.addNew);
-    // router.delete("/contact/remove-contact", contact.removeContact);
-    // router.delete("/contact/remove-request-contact-sent",  contact.removeRequestContactSent);
-    // router.delete("/contact/remove-request-contact-received", contact.removeRequestContactReceived);
+    router.delete("/contact/remove-contact", Contact.removeContact);
+    router.delete("/contact/remove-request-contact-sent",  Contact.removeRequestContactSent);
+    router.delete("/contact/remove-request-contact-received", Contact.removeRequestContactReceived);
     // router.get("/contact/read-more-contacts", contact.readMoreContacts);
     // router.get("/contact/read-more-contacts-sent", contact.readMoreContactsSent);
     // router.get("/contact/read-more-contacts-received", contact.readMoreContactsReceived);
@@ -34,8 +34,12 @@ let initRouter = (app) => {
 
     router.post("/post/add-new", Post.addNewPost); 
     router.get("/post/get-by-idUser/:idUser", Post.getPostbyIdUser) ; 
+    router.get("/post/get-by-friend", Post.getPostsByFriend) ; 
+    router.get("/post/search-post", Post.searchPost); 
 
-
+    // router.get("/research/get-all") ; 
+    router.get("/research/get-by-idUser", Research.getResearchByIdUser) ; 
+    router.post("/research/add-new-research", Research.addNewResearch) ; 
 
     router.get('/images/:path/:name_image', getFileImage);
 

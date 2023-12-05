@@ -22,3 +22,8 @@ export const STATUS_HANDLE_FRIEND =  {
     REQUEST_FRIEND: "Cancel request Friend", // người gửi hủy yêu cầu kết bạn
     CONFIRM_FRIEND: "Confirm friend",// người nhận lời mời xác nhận kết bạn
 }
+
+export const HANDLE_MY_PROFILE= {
+    VERIFY_EMAIL: "Verify email", 
+    UPDATE_PROFILE: "Update profile"
+}

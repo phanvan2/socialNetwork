@@ -9,7 +9,7 @@ import { getRequestFriend } from "./sockets/getRequestFriend";
 import { approveRequestContactReceived } from "./sockets/approveRequestContactReceived";
 import { userOfflineOnline } from "./sockets/userOfflineOnline";
 
-import {socketStore, notificationStore, friendsOnlineStore} from "../src/store"; 
+import {socketStore, notificationStore, friendsOnlineStore, friendsStore} from "../src/store"; 
 import * as API from "./api/AuthRequest"; 
 
 import {Routes , Route , Navigate} from 'react-router-dom'
@@ -32,6 +32,9 @@ function App() {
   const messsNoti = useSelector((state) => state.alertReducer.message)
   const open = useSelector((state) => state.alertReducer.open)
   const currentUser = JSON.parse(localStorage.getItem("profile"))
+
+  const friends = friendsStore((state) => state.friends); 
+  console.log(friends); 
 
   const dispatch = useDispatch();
 

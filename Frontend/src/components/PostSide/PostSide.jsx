@@ -9,9 +9,7 @@ const PostSide = ({location}) => {
   
   const user  = useSelector((state) => state.authReducer.authData)
   const {id} = useParams()
-  console.log("post side"); 
-  // console.log(user) ; 
-  // console.log(id) ; 
+
   return (
     <div className='PostSide'>
       {!id ? <PostShare /> : user._id === id ? <PostShare /> : <></>}

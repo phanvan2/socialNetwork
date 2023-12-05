@@ -9,3 +9,4 @@ export const getUser = (id) =>{
 export const updateUser = (id , formData) => {
     return API.put(`/user/${id}` , formData)
 }
+

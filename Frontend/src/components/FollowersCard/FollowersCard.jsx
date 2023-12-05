@@ -5,6 +5,7 @@ import { User } from '../User/User'
 import './FollowersCard.css'; 
 import { getListFriend } from '../../api/contactRequest';
 import { friendsStore, friendsOnlineStore} from '../../store';
+import LogoSearch from '../LogoSearch/LogoSearch'
 
 export const FollowersCard = () => {
   // const [friends , setFriends] = useState([])
@@ -19,7 +20,8 @@ export const FollowersCard = () => {
   useEffect(()=>{
     getListFriend(currentUser.token)
     .then(res => {
-      setFriends(res.data)
+      if(res.data)
+        setFriends(res.data)
     })
     .catch(error => console.log(error));
   },[])
@@ -48,11 +50,11 @@ export const FollowersCard = () => {
     <div className='FollowersCard'>
         <h3>Friends</h3>
 
-        {friends.map((friend , id) => {
+        {Array.isArray(friends) ? friends.map((friend , id) => {
             return (
                     <User person={friend} key={id}/>
                 )
-            })}
+            }): <></>}
     </div>
   )
 }

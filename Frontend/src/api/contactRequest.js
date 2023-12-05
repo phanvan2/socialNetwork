@@ -19,6 +19,16 @@ export const getListFriend = (token_user) => {
     
 }
 
+export const removeContact =  (token_user,contactId )=> {
+    return API.delete(`/contact/remove-contact`,  { data: {user_token: token_user, contactId: contactId }} ) ; 
+}
+export const removeReqContactSent =  (token_user,contactId )=> {
+    return API.delete(`/contact/remove-request-contact-sent`,   { data: {user_token: token_user, contactId: contactId }} ) ; 
+}
+export const removeReqContactReceive =  (token_user,contactId )=> {
+    return API.delete(`/contact/remove-request-contact-received`,   { data: {user_token: token_user, contactId: contactId }} ) ; 
+}
+
 
 
 

@@ -31,6 +31,13 @@ export const friendsStore = create((set) =>({
   setFriends: (data) => set((state) => ({friends: data})),
 })); 
 
+export const postsProfile = create((set) => ({
+  postsProfile:[],
+  setPostsProfile : (data) => set((state) => ({ postsProfile: data })),
+  addPostsProfile : (data) => set((state) => ({postsProfile : [data , ...state.posts]})),
+
+})); 
+
 export const friendsOnlineStore =create((set) =>({
   friendsOnline: [],
   setFriendsOnline: (data) => set((state) => ({friendsOnline: data})),

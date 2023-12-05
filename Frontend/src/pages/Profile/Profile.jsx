@@ -5,7 +5,7 @@ import PostSide from '../../components/PostSide/PostSide'
 import { ProfileCard } from '../../components/ProfileCard/ProfileCard'
 import { ProfileLeft } from '../../components/ProfileLeft/ProfileLeft'
 import { RightSide } from '../../components/RightSide/RightSide'
-import {userInfoStore} from '../../store';
+import {userInfoStore, postsProfile} from '../../store';
 import './Profile.css'
 
 export const Profile = () => {
@@ -13,7 +13,7 @@ export const Profile = () => {
   const currentUser = JSON.parse(localStorage.getItem("profile"))
 
   const setOtherUserInfor = userInfoStore((state) => state.setOtherUserInfor)
-  const setPosts = userInfoStore((state) => state.setPosts)
+  const setPostsProfile = postsProfile((state) => state.setPostsProfile)
   const { id } = useParams();
   const [loadPage , setLoadPage] = useState(0)
 
@@ -31,9 +31,9 @@ export const Profile = () => {
       .catch(error => console.log(error));
 
     axios.get(process.env.REACT_APP_API_URL + `/post/get-by-idUser/${id}`)
-      .then(res => {
-        if(!res.data)
-          setPosts(res.data.data)
+      .then(res => {; 
+        if(res.data)
+          setPostsProfile(res.data.data)
       })
       .catch(error => console.log(error));
   }, [id])

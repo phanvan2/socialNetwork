@@ -1,8 +1,11 @@
 import bcrypt from "bcrypt" ; 
 import jwt from "jsonwebtoken";
+import fs from "fs-extra" ; 
+
 
 import UserModel from "../models/UserModel";
 import ContactModel from "../models/ContactModel";
+import {app} from "../config/app" ; 
 
 let registerUser =  (item ) => {
     return new Promise(async (resolve, reject) => {
@@ -44,7 +47,6 @@ let loginUser = (item) => {
                 console.log(checkPass); 
 
                 if(checkPass){
-                    console.log("check pass thànhc ông") ; 
                     let userInfor = {
                         _id : userItem._id,
                         firstName: userItem.firstName,
@@ -54,7 +56,10 @@ let loginUser = (item) => {
                         isActive: userItem.isActive,
                         createAt: userItem.createAt,
                         gender: userItem.gender,
-                        
+                        livesin: userItem.livesin,
+                        country: userItem.country,
+                        workAt: userItem.workAt,
+                        relationship: userItem.relationship    
                     }; 
                     return resolve(userInfor);
                 }else{
@@ -96,6 +101,34 @@ let updateTokenVerify = (email) => {
     })
 }; 
 
+let updateUser = (idUser, item) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+
+            let userr = await UserModel.findUserById(idUser);
+
+            if(userr[0].isActive){
+                if(userr[0].avatar !== "avatar-default.jpg" && item.avatar)
+                    await fs.remove(`${app.avatar_directory}/${userr[0].avatar}`); 
+
+                let resultUpdate = await UserModel.updateProfile( idUser, item) ; 
+                if(resultUpdate)
+                    return resolve(true) ; 
+                else
+                    return resolve(false) ;
+            }else {
+                return resolve(false)
+            }
+
+                
+        } catch (error) {
+            console.log(error) ; 
+            return resolve(false); 
+
+        }
+    })
+
+}
 let verifyEmail = (token) => {
     return new Promise((resolve, reject) => {
         try {
@@ -155,4 +188,4 @@ let getUserById = (id, currentUserId = false) => {
         }
     })
 }
-export default {registerUser, loginUser, updateTokenVerify, verifyEmail, getUserById} ;
+export default {registerUser, loginUser, updateTokenVerify, verifyEmail, getUserById, updateUser} ;

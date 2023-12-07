@@ -17,6 +17,7 @@ let initRouter = (app) => {
     router.get("/check/token/:token", User.checkExpiredToken);
 
     router.get("/user/:id", User.getUserById);
+    router.put("/user/update-profile", User.updateProfile) ; 
     
     router.get("/contact/find-users/:keyword",  Contact.findUserContact);
     router.post("/contact/add-new", Contact.addNew);
@@ -33,8 +34,10 @@ let initRouter = (app) => {
     router.put("/notification/mark-all-as-read", Notification.markAllAsRead);
 
     router.post("/post/add-new", Post.addNewPost); 
+    router.get("/post/get-by-idPost/:idPost", Post.getPostbyIdPost)
     router.get("/post/get-by-idUser/:idUser", Post.getPostbyIdUser) ; 
     router.get("/post/get-by-friend", Post.getPostsByFriend) ; 
+    router.get("/post/get-all"); 
     router.get("/post/search-post", Post.searchPost); 
 
     // router.get("/research/get-all") ; 

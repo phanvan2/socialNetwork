@@ -37,3 +37,34 @@
     height: 30px;
     cursor: pointer;
 }
+
+.card-post-header{
+    border-radius: 7px;
+    padding: 3px;
+    margin-top: 5px;
+    display: inline-block ; 
+}
+
+.card-post-header .post-header{
+    display: flex;
+    float: left;
+    justify-content: space-between; 
+}   
+.card-post-header .post-header .image-post-header{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+.detail-post-header{
+    padding:5px;
+    width: 290px;
+}
+.detail-post-header .desc-post{
+    font-weight: bold;
+    font-size: 14px;
+
+}   
+
+.detail-post-header .createTime-post{
+    font-size: 10px;
+}

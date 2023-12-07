@@ -174,7 +174,8 @@ export const ProfileCard = ({ location }) => {
                         { currentUser.data._id !== otherUserInfor._id ?(
                         <Button  variant="contained" onClick={handleFriend} value={otherUserInfor.statusFriend}>{otherUserInfor.statusFriend}</Button>
                         ): currentUser.data.isActive ? (
-                            <Button  variant="contained" onClick={handleFriend} value={HANDLE_MY_PROFILE.UPDATE_PROFILE}>Update profile</Button>
+                            <></>
+                            // <Button  variant="contained" onClick={handleFriend} value={HANDLE_MY_PROFILE.UPDATE_PROFILE}>Update profile</Button>
                         ):(
                         <>
                             <Button  variant="contained" onClick={handleFriend} value={HANDLE_MY_PROFILE.VERIFY_EMAIL}>Verify Email</Button>

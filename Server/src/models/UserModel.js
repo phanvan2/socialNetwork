@@ -8,6 +8,10 @@ const UserSchema = new Schema({
     lastName: String,
     firstName: String,
     password: String,
+    livesin: String,
+    country: String,
+    workAt: String,
+    relationship: String, // Single, engaged, Married
     avatar:     {type: String, default: "avatar-default.png"},
     gender:     {type: String, default: "male"},
     isActive:   {type: Boolean, default: false},
@@ -27,10 +31,26 @@ UserSchema.statics = {
     },
 
     findUserById(id){
-        return this.find({_id: id, isActive: true },"_id email lastName firstName avatar gender createAt").exec(); 
+        return this.find({_id: id, isActive: true },"_id email lastName firstName avatar isActive gender createAt").exec(); 
     },
 
+    updateProfile(id, data){
+        return this.findByIdAndUpdate(id, 
+            {
+                "lastName": data.lastName, 
+                "firstName": data.firstName, 
+                "livesin": data.livesin, 
+                "country": data.country, 
+                "workAt": data.workAt, 
+                "relationship": data.relationship, 
+                "avatar": data.avatar,
+                "gender": data.gender,
+                "updateAt": Date.now()
 
+
+            }).exec(); 
+
+    },
 
 
     updateTokenByEmail(id, token){

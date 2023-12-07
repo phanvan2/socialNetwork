@@ -1,10 +1,33 @@
 import _ from "lodash" ; 
 import jwt from "jsonwebtoken";
+import multer from "multer"; 
+import { v4 as uuidv4 } from 'uuid';
 
 import { transValidation, transSuccess, transError, transMail } from "../../lang/en";
 import { User } from "../services";
 import  sendMail from "../config/mailer";
+import {app} from './../config/app'; 
 
+let storagePost = multer.diskStorage({
+    destination: (req, file , callback) => {
+        callback(null , app.avatar_directory);
+    },
+    filename: (req , file , callback) => {
+        let math = app.post_type; 
+        if(math.indexOf(file.mimetype) === -1){
+            return callback(transError.image_type, null ,  )
+        }
+        let nameAvatar =  `${Date.now()}-${uuidv4()}-${file.originalname}`; 
+        callback(null, nameAvatar) ; 
+    }
+
+}); 
+
+let avatarUploadFile = multer({
+    storage: storagePost,
+    limits: {fileSize: app.post_limit_size},
+
+}).single("user_avatar"); 
 
 let registerUser = async(req , res) => {
     if(_.isEmpty(req.body)){
@@ -139,6 +162,53 @@ let checkExpiredToken = async(req, res) => {
     }
 }
 
+let updateProfile = async (req, res) => { 
+
+    avatarUploadFile(req, res, async(error) => {
+        if(error){
+            return res.send(error);
+        }else{
+                if(_.isEmpty(req)){
+                    return res.send(false);
+                }else {  
+                    try {
+                        let req_user = jwt.verify(req.body.user_token, process.env.JWT_KEY);
+                        let data = {
+                            lastName: req.body.lastName, 
+                            firstName: req.body.firstName, 
+                            livesin: req.body.livesin, 
+                            country: req.body.country, 
+                            workAt: req.body.workAt, 
+                            relationship: req.body.relationship, 
+                            relationship: req.body.relationship, 
+                            avatar: req.body.avatar,
+                            gender: req.body.gender,
+                            email: req.body.email,
+                            updateAt: Date.now()
+                        }
+                        if(req.file){
+                            data.avatar= req.file.filename;
+                        }
+    
+                        let result = await User.updateUser(req_user._id, data)  ; 
+                        if(result){
+                            return res.status(200).send(result); 
+                
+                        }else{
+                            return res.send(false); 
+    
+                        }
+                    } catch (error) {
+                        console.log(error);
+                        return res.send(false); 
+                    }
+                }
+        }
+
+
+    }); 
+}
+
 
 export default {
     registerUser, 
@@ -146,5 +216,6 @@ export default {
     sendAcitveEmail, 
     verifyEmail, 
     getUserById,
-    checkExpiredToken
+    checkExpiredToken, 
+    updateProfile
 } ; 

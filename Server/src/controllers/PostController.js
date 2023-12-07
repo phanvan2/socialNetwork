@@ -77,8 +77,15 @@ let addNewPost = async(req , res) => {
     }); 
 };
 
-let getPostbyIdPost = async(req, res) => {
 
+let getPostbyIdPost = async(req, res) => {
+    let idPost = req.params.idPost; 
+    let data = await Post.getPostbyIdPost(idPost); 
+    if(data)
+        res.send(data) ; 
+    else{
+        res.send(false)  ; 
+    }
 }
 
 let getPostbyIdUser = async(req, res) => {
@@ -138,5 +145,6 @@ export default {
     addNewPost, 
     getPostbyIdUser, 
     getPostsByFriend, 
-    searchPost
+    searchPost,
+    getPostbyIdPost
 } ; 

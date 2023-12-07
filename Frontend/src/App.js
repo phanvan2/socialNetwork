@@ -2,6 +2,7 @@ import "./App.css"
 import { Auth } from "./pages/Auth/Auth";
 import { Home } from "./pages/home/Home";
 import { Profile } from "./pages/Profile/Profile";
+import {PostDetail} from "./pages/PostDetail/PostDetail";
 import {alertt_off} from "./actions/AlertAction" ;
 
 import { initSocket } from "./sockets/initSocket";
@@ -81,6 +82,7 @@ function App() {
           <Route path="/home" element = {user ? <Home/> : <Navigate to="../auth"/>}/>
           <Route path="/auth" element = {user ? <Navigate to="../home"/> : <Auth/>}/>
           <Route path="/profile/:id" element={user ? <Profile/> : <Navigate to="../auth"/>} />
+          <Route path="/post/:idPost" element={user ? <PostDetail/> : <Navigate to="../auth"/>} />
           <Route path="/chat/:id" element={user ? <Chating/> : <Navigate to="../auth"/>} />
           <Route path="/chat" element={user ? <Chating/> : <Navigate to="../auth"/>} />
         </Routes>

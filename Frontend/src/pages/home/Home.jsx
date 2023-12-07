@@ -4,6 +4,8 @@ import ProfileSide from '../../components/profileSide/ProfileSide'
 import PostSide from '../../components/PostSide/PostSide'
 import { RightSide } from '../../components/RightSide/RightSide'
 import {userInfoStore} from '../../store';
+import * as PostAPI from "../../api/PostRequest" ;
+
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 
@@ -11,15 +13,22 @@ export const Home = () => {
   const user  = useSelector((state) => state.authReducer.authData)
   const setPosts = userInfoStore((state) => state.setPosts)
   const setUserInfo = userInfoStore((state) => state.setUserInfo)
-  const posts = userInfoStore((state) => state.posts)
+
+  let getPostsByFriend = async() => {
+    try {
+      let result = await PostAPI.getPostsByFriend(user.token); 
+      console.log(result) ;
+      if(result.data){
+        setPosts(result.data)
+      }
+    } catch (error) {
+      
+    }
+
+
+  }
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + `/post/${user._id}/timeline`)
-      .then(res => {
-        if (res.data) {
-          setPosts(res.data.pop().followingPosts)
-        }
-      })
-      .catch(error => console.log(error));
+    getPostsByFriend();
 
       axios.get(process.env.REACT_APP_API_URL + `/user/${user._id}`)
       .then(res => {

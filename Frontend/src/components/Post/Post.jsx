@@ -8,19 +8,24 @@ import NotLike from '../../img/notlike.png'
 import { useSelector } from 'react-redux'
 import { likePost } from '../../api/PostRequest'
 import { UilMessage } from '@iconscout/react-unicons'
-import axios from 'axios'
+import axios from 'axios'; 
+import { useParams } from 'react-router-dom'
+
 import {userInfoStore} from '../../store';
 
 import { convertTimestampToHumanTime } from '../../helpers/helper'
 
-export const Post = ({ data }) => {
+export const Post = ({ data, location=null }) => {
+  
   const [hideInputCmt, setHideInputCmt] = useState(false)
   const  user  = useSelector((state) => state.authReducer.authData)
   const [liked, setLiked] = useState()
   const [likes, setLikes] = useState()
   const [contentCmt, setContentCmt] = useState()
-  const [listCmt , setListCmt] = useState(data.comment ? data.comment : [])
+  const [listCmt , setListCmt] = useState([])
   const userInfo = userInfoStore((state) => state.userInfo)
+
+
 
   const handleLiked = (e) => {
     setLiked((prev) => !prev)
@@ -53,23 +58,38 @@ export const Post = ({ data }) => {
 
   return (
     <div className='Post'>
+        <div className='card-post-header'>
+          <div className='post-header'>
+            <img src={`http://localhost:5000/images/posts/${data.image}`} alt="" className='image-post-header' />
+            <div className='detail-post-header'>
+              <span className='desc-post'>{data.lastName}</span><br/>
+              <span className='createTime-post'>{convertTimestampToHumanTime(`${data.creatAt}`)}</span>
+            </div>
+          </div>
+        
+        </div>  
       <span>{data.desc}</span>
 
       <img src={data.image ? "http://localhost:5000/images/posts/" + data.image : ""} alt="" />
 
       <div className="postReact">
-        <img src={liked ? Like : NotLike} alt="" style={{ "cursor": "pointer" }} onClick={handleLiked} />
-        <img src={Comment} alt="" onClick={() => setHideInputCmt((prev) => !prev)} />
-        <img src={Share} alt="" />
+        <div>         
+          <img src={liked ? Like : NotLike} alt="" style={{ "cursor": "pointer" }} onClick={handleLiked} />
+          <p style={{ color: "var(--gray)", fontSize: "12px", textAlign:"center", margin:"2px" }}>{likes} 12</p>
+
+
+        </div>
+        <div>         
+          <img src={Comment} alt="" onClick={() => setHideInputCmt((prev) => !prev)} />
+          <p style={{ fontSize: "12px",  color: "var(--gray)",textAlign:"center", margin:"2px" }}>2.5k</p>
+
+        </div>
+        <div>         
+          <img src={Share} alt="" />
+        </div>
+
       </div>
 
-      <span style={{ color: "var(--gray)", fontSize: "12px" }}>{likes} Likes</span>
-
-      <div className="detail">
-        <span><b>{data.lastName} </b></span><br/>
-        <span>{convertTimestampToHumanTime(data.creatAt)}</span>
-      </div>
-      <span style={{ fontSize: "20px", fontWeight: "bold" }}>Comment</span>
       {hideInputCmt && (
         <div style={{
           display: "flex",

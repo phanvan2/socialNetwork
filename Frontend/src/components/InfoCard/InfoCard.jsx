@@ -11,7 +11,8 @@ export const InfoCard = () => {
     const [modalOpened, setModalOpened] = useState(false);
     const params = useParams();
     const user  = useSelector((state) => state.authReducer.authData)
-    const profileUserId = params.id
+    const profileUserId = params.id ; 
+
     
     const otherUserInfor = userInfoStore((state) => state.otherUserInfor)
 
@@ -19,10 +20,10 @@ export const InfoCard = () => {
         <div className="InfoCard">
             <div className="InfoHead">
                 <h4>Profile Info</h4>
-                {user._id === profileUserId ? (
+                {user.data._id === profileUserId ? (
                     <div>
                         <UilPen width='2rem' height='1.2rem' onClick={() => setModalOpened(true)} />
-                        <ProfileModal modalOpened={modalOpened} setModalOpened={setModalOpened} data={user}/>
+                        <ProfileModal modalOpened={modalOpened} setModalOpened={setModalOpened} data={user.data}/>
                     </div>
                 ) : ""}
 

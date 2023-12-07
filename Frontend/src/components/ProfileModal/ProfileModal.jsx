@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './ProfileModal.css'
 import { Modal, useMantineTheme } from '@mantine/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import {uploadImage} from '../../actions/UploadAction'
-import { updateUser } from '../../actions/UserAction';
-import {userInfoStore} from '../../store';
+import { Form, useParams } from 'react-router-dom';
+import swal from 'sweetalert';
+
+import * as UserAPI from "../../api/UserRequest";
+
 
 const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const theme = useMantineTheme();
@@ -16,13 +17,13 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const dispatch = useDispatch()
     const { id } = useParams()
     const user  = useSelector((state) => state.authReducer.authData)
-    console.log("oke"); 
-    console.log(user) ; 
-    const otherUserInfor = userInfoStore((state) => state.otherUserInfor)
-    const setOtherUserInfo = userInfoStore((state) => state.setOtherUserInfo)
+    const currentUser = JSON.parse(localStorage.getItem("profile"))
+
+
+
 
     useEffect(()=>{
-        setFormData(otherUserInfor)
+        setFormData(currentUser.data)
     },[id])
 
     const handleChange = (e) => {
@@ -39,26 +40,66 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     }
 
     
-    const handleSubmit = (e)=>{
+    const handleSubmit = async(e)=>{
         e.preventDefault();
-        let UserData = formData
-        if (profileImage) {
-            const data = new FormData()
-            const fileName = Date.now() + profileImage.name
-            data.append("name" , fileName)
-            data.append("file" , profileImage)
-            UserData.profilePicture = fileName
 
-            try {
-                dispatch(uploadImage(data))
-            } catch (error) {
-                console.log(error);
+        const data = new FormData() ; 
+        data.append("email" , formData.email)
+        data.append("firstName" , formData.firstName)
+        data.append("lastName" , formData.lastName)
+        data.append("gender" , formData.gender)
+        data.append("livesin" , formData.livesin)
+        data.append("country" , formData.country)
+        data.append("workAt" , formData.workAt)
+        data.append("relationship" , formData.relationship)
+        data.append("user_token", user.token)
+
+        if (profileImage  !== null) {
+            data.append("user_avatar" , profileImage)
+            let result  = await UserAPI.updateUser(data) ; 
+            if(result.data){
+                console.log(result); 
+                swal({
+                    title: "update success",
+                    icon: "success",
+                    button: "OK!",
+                  });
+            }else{
+                swal({
+                    title: "update fail",
+                    icon: "error",
+                    button: "OK!",
+                  });
             }
+        }else{
+            swal({
+                title: "Are you sure to update without selecting photos ?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            }).then(async (btnAction)=> {
+                if(!btnAction){
+                }else{
+                    let result  = await UserAPI.updateUser(data) ; 
+                    if(result.data){
+                        console.log(result); 
+                        swal({
+                            title: "update success",
+                            icon: "success",
+                            button: "OK!",
+                          });
+                    }else{
+                        swal({
+                            title: "update fail",
+                            icon: "error",
+                            button: "OK!",
+                          });
+                    }
+                }
+            });   
         }
-        setOtherUserInfo(UserData)
-        UserData.currentUserId = user._id
-        dispatch(updateUser(id , UserData))
-        setModalOpened(false)
+
+
     }
     return (
         <Modal
@@ -72,20 +113,39 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
             {/* Modal content */}
             <form className='infoForm' action="">
                 <h3>Your infor</h3>
+                 
+                 
+                <div>
+                <input type="text"
+                        className='infoInput'
+                        name='email'
+                        placeholder='Email'
+                        disabled
+                        value={formData.email}
+                    />  
+                    <input type="text"
+                        className='infoInput'
+                        name='gender'
+                        placeholder='Type your gender'
+                        onChange={handleChange}
+                        value={formData.gender}
+                    />
+                </div>
+
                 <div>
                     <input type="text"
                         className='infoInput'
-                        name='firstname'
+                        name='firstName'
                         placeholder='First Name'
                         onChange={handleChange}
-                        value={formData.firstname}
+                        value={formData.firstName}
                     />
                     <input type="text"
                         className='infoInput'
-                        name='lastname'
+                        name='lastName'
                         placeholder='Last Name'
                         onChange={handleChange}
-                        value={formData.lastname}
+                        value={formData.lastName}
                     />
                 </div>
                 <div>

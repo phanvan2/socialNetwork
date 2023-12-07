@@ -6,7 +6,8 @@ export const getUser = (id) =>{
     return API.get(`/user/${id}`)
 }
 
-export const updateUser = (id , formData) => {
-    return API.put(`/user/${id}` , formData)
+export const updateUser = (formData) => {
+    return API.put(`/user/update-profile` , formData)
+    
 }
 

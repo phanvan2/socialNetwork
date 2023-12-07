@@ -7,19 +7,19 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 
 
 import './LogoSearch.css'
-import postImage from '../../img/postpic1.jpg';
-import avatar from "../../img/img1.png"
-import UserSearch from "../../components/User/UserSearch" ; 
+
 import * as PostAPI from "../../api/PostRequest" ; 
 import { convertTimestampToHumanTime } from '../../helpers/helper';
 
 const SearchPost = () => {
 
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   const  userToken  = useSelector(state => state.authReducer.authData).token; 
   const [open, setOpen] = React.useState(false);
@@ -63,6 +63,12 @@ const SearchPost = () => {
       }
     }
   }, [open]);
+
+  const sendToPost = (postId) => {
+    let path = `/post/${postId}`;
+    navigate(path);
+    handleClose();
+  }
   return (
     <>
       <div className='LogoSearch' onClick={handleClickOpen}>
@@ -99,7 +105,7 @@ const SearchPost = () => {
                   <span className='createTime-post'>{convertTimestampToHumanTime(`${post.creatAt}`)}</span>
                 </div>
                 <div className='btn-view-post-search'>
-                  <Button variant="outlined">View</Button>
+                  <Button variant="outlined"  onClick={()=> sendToPost(post._id) }>View</Button>
                 </div>
   
               </div>

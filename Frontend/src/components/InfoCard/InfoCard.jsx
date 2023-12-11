@@ -16,6 +16,7 @@ export const InfoCard = () => {
     
     const otherUserInfor = userInfoStore((state) => state.otherUserInfor)
 
+
     return (
         <div className="InfoCard">
             <div className="InfoHead">
@@ -30,7 +31,7 @@ export const InfoCard = () => {
             </div>
             <div className="info">
                 <span>
-                    <b>Status </b>
+                    <b>Relationship </b> <span>{user.data.relationship}</span>
                 </span>
              
 
@@ -38,20 +39,20 @@ export const InfoCard = () => {
 
             <div className="info">
                 <span>
-                    <b>Country </b>
+                    <b>Country </b><span>{user.data.country}</span>
                 </span>
                
             </div>
 
             <div className="info">
                 <span>
-                    <b>Live in </b>
+                    <b>Live in </b><span>{user.data.livesin}</span>
                 </span>
                
             </div>
             <div className="info">
                 <span>
-                    <b>Works at </b>
+                    <b>Works at </b><span>{user.data.workAt}</span>
                 </span>
              
             </div>

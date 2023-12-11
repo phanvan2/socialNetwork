@@ -22,7 +22,6 @@ export const ProfileCard = ({ location }) => {
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
     const  currentUser  = useSelector(state => state.authReducer.authData) ; 
-    const userInfo = userInfoStore((state) => state.userInfo);
     const otherUserInfor = userInfoStore((state) => state.otherUserInfor); 
     const posts = userInfoStore((state) => state.posts)
     const socket_ = socketStore((state) => state.socket);
@@ -157,12 +156,12 @@ export const ProfileCard = ({ location }) => {
             <div className="ProfileImages">
                 <img src={location === "homePage" ? currentUser.data.coverPicture ? publicFolder + currentUser.data.coverPicture : Cover :
                     otherUserInfor.coverPicture ? publicFolder + otherUserInfor.coverPicture : Cover} alt='' />
-                <img src={location === "homePage" ? currentUser.data.profilePicture ? publicFolder + currentUser.data.profilePicture : Profile :
-                    currentUser.data.profilePicture ? publicFolder + currentUser.data.profilePicture : Profile} alt='' />
+                <img src={location === "homePage" ? currentUser.data.avatar ? process.env.REACT_APP_AVATAR_IMAGE_FOLDER  + currentUser.data.avatar : Profile :
+                    otherUserInfor.avatar ? process.env.REACT_APP_AVATAR_IMAGE_FOLDER + otherUserInfor.avatar : Profile} alt='' />
             </div>
             <div className="ProfileName">
                 <span>{location === "homePage" ? currentUser.data.firstName : otherUserInfor.firstName} {location === "homePage" ? currentUser.data.lastName : otherUserInfor.lastName} </span>
-                <span>{location === "homePage" ? userInfo.workAt ? userInfo.workAt : "Write about yourself" : otherUserInfor.workAt ? otherUserInfor.workAt : "Write about yourself"}</span>
+                <span>{location === "homePage" ? currentUser.data.workAt ? currentUser.data.workAt : "Write about yourself" : otherUserInfor.workAt ? otherUserInfor.workAt : "Write about yourself"}</span>
 
                 {id && currentUser.data._id !== otherUserInfor._id ? <img style={{width : 20 , height : 20 , cursor : "pointer"}} src={message} onClick={handleInbox} /> : <></>}
 
@@ -189,13 +188,13 @@ export const ProfileCard = ({ location }) => {
                 <hr />
                 <div>
                     <div className='follow'>
-                        <span>{location === "homePage" ? userInfo.following ? userInfo.following.length : "0" : otherUserInfor.following ? otherUserInfor.following.length : "0"}</span>
-                        <span>Followings</span>
+                        <span>12</span>
+                        <span>Friends</span>
                     </div>
                     <div className='vl'></div>
                     <div className='follow'>
-                        <span>{location === "homePage" ? userInfo.followers ? userInfo.followers.length : "0" : otherUserInfor.followers ? otherUserInfor.followers.length : "0"}</span>
-                        <span>Followers</span>
+                        <span>hihi</span>
+                        <span>Friends</span>
                     </div>
 
                     {location === "profilePage" && (

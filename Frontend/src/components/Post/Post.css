@@ -68,3 +68,9 @@
 .detail-post-header .createTime-post{
     font-size: 10px;
 }
+
+.img-input-comment{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}

@@ -63,7 +63,7 @@ const PostShare = (props) => {
         //     }
         // }
         addNewPost(formData).then(res => {
-            addPosts(res.data)
+            console.log(res) ; 
         })
         reset()
     }

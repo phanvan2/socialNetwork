@@ -1,7 +1,9 @@
 import CommentModel from "../models/CommentModel";
+import UserModel from "../models/UserModel";
 
 let addNew =  (req_user, data) =>{
     return new Promise(async(resolve, reject) =>{
+
         let item = { 
             userId: req_user._id, 
             postId: data.postId,
@@ -18,15 +20,14 @@ let addNew =  (req_user, data) =>{
 }
 
 let getCommentByPost =  (idPost) =>{
-    return new Promise(async(resolve, reject) =>{
-      
-        let comments = await CommentModel.getCommentByPost(idPost) ; 
+    return new Promise(async(resolve, reject) =>{ 
+         let comments = await CommentModel.getCommentByPost(idPost) ; 
         let results = comments.map( async(comment) => {
             let user = await UserModel.findUserById(comment.userId);
             return {
                 userId: comment.userId, 
                 lastName: user[0].lastName,
-                firstName: user[0].fistName,
+                firstName: user[0].firstName,
                 avatar: user[0].avatar,
                 email: user[0].email,
                 postId: comment.postId,
@@ -36,9 +37,9 @@ let getCommentByPost =  (idPost) =>{
             }
         }) ; 
         if(results){
-            resolve(results) ;
+            return resolve(await Promise.all(results)) ;
         }else{
-            resolve(false) ; 
+            return resolve(false) ; 
             
         }
     

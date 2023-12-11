@@ -49,8 +49,6 @@ let addNew = async (req, res) =>{
 };
 
 let removeContact = async(req, res) => {
-    console.log("controler remove contact") ; 
-    console.log(req) ; 
 
     if(!_.isEmpty(req.body)){
         console.log(req.body);

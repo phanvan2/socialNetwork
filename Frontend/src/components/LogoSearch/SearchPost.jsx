@@ -99,7 +99,7 @@ const SearchPost = () => {
           {posts.map((post, index) => (
             <div className='card-post-search' key={index}>
               <div className='post-search'>
-                <img src={`http://localhost:5000/images/posts/${post.image}`} alt="" className='image-post-search' />
+                <img src={`${process.env.REACT_APP_POSTS_IMAGE_FOLDER}${post.image}`} alt="" className='image-post-search' />
                 <div className='detail-post-search'>
                   <span className='desc-post'>{post.desc}</span><br/>
                   <span className='createTime-post'>{convertTimestampToHumanTime(`${post.creatAt}`)}</span>

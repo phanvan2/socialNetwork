@@ -4,12 +4,7 @@ const API = axios.create({baseURL : process.env.REACT_APP_API_URL})
 
 
 export const addNewPost =(data) => {
-    const config = {
-        headers: {
-            "Content-Type":"application/json"
-        }
-      }
-    return API.post('/post/add-new', data, config) ; 
+    return API.post('/post/add-new', data) ; 
 }
 
 export const getTimelinePosts = (id) =>{

@@ -8,7 +8,7 @@ import "./User.css";
 import ProfileImage from '../../img/default.png'; 
 
 export const User = ({ person }) => {
-    const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER
+    const publicFolder = process.env.REACT_APP_AVATAR_IMAGE_FOLDER
     const { user } = useSelector((state) => state.authReducer.authData)
 
     let navigate = useNavigate();
@@ -22,7 +22,7 @@ export const User = ({ person }) => {
         <div>
             <div className='follower' style={{cursor : 'pointer'}}>
                 <div onClick={sendToProfile}>
-                <img src={person.profilePicture ? publicFolder + person.profilePicture : ProfileImage} alt="" className='followerImg' />
+                <img src={person.avatar ? process.env.REACT_APP_AVATAR_IMAGE_FOLDER + person.avatar : ProfileImage} alt="" className='followerImg' />
 
 
                     <div className='name'>

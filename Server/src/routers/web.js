@@ -1,6 +1,6 @@
 import express from "express"; 
 
-import { User, Contact, Notification, Post, Research } from "../controllers/index";
+import { User, Contact, Notification, Post, Research, Comment, Like } from "../controllers/index";
 import getFileImage from "../helpers/fileHelper" ; 
 
 let router = express.Router(); 
@@ -43,6 +43,17 @@ let initRouter = (app) => {
     // router.get("/research/get-all") ; 
     router.get("/research/get-by-idUser", Research.getResearchByIdUser) ; 
     router.post("/research/add-new-research", Research.addNewResearch) ; 
+
+    router.post("/comment/add-new", Comment.createNew); 
+    router.get("/comment/get-by-idPost/:idPost", Comment.getCommentByPost); 
+    router.put("/comment/updaet-by-idUser"); 
+    router.delete("/comment/remove-by-id");
+
+    router.post("/like/add-new", Like.createNew); 
+    router.get("/like/get-by-idPost/:idPost", Like.getLikeByPost); 
+    router.delete("/like/remove-one", Like.removeByIdUser);
+    router.get("/like/get-intereaction", Like.getIntreactionPost) ; 
+
 
     router.get('/images/:path/:name_image', getFileImage);
 

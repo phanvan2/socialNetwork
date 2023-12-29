@@ -18,6 +18,9 @@ import { useSelector, useDispatch } from "react-redux";
 import Chating from "./pages/Chating/Chating";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+
 import React, { useState,useEffect } from 'react';
 import { io } from "socket.io-client";
 import { logOut } from "./actions/AuthAction";
@@ -32,6 +35,12 @@ function App() {
   const user = useSelector((state) => state.authReducer.authData)
   const messsNoti = useSelector((state) => state.alertReducer.message)
   const open = useSelector((state) => state.alertReducer.open)
+
+  const openBackDrop = useSelector((state) => state.backDropReducer.open)
+
+  
+  
+
   const currentUser = JSON.parse(localStorage.getItem("profile"))
 
   const friends = friendsStore((state) => state.friends); 
@@ -99,6 +108,12 @@ function App() {
                     {messsNoti}
                 </Alert>
             </Snackbar>
+            <Backdrop
+        sx={{ color: '#F99329', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={openBackDrop}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </div>
   );
 }

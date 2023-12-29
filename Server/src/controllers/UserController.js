@@ -25,7 +25,6 @@ let storagePost = multer.diskStorage({
 
 let avatarUploadFile = multer({
     storage: storagePost,
-    limits: {fileSize: app.post_limit_size},
 
 }).single("user_avatar"); 
 
@@ -163,6 +162,7 @@ let checkExpiredToken = async(req, res) => {
 }
 
 let updateProfile = async (req, res) => { 
+    console.log("update profile") ; 
 
     avatarUploadFile(req, res, async(error) => {
         if(error){
@@ -180,8 +180,6 @@ let updateProfile = async (req, res) => {
                             country: req.body.country, 
                             workAt: req.body.workAt, 
                             relationship: req.body.relationship, 
-                            relationship: req.body.relationship, 
-                            avatar: req.body.avatar,
                             gender: req.body.gender,
                             email: req.body.email,
                             updateAt: Date.now()
@@ -192,7 +190,7 @@ let updateProfile = async (req, res) => {
     
                         let result = await User.updateUser(req_user._id, data)  ; 
                         if(result){
-                            return res.status(200).send(result); 
+                            return res.status(200).send(data.avatar || result); 
                 
                         }else{
                             return res.send(false); 

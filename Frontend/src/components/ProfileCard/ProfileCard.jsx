@@ -21,7 +21,8 @@ export const ProfileCard = ({ location }) => {
 
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
-    const  currentUser  = useSelector(state => state.authReducer.authData) ; 
+    const  currentUser  = JSON.parse(localStorage.getItem("profile"))
+
     const otherUserInfor = userInfoStore((state) => state.otherUserInfor); 
     const posts = userInfoStore((state) => state.posts)
     const socket_ = socketStore((state) => state.socket);

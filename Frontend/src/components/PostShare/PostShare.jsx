@@ -17,8 +17,9 @@ const PostShare = (props) => {
     // const loading = false
     const loading = useSelector((state) => state.postReducer.loading)
     const [image , setImage] = useState(null)
-    const user = useSelector((state) => state.authReducer.authData)
-    const desc = useRef()
+    const user =  JSON.parse(localStorage.getItem("profile"))
+
+    const title = useRef()
 
     const addPosts = userInfoStore((state) => state.addPosts)
 
@@ -35,14 +36,14 @@ const PostShare = (props) => {
 
     const reset = () =>{
         setImage(null)
-        desc.current.value = ""
+        title.current.value = ""
     }
 
     const handleSubmit = (e)=>{
         e.preventDefault();
         const formData = new FormData();
         formData.append("user_token", user.token) ; 
-        formData.append("desc", desc.current.value) ; 
+        formData.append("title", title.current.value) ; 
         formData.append("post_image", image) ; 
 
        
@@ -74,7 +75,7 @@ const PostShare = (props) => {
             {/* <img src={user.coverPicture ? publicFolder + user.coverPicture : ProfileImage} alt="" /> */}
             <div>
                 <input
-                ref={desc}
+                ref={title}
                 required
                 type="text" placeholder='What is happening' />
                 <div className="postOptions">

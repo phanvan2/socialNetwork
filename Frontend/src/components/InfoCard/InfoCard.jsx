@@ -10,8 +10,8 @@ export const InfoCard = () => {
 
     const [modalOpened, setModalOpened] = useState(false);
     const params = useParams();
-    const user  = useSelector((state) => state.authReducer.authData)
     const profileUserId = params.id ; 
+    const user = JSON.parse(localStorage.getItem("profile"))
 
     
     const otherUserInfor = userInfoStore((state) => state.otherUserInfor)
@@ -30,6 +30,7 @@ export const InfoCard = () => {
 
             </div>
             <div className="info">
+                
                 <span>
                     <b>Relationship </b> <span>{user.data.relationship}</span>
                 </span>

@@ -47,7 +47,7 @@
 
 .card-post-header .post-header{
     display: flex;
-    float: left;
+    /* float: left; */
     justify-content: space-between; 
 }   
 .card-post-header .post-header .image-post-header{
@@ -58,6 +58,8 @@
 .detail-post-header{
     padding:5px;
     width: 290px;
+    display: flex;
+    gap: 10px;
 }
 .detail-post-header .desc-post{
     font-weight: bold;
@@ -67,10 +69,32 @@
 
 .detail-post-header .createTime-post{
     font-size: 10px;
+    
 }
 
 .img-input-comment{
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
+}
+.div-info-user{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.div-image-avatar{
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edipost:hover{
+    background-color: #dcdcdc;
+    cursor: pointer;
+}
+.ck-blurred .ck, .ck-content, .ck-editor__editable, .ck-rounded-corners, .ck-editor__editable_inline{
+    height: 100px;
+}
+
+img{
+    object-fit: cover;
 }

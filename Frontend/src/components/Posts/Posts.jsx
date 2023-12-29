@@ -15,10 +15,10 @@ const Posts = ({ location }) => {
     <div className='Posts'>
       { location=== "homePage" ? 
         (posts.map((post, id) => {
-          return <Post data={post} id={id} />
+          return <Post data={post} id={id} location={"homePage"} />
         })): 
         (postsProfile1.map((post, id) => {
-          return <Post data={post} id={id} />}))
+          return <Post data={post} id={id} location={"profile"}/>}))
       }
     </div>
   )

@@ -14,7 +14,8 @@ import ChatBox from '../../components/ChatBox/ChatBox'
 import { io } from 'socket.io-client'
 
 const Chating = () => {
-  const user  = useSelector((state) => state.authReducer.authData)
+  const user  =  JSON.parse(localStorage.getItem("profile"))
+
   const [chats, setChats] = useState([])
   const dispatch = useDispatch()
   const [onlineUsers, setOnlineUsers] = useState([]);

@@ -18,7 +18,8 @@ const LogoSearch = () => {
 
   const dispatch = useDispatch();
 
-  const  userToken  = useSelector(state => state.authReducer.authData).token; 
+  const  user = useSelector(state => state.authReducer.authData) || null; 
+  const userToken = user.token || null;
   let contactFind = useSelector((state) => state.contactFind.contactfind);
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
@@ -26,7 +27,6 @@ const LogoSearch = () => {
 
 
   const handleClickOpen = () => {
-    console.log("oke bro")
     setOpen(true);
     setScroll("paper");
   };

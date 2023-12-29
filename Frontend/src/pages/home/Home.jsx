@@ -10,7 +10,8 @@ import axios from 'axios'
 import { useSelector } from 'react-redux'
 
 export const Home = () => {
-  const user  = useSelector((state) => state.authReducer.authData)
+  const user  = JSON.parse(localStorage.getItem("profile"))
+
   const setPosts = userInfoStore((state) => state.setPosts)
   const setUserInfo = userInfoStore((state) => state.setUserInfo)
 

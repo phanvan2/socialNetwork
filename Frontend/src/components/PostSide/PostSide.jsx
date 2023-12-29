@@ -7,7 +7,8 @@ import './PostSide.css'
 
 const PostSide = ({location}) => {
   
-  const user  = useSelector((state) => state.authReducer.authData)
+  const user  = JSON.parse(localStorage.getItem("profile"))
+
   const {id} = useParams()
 
   return (

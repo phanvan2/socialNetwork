@@ -12,7 +12,7 @@ export const getTimelinePosts = (id) =>{
 }
 
 export const getPostsByFriend = (token) => {
-    return API.get(`post/get-by-friend?user_token=${token}`) ;
+    return API.get(`post/get-real-time?user_token=${token}`) ;
 }
 
 export const likePost = (id , userId) =>{
@@ -25,4 +25,14 @@ export const searchPost =  (user_token , keyword) =>{
 
 export const getPostsByIdPost = (idPost) => {
     return API.get(`/post/get-by-idPost/${idPost}`);
+}
+
+export const updatePost = (formData) => {
+    return API.put(`/post/update-by-id` , formData)
+    
+}
+
+export const removePost = (user_token, idPost) => {
+    return API.delete(`/post/remove-by-id` , { data: {user_token: user_token, idPost: idPost}})
+    
 }

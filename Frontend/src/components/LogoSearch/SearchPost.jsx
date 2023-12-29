@@ -24,6 +24,7 @@ const SearchPost = () => {
   const  userToken  = useSelector(state => state.authReducer.authData).token; 
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
+  
   const [txtSearch, setTxtSearch] = React.useState("");
 
   const [posts, setPosts] = React.useState([]);
@@ -101,7 +102,7 @@ const SearchPost = () => {
               <div className='post-search'>
                 <img src={`${process.env.REACT_APP_POSTS_IMAGE_FOLDER}${post.image}`} alt="" className='image-post-search' />
                 <div className='detail-post-search'>
-                  <span className='desc-post'>{post.desc}</span><br/>
+                  <span className='desc-post'>{post.title}</span><br/>
                   <span className='createTime-post'>{convertTimestampToHumanTime(`${post.creatAt}`)}</span>
                 </div>
                 <div className='btn-view-post-search'>

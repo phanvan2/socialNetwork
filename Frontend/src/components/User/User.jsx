@@ -9,7 +9,6 @@ import ProfileImage from '../../img/default.png';
 
 export const User = ({ person }) => {
     const publicFolder = process.env.REACT_APP_AVATAR_IMAGE_FOLDER
-    const { user } = useSelector((state) => state.authReducer.authData)
 
     let navigate = useNavigate();
     const sendToProfile = () => {

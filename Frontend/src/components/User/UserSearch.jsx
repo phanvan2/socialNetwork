@@ -12,7 +12,7 @@ const  UserSearch = (props) => {
     const contactUser = props.contactUser;
     const socket_ = socketStore((state) => state.socket);
 
-    const user  = useSelector((state) => state.authReducer.authData)
+    const user  =  JSON.parse(localStorage.getItem("profile"))
 
     let navigate = useNavigate();
     const sendToProfile = (_id) => {
@@ -44,7 +44,8 @@ const  UserSearch = (props) => {
         <div>
             <div className='follower' style={{cursor : 'pointer'}}>
                 <div onClick={()=> sendToProfile(contactUser._id)} id={contactUser._id}  name={contactUser._id}>
-                    <img src={ProfileImage} alt="" className='followerImg' />
+                    <img src={`${process.env.REACT_APP_AVATAR_IMAGE_FOLDER}${contactUser.avatar}`}alt="" className='followerImg' />
+
                     <div className='name'>
                         <span>{contactUser.lastName}</span>
                         <span>{contactUser.email}</span>

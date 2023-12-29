@@ -9,7 +9,7 @@ import LogoSearch from '../LogoSearch/LogoSearch'
 
 export const FollowersCard = () => {
   // const [friends , setFriends] = useState([])
-  const currentUser  = useSelector((state) => state.authReducer.authData)
+  const currentUser = JSON.parse(localStorage.getItem("profile"))
   const friends  = friendsStore((state) => state.friends)
   const setFriends = friendsStore((state)=> state.setFriends)
   const friendsOnline = friendsOnlineStore((state)=> state.friendsOnline) ; 

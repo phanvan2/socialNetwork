@@ -16,7 +16,6 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const [coverImage, setCoverImage] = useState(null)
     const dispatch = useDispatch()
     const { id } = useParams()
-    const user  = useSelector((state) => state.authReducer.authData)
     const currentUser = JSON.parse(localStorage.getItem("profile"))
 
 
@@ -38,6 +37,22 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
             : setCoverImage(img)
         }
     }
+    const setUserAccount = (nameImg = null) => {
+        let data = {
+            avatar: nameImg ,
+            country: formData.country,
+            email: currentUser.data.email,
+            firstName: formData.firstName,
+            gender: formData.gender,
+            isActive: currentUser.data.isActive,
+            lastName: formData.lastName,
+            livesin: formData.livesin,
+            relationship: formData.relationship,
+            workAt:  formData.workAt, 
+            _id: currentUser.data._id,
+        }
+        localStorage.setItem("profile", JSON.stringify({ data: data,token:  currentUser.token}));
+    }
 
     
     const handleSubmit = async(e)=>{
@@ -52,13 +67,13 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
         data.append("country" , formData.country)
         data.append("workAt" , formData.workAt)
         data.append("relationship" , formData.relationship)
-        data.append("user_token", user.token)
+        data.append("user_token", currentUser.token)
+        data.append("user_avatar" , profileImage)
 
         if (profileImage  !== null) {
-            data.append("user_avatar" , profileImage)
             let result  = await UserAPI.updateUser(data) ; 
             if(result.data){
-                console.log(result); 
+                setUserAccount(result.data);
                 swal({
                     title: "update success",
                     icon: "success",
@@ -82,7 +97,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                 }else{
                     let result  = await UserAPI.updateUser(data) ; 
                     if(result.data){
-                        console.log(result); 
+                        setUserAccount(result.data);
                         swal({
                             title: "update success",
                             icon: "success",

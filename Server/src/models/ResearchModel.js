@@ -21,9 +21,11 @@ ResearchSchema.statics = {
     }, 
     getAllResearch(){
         return this.find().exec();
+    },
 
-    }
-
+    getLimitByIdUser(userId){
+        return this.find({"userId": userId}).sort({"creatAt": -1 }).limit(5).exec();
+    }, 
 }
 
 

@@ -113,7 +113,7 @@ let updateUser = (idUser, item) => {
 
                 let resultUpdate = await UserModel.updateProfile( idUser, item) ; 
                 if(resultUpdate)
-                    return resolve(true) ; 
+                    return resolve(userr[0].avatar) ; 
                 else
                     return resolve(false) ;
             }else {

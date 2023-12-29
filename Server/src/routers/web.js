@@ -38,7 +38,10 @@ let initRouter = (app) => {
     router.get("/post/get-by-idUser/:idUser", Post.getPostbyIdUser) ; 
     router.get("/post/get-by-friend", Post.getPostsByFriend) ; 
     router.get("/post/get-all"); 
+    router.get("/post/get-real-time", Post.getRealTime); 
     router.get("/post/search-post", Post.searchPost); 
+    router.delete("/post/remove-by-id", Post.removeById) ; 
+    router.put("/post/update-by-id", Post.updatePost) ; 
 
     // router.get("/research/get-all") ; 
     router.get("/research/get-by-idUser", Research.getResearchByIdUser) ; 
@@ -54,6 +57,7 @@ let initRouter = (app) => {
     router.delete("/like/remove-one", Like.removeByIdUser);
     router.get("/like/get-intereaction", Like.getIntreactionPost) ; 
 
+    router.get("/train-model", Post.trainModel)
 
     router.get('/images/:path/:name_image', getFileImage);
 

@@ -3,6 +3,9 @@ import './ProfileModal.css'
 import { Modal, useMantineTheme } from '@mantine/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { Form, useParams } from 'react-router-dom';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+
 import swal from 'sweetalert';
 
 import * as UserAPI from "../../api/UserRequest";
@@ -18,7 +21,12 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const { id } = useParams()
     const currentUser = JSON.parse(localStorage.getItem("profile"))
 
+    const [age, setAge] = React.useState('');
 
+    const handleChange1= (event) => {
+      setAge(event.target.value);
+    };
+  
 
 
     useEffect(()=>{
@@ -79,6 +87,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                     icon: "success",
                     button: "OK!",
                   });
+                  setModalOpened(false)
             }else{
                 swal({
                     title: "update fail",
@@ -103,6 +112,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                             icon: "success",
                             button: "OK!",
                           });
+                          setModalOpened(false)
                     }else{
                         swal({
                             title: "update fail",
@@ -187,13 +197,25 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                         onChange={handleChange}
                         value={formData.workAt}
                     />
-                    <input type="text"
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={age}
+          label="Relationship"
+          onChange={handleChange1}
+          style={{"width": "350px", "height": "40px"}}
+        >
+          <MenuItem value={10}>Single</MenuItem>
+          <MenuItem value={20}>Engaged</MenuItem>
+          <MenuItem value={30}>Married</MenuItem>
+        </Select>
+                    {/* <input type="text"
                         className='infoInput'
                         name='relationship'
                         placeholder='Relationship Status'
                         onChange={handleChange}
                         value={formData.relationship}
-                    />
+                    /> */}
                 </div>
                 <div>
                     Profile Image

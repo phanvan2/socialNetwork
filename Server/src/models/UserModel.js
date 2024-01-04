@@ -31,7 +31,7 @@ UserSchema.statics = {
     },
 
     findUserById(id){
-        return this.find({_id: id, isActive: true },"_id email lastName firstName avatar isActive gender createAt").exec(); 
+        return this.find({_id: id },"_id email lastName firstName avatar isActive gender createAt").exec(); 
     },
 
     updateProfile(id, data){

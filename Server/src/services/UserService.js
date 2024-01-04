@@ -135,7 +135,7 @@ let verifyEmail = (token) => {
             jwt.verify(token, process.env.JWT_KEYMAIL, async(err, decoded) => {
                 if(err) resolve(false) ;
                 else {
-                    let result = await UserModel.activeEmail(decoded.id, token, decode.email); 
+                    let result = await UserModel.activeEmail(decoded.id, token, decoded.email); 
                     if(result)
                         resolve(true) ; 
                     else 

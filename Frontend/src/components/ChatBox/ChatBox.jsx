@@ -98,21 +98,71 @@ const ChatBox = ({ chat, setSendMessage, currentUser, receivedMessage }) => {
             <div className='chat-header'>
               <div className='follower'>
                 <div>
+
                   {/* <div className="online-dot"></div> */}
-                  <img src={userData?.profilePicture ? process.env.REACT_APP_PUBLIC_FOLDER + userData.profilePicture :
-                    defaultProfile} alt=""
-                    className='followerImage'
+                  <img  src="http://localhost:5000/images/users/1702345261633-68eafff2-4c9b-4ce5-82ab-6bd379a686a6-IMG_3896.jpg" alt=""
+                    className='followerImg'
                     style={{ width: "50px", height: "50px" }} />
                   <div className='name' style={{ fontSize: "0.8rem" }}>
-                    <span>{userData?.firstname} {userData?.lastname}</span>
+                    <span>Phan van</span>
                     {/* <span>Online</span> */}
                   </div>
                 </div>
               </div>
-              <hr style={{ width: "85%", border: "0.1px solid #ececec" }} />
             </div>
             <div className="chat-body">
-              {messages.map((message) => (
+                <div 
+                              ref={scroll}
+                      className={"message own"}>
+                        <span>Hello</span>
+                        {/* <span>a day ago</span> */}
+                      </div>
+                      <div 
+                      ref={scroll}
+                      className={"message"}>
+                        <span>OK you</span>
+                        {/* <span>a day ago</span> */}
+                      </div>
+                      <div 
+                      ref={scroll}
+                      className={"message own"}>
+                        <span>Can You help me? </span>
+                        {/* <span>a day ago</span> */}
+                      </div>
+                      <div 
+                      ref={scroll}
+                      className={"message"}>
+                        <span>No </span>
+                        {/* <span>a day ago</span> */}
+                      </div>
+                      <div 
+                      ref={scroll}
+                      className={"message own"}>
+                        <span>What school do you attend</span>
+                        {/* <span>a day ago</span> */}
+                      </div>
+                      <div 
+                      ref={scroll}
+                      className={"message"}>
+                        <span>I study at Vietnam-Korean University of Information Technology and Communications</span>
+                        {/* <span>a day ago</span> */}
+                      </div>
+                      <div 
+                      ref={scroll}
+                      className={"message own"}>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quam atque suscipit harum esse, saepe, exercitationem vel, ad laborum eum nesciunt veniam? In sint reiciendis quis molestiae ipsam hic beatae.</span>
+
+                        {/* <span>a day ago</span> */}
+                      </div>
+                      <div 
+                      ref={scroll}
+                      className={"message"}>
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quam atque suscipit harum esse, saepe, exercitationem vel, ad laborum eum nesciunt veniam? In sint reiciendis quis molestiae ipsam hic beatae.</span>
+                        {/* <span>a day ago</span> */}
+                      </div>
+
+              {messages
+              .map((message) => (
                 <>
                   <div 
                   ref={scroll}

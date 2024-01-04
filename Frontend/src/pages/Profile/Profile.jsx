@@ -22,7 +22,7 @@ export const Profile = () => {
   useEffect(() => {
     axios.get(process.env.REACT_APP_API_URL + `/user/${id}?user_token=${currentUser.token}`)
       .then(res => {
-
+        console.log((res.data))
         if(res.data){
 
           setOtherUserInfor(res.data.data)

@@ -7,7 +7,7 @@ let router = express.Router();
 
 let initRouter = (app) => {
     router.get("/", function(req, res){
-        res.send("xin chào mọi người");
+        res.send("hello");
     }); 
 
     router.post("/auth/register",User.registerUser ) ; 

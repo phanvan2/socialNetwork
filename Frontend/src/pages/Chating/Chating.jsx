@@ -27,19 +27,19 @@ const Chating = () => {
 
 
   useEffect(() => {
-    socket.current = io("https://socketio-chating.onrender.com");
-    socket.current.emit("new-user-add", user._id);
-    socket.current.on("get-users", (users) => {
-      setOnlineUsers(users);
-    });
+    // socket.current = io("https://socketio-chating.onrender.com");
+    // socket.current.emit("new-user-add", user._id);
+    // socket.current.on("get-users", (users) => {
+    //   setOnlineUsers(users);
+    // });
   }, [user])
 
 
   // Send Message to socket server
   useEffect(() => {
-    if (sendMessage !== null) {
-      socket.current.emit("send-message", sendMessage);
-    }
+    // if (sendMessage !== null) {
+    //   socket.current.emit("send-message", sendMessage);
+    // }
   }, [sendMessage]);
 
 
@@ -53,8 +53,9 @@ const Chating = () => {
   }, [id])
 
   useEffect(() => {
-    axios.get(process.env.REACT_APP_API_URL + '/chat/' + user._id)
+    axios.get(process.env.REACT_APP_API_URL + '/contact/get-list-friends?user_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTJlNTFiMzZhNzY1NGE5ZTRiODM4MjUiLCJmaXJzdE5hbWUiOiJwaHVuZzEiLCJsYXN0TmFtZSI6IlBoYW4gdmlwMSIsImVtYWlsIjoicHZwaHVuZy4xOWl0MUB2a3UudWRuLnZuIiwiYXZhdGFyIjoiMTcwMjM0NzkzMjA0MC02ODEyZTEwMC0xZGU1LTQzMGYtYWQ5Yi0yODY2OTljNTYyMmYtcG9zdHBpYzIuanBnIiwiaXNBY3RpdmUiOnRydWUsImdlbmRlciI6Im1hbGUiLCJsaXZlc2luIjoiRG9uZyBob2kiLCJjb3VudHJ5IjoiVmlldCBOYW0iLCJ3b3JrQXQiOiJTdHVkZW50IiwicmVsYXRpb25zaGlwIjoiU2luZ2xlIiwiaWF0IjoxNzA0MTI0MjcxLCJleHAiOjE3MDQxNDIyNzF9.52YVb1hOVzbOcurRgi9n0QgxuLM89lIH-4QSTFdD0lI')
       .then(function (response) {
+        console.log(response.data) ; 
         setChats(response.data)
       })
       .catch(function (error) {
@@ -69,11 +70,11 @@ const Chating = () => {
   }
   // Get the message from socket server
   useEffect(() => {
-    socket.current.on("recieve-message", (data) => {
-      setReceivedMessage(data);
-    }
+    // socket.current.on("recieve-message", (data) => {
+    //   setReceivedMessage(data);
+    // }
 
-    );
+    // );
   }, []);
   return (
     <div className='Chat'>
@@ -86,7 +87,7 @@ const Chating = () => {
               <div onClick={() => { setCurrentChat(chat); }}>
                 <Coversation
                   data={chat}
-                  currentUser={user._id}
+                  currentUser={user.data._id}
                 // online={checkOnlineStatus(chat)}
                 />
               </div>

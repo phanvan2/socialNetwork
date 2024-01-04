@@ -22,6 +22,7 @@ export const ProfileCard = ({ location }) => {
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
     const  currentUser  = JSON.parse(localStorage.getItem("profile"))
+    
 
     const otherUserInfor = userInfoStore((state) => state.otherUserInfor); 
     const posts = userInfoStore((state) => state.posts)
@@ -105,7 +106,21 @@ export const ProfileCard = ({ location }) => {
     }
 
     const handleVerifyEmail = async() => {
-        AuthAPI.verifyEmail(currentUser.token) ; 
+        let result = await AuthAPI.verifyEmail(currentUser.token) ; 
+        if(result.data){
+            swal({
+                title: "Email has been sent, please check your email inbox",
+                icon: "success",
+              })  
+              currentUser.isActive = true; 
+
+        }else{
+            swal({
+                title: "Error",
+                icon: "error",
+              
+              })  
+        }
     }
     const handleFriend = (e) => {
         switch (e.target.value) {
@@ -173,7 +188,7 @@ export const ProfileCard = ({ location }) => {
                     <div className='action-btn-contact'>
                         { currentUser.data._id !== otherUserInfor._id ?(
                         <Button  variant="contained" onClick={handleFriend} value={otherUserInfor.statusFriend}>{otherUserInfor.statusFriend}</Button>
-                        ): currentUser.data.isActive ? (
+                        ): currentUser.data.isActive == true? (
                             <></>
                             // <Button  variant="contained" onClick={handleFriend} value={HANDLE_MY_PROFILE.UPDATE_PROFILE}>Update profile</Button>
                         ):(
@@ -185,32 +200,27 @@ export const ProfileCard = ({ location }) => {
                     }
                     </div>
                 }
-
-                <hr />
-                <div>
-                    <div className='follow'>
-                        <span>12</span>
-                        <span>Friends</span>
-                    </div>
-                    <div className='vl'></div>
-                    <div className='follow'>
-                        <span>hihi</span>
-                        <span>Friends</span>
-                    </div>
-
                     {location === "profilePage" && (
                         <>
-                            <div className='vl'>
+                <div>
 
-                            </div>
+              
+     
+
+
+                    <div className='follow'>
+                                        <span>12</span>
+                                        <span>Friends</span>
+                                    </div>
                             <div className="follow">
                                 <span>{posts ? posts.length : "0"}</span>
                                 <span>Posts</span>
                             </div>
-                        </>
-                    )}
+                      
+                  
                 </div>
-                <hr />
+                </>
+                )}
             </div>
             {location === "profilePage" ? "" : <span>
                 <Link style={{ textDecoration: "none", color: "inherit" }} to={`/profile/${currentUser.data._id}`}> My profile</Link>

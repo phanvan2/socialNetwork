@@ -7,11 +7,11 @@
 }
 .search{
     width: 100%;
-    float:right;
+    /* float:right; */
     display: flex;
     background-color: var(--inputColor);
-    border-radius: 10px;
-    padding: 5px;
+    border-radius: 8px;
+    padding: 8px 12px;
 }
 .input-search1{
     width: 100%;
@@ -57,7 +57,7 @@
     justify-content: space-between; 
 }   
 .card-post-search .post-search .image-post-search{
-    width: 60p;
+    width: 100px;
     height: 60px;
     border-radius: 15px;
 }
@@ -79,3 +79,8 @@
     margin-right: 45px;
 }
 
+h2#scroll-dialog-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

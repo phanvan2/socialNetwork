@@ -84,7 +84,6 @@ let sendAcitveEmail = async(req, res) => {
     }else { 
         try {
             let result = jwt.verify(req.body.token, process.env.JWT_KEY);
-
             // kiểm tra email đã đc đk chưa hoặc tài khoản đã active chưa
             let result_update = await User.updateTokenVerify(result.email);
             console.log("xác minh")
@@ -92,24 +91,24 @@ let sendAcitveEmail = async(req, res) => {
                 sendMail(result.email, transMail.subject , transMail.template(`localhost:5000/auth/verifyEmail/${result_update.token}`))
                     .then((success) => {
                         console.log("gửi mail thành công") ;
-                        res.send({data: true, message: transSuccess.sendVerifyEmail}) ; 
+                        res.send(true) ; 
                     })
                     .catch(error => {
                         console.log(error) ; 
                         console.log("gửi mail thất bại")
-                        res.send( {data: false, message:transError.sendVerifyEmail}); 
+                        res.send( false); 
 
                     }) ;
 
             }else{
-                res.send( {data: false, message:transError.sendVerifyEmail}); 
+                res.send( false); 
 
             }
 
             
         } catch (error) {
             console.log(error);
-            res.send( {data: false, message:transError.error_}); 
+            res.send( false); 
 
         }
     }   
@@ -119,7 +118,7 @@ let verifyEmail = async(req, res) => {
     if(req.params.token_verify){
         let result = await User.verifyEmail(req.params.token_verify) ; 
         if(result) 
-            res.send({data: true, message: transSuccess.aciveEmail}) ;
+            res.send("<a href='http://localhost:3000/home'>go to home</a>") ;
         else{
             res.send({data: false, message: transError.aciveEmail}) ; 
         }

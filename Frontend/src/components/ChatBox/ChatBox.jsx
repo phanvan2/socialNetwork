@@ -1,194 +1,152 @@
-import axios from 'axios';
-import React, { useEffect, useRef, useState } from 'react'
-import { getUser } from '../../api/UserRequest';
-import defaultProfile from '../../img/default.png'
-import './ChatBox.css'
-import { format } from 'timeago.js'
-import InputEmoji from 'react-input-emoji'
+import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
+
+import "./ChatBox.css";
+import InputEmoji from "react-input-emoji";
+
+import { getListChatbyIdUser, sendChat } from "../../api/ChatRequest";
+import { socketStore, listChatStore, friendsOnlineStore } from "../../store";
+import { User } from "../User/User";
 
 const ChatBox = ({ chat, setSendMessage, currentUser, receivedMessage }) => {
-  const [userData, setUserData] = useState(null);
-  const [messages, setMessages] = useState([]);
+  // const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("123");
-  const scroll = useRef()
+
+  const setListChat = listChatStore((state) => state.setListChat);
+  const listChat = listChatStore((state) => state.listChat);
+  const addListChat = listChatStore((state) => state.addListChat);
+
+  const friendsOnline = friendsOnlineStore((state) => state.friendsOnline);
+
+  const socket_ = socketStore((state) => state.socket);
+
+  const scroll = useRef();
 
   useEffect(() => {
-    const userId = chat?.members?.find((id) => id !== currentUser);
-
-    const getUserData = async () => {
-      try {
-        const { data } = await getUser(userId);
-        setUserData(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    if (chat !== null) getUserData();
-  }, [chat, currentUser])
-
-  // Receive Message from parent component
-  useEffect(() => {
-    if (receivedMessage !== null && receivedMessage.chatId === chat._id) {
-      setMessages([...messages, receivedMessage]);
+    if (chat && currentUser) {
+      getListChatbyIdUser(currentUser.token, chat._id).then((response) => {
+        setListChat(response.data);
+      });
     }
+  }, [chat]);
 
-  }, [receivedMessage])
+  React.useEffect(() => {
+    const x = document.querySelectorAll(`span.status-user`);
+    x.forEach((value) => {
+      console.log(chat);
+      value.classList.remove("user-online");
+      value.classList.add("user-offine");
+      value.innerHTML = "offline";
 
-  useEffect(() => {
-    const fetchMessages = async () => {
-      try {
-        axios.get('/message/' + chat._id)
-          .then(function (response) {
-            setMessages(response.data);
-          })
-          .catch(function (error) {
-            // handle error
-            console.log(error);
-          })
-
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    if (chat !== null) fetchMessages();
-  }, [chat])
+      friendsOnline.forEach((userId) => {
+        if (value.id == `user${userId}`) {
+          value.classList.remove("user-offline");
+          value.classList.add("user-online");
+          value.innerHTML = "online";
+        }
+      });
+    });
+  }, [friendsOnline]);
 
   const handleOnChange = (newMsg) => {
-    setNewMessage(newMsg)
-  }
+    setNewMessage(newMsg);
+  };
 
   const handleSend = async (e) => {
-    e.preventDefault()
-    const message = {
-      senderId: currentUser,
+    e.preventDefault();
+    let dataChat = {
+      receiverId: chat._id,
       text: newMessage,
-      chatId: chat._id,
-    }
-    const receiverId = chat.members.find((id) => id !== currentUser);
-    // send message to socket server
-    setSendMessage({ ...message, receiverId })
-    // send message to database
+      messageType: "text",
+    };
+
+    socket_.emit("chat-text", { dataChat: dataChat });
     try {
-      axios.post('/message/', message)
-        .then(function (response) {
-          setMessages([...messages, response.data]);
+      sendChat(currentUser.token, chat._id, {
+        text: newMessage,
+        messageType: "text",
+      }).then((response) => {
+        if (response.data) {
+          addListChat({
+            senderId: currentUser.data._id,
+            receiverId: chat._id,
+            messageType: "text",
+            text: newMessage,
+          });
           setNewMessage("");
-        })
-        .catch(function (error) {
-          // handle error
-          console.log(error);
-        })
-
+        }
+      });
+    } catch (error) {
+      console.log(error);
     }
-    catch
-    {
-      console.log("error")
-    }
-  }
+  };
+  let getMessgeFromSocket = () => {
+    if (socket_)
+      socket_.on("response-chat-text", (newMessage) => {
+        if (newMessage.receiverId === currentUser.data._id) {
+          addListChat(newMessage);
+        }
+      });
+  };
+  useEffect(() => {
+    getMessgeFromSocket();
+  }, [socket_]);
 
-  useEffect(()=>{
-    scroll?.current?.scrollIntoView({behavior : "smooth"})
-  },[messages])
+  useEffect(() => {
+    scroll?.current?.scrollIntoView({ behavior: "smooth" });
+  }, [listChat]);
   return (
     <>
       <div className="ChatBox-container">
         {chat ? (
           <>
-            <div className='chat-header'>
-              <div className='follower'>
+            <div className="chat-header">
+              <User person={chat} key={chat._id} turnOffOnline="true"></User>
+              {/* <div className="follower">
                 <div>
-
-                  {/* <div className="online-dot"></div> */}
-                  <img  src="http://localhost:5000/images/users/1702345261633-68eafff2-4c9b-4ce5-82ab-6bd379a686a6-IMG_3896.jpg" alt=""
-                    className='followerImg'
-                    style={{ width: "50px", height: "50px" }} />
-                  <div className='name' style={{ fontSize: "0.8rem" }}>
-                    <span>Phan van</span>
-                    {/* <span>Online</span> */}
+                  <img
+                    src={`${process.env.REACT_APP_AVATAR_IMAGE_FOLDER}${chat.avatar}`}
+                    alt=""
+                    className="followerImg"
+                    style={{ width: "50px", height: "50px" }}
+                  />
+                  <div className="name" style={{ fontSize: "0.8rem" }}>
+                    <span>{chat.firstName}</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="chat-body">
-                <div 
-                              ref={scroll}
-                      className={"message own"}>
-                        <span>Hello</span>
-                        {/* <span>a day ago</span> */}
-                      </div>
-                      <div 
-                      ref={scroll}
-                      className={"message"}>
-                        <span>OK you</span>
-                        {/* <span>a day ago</span> */}
-                      </div>
-                      <div 
-                      ref={scroll}
-                      className={"message own"}>
-                        <span>Can You help me? </span>
-                        {/* <span>a day ago</span> */}
-                      </div>
-                      <div 
-                      ref={scroll}
-                      className={"message"}>
-                        <span>No </span>
-                        {/* <span>a day ago</span> */}
-                      </div>
-                      <div 
-                      ref={scroll}
-                      className={"message own"}>
-                        <span>What school do you attend</span>
-                        {/* <span>a day ago</span> */}
-                      </div>
-                      <div 
-                      ref={scroll}
-                      className={"message"}>
-                        <span>I study at Vietnam-Korean University of Information Technology and Communications</span>
-                        {/* <span>a day ago</span> */}
-                      </div>
-                      <div 
-                      ref={scroll}
-                      className={"message own"}>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quam atque suscipit harum esse, saepe, exercitationem vel, ad laborum eum nesciunt veniam? In sint reiciendis quis molestiae ipsam hic beatae.</span>
-
-                        {/* <span>a day ago</span> */}
-                      </div>
-                      <div 
-                      ref={scroll}
-                      className={"message"}>
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore quam atque suscipit harum esse, saepe, exercitationem vel, ad laborum eum nesciunt veniam? In sint reiciendis quis molestiae ipsam hic beatae.</span>
-                        {/* <span>a day ago</span> */}
-                      </div>
-
-              {messages
-              .map((message) => (
+              {listChat.map((message) => (
                 <>
-                  <div 
-                  ref={scroll}
-                  className={message.senderId === currentUser ? "message own" : "message"}>
+                  <div
+                    ref={scroll}
+                    className={
+                      message.senderId === currentUser.data._id
+                        ? "message own"
+                        : "message"
+                    }
+                  >
                     <span>{message.text}</span>
-                    <span>{format(message.createdAt)}</span>
                   </div>
                 </>
               ))}
             </div>
 
-            <div className='chat-sender'>
+            <div className="chat-sender">
               <div>+</div>
-              <InputEmoji
-                value={newMessage}
-                onChange={handleOnChange}
-              />
+              <InputEmoji value={newMessage} onChange={handleOnChange} />
               <div className="send-button button" onClick={handleSend}>
                 Send
               </div>
             </div>
           </>
-        ) : <span className='chatbox-empty-message'>choose chat</span>}
+        ) : (
+          <span className="chatbox-empty-message">choose chat</span>
+        )}
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ChatBox
+export default ChatBox;

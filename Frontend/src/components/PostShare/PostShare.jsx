@@ -17,6 +17,7 @@ import { uploadImage, uploadPost } from "../../actions/UploadAction";
 import { addNewPost } from "../../api/PostRequest";
 
 import { userInfoStore } from "../../store";
+import { backDropOn, backDropOFF } from "../../actions/backDropAction";
 
 const PostShare = (props) => {
     // const loading = false
@@ -60,15 +61,19 @@ const PostShare = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append("user_token", user.token);
-        formData.append("title", title.current.value);
-        formData.append("post_image", image);
+        dispatch(backDropOn());
+        setTimeout(() => {
+            const formData = new FormData();
+            formData.append("user_token", user.token);
+            formData.append("title", title.current.value);
+            formData.append("post_image", image);
 
-        addNewPost(formData).then((res) => {
-            console.log(res);
-        });
-        reset();
+            addNewPost(formData).then((res) => {
+                console.log(res);
+                dispatch(backDropOFF());
+            });
+            reset();
+        }, 1000);
     };
     const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 

@@ -6,9 +6,13 @@ import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";
 import swal from "sweetalert";
 import { alertt_success } from "../../actions/AlertAction";
+import Tooltip from "@mui/material/Tooltip";
 
 import "./comment.css";
-import { convertTimestampToHumanTime } from "../../helpers/helper";
+import {
+  convertTimestampToHumanTime,
+  convertTimestampToDateTime,
+} from "../../helpers/helper";
 import { backDropOn, backDropOFF } from "../../actions/backDropAction";
 import { removeComment } from "../../api/CommentRequest";
 
@@ -36,12 +40,14 @@ const Comment = ({ data, handleDeleteComment }) => {
             className="image-comment-header"
           />
           <div className="detail-comment-header">
-            <span className="user-comment">{data.lastName}</span>{" "}
+            <span className="user-comment">{data.firstName}</span>{" "}
             <span className="content-comment">{data.content}</span>
             <br />
-            <span className="createTime-comment">
-              {convertTimestampToHumanTime(data.creatAt)}
-            </span>
+            <Tooltip title={convertTimestampToDateTime(data.creatAt)}>
+              <span className="createTime-comment">
+                {convertTimestampToHumanTime(data.creatAt)}
+              </span>
+            </Tooltip>
           </div>
           {data.userId === currentUser.data._id ? (
             <>

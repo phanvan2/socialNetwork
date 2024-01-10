@@ -1,36 +1,37 @@
-
-.card-comment-header{
-    border-radius: 7px;
-    padding: 3px;
-    display: inline-block ; 
+.card-comment-header {
+  border-radius: 7px;
+  padding: 3px;
+  display: inline-block;
 }
 
-.card-comment-header .comment-header{
-    display: flex;
-    justify-content: flex-start;
-    gap: 10px;
-}   
-.card-comment-header .comment-header .image-comment-header{
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
+.card-comment-header .comment-header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
 }
-.detail-comment-header{
-    width: max-content;
-    background-color: #dcdcdc;
-    border-radius: 10px;
-    padding: 7px 10px;
+.card-comment-header .comment-header .image-comment-header {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
 }
-.detail-comment-header .user-comment{
-    font-weight: bold;
-    font-size: 15px;
-
+.detail-comment-header {
+  width: max-content;
+  background-color: #dcdcdc;
+  border-radius: 10px;
+  padding: 7px 10px;
 }
-.detail-comment-header .content-comment{
-    font-size: 13px;
+.detail-comment-header .user-comment {
+  font-weight: bold;
+  font-size: 15px;
+}
+.detail-comment-header .content-comment {
+  font-size: 13px;
+}
 
-}     
+.detail-comment-header .createTime-comment {
+  font-size: 10px;
+}
 
-.detail-comment-header .createTime-comment{
-    font-size: 10px;
+.detail-comment-header .createTime-comment:hover {
+  cursor: pointer;
 }

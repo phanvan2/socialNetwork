@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./ProfileModal.css";
 import { Modal, useMantineTheme } from "@mantine/core";
 import { useDispatch, useSelector } from "react-redux";
@@ -17,6 +17,9 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const [formData, setFormData] = useState(other);
     const [profileImage, setProfileImage] = useState(null);
     const [coverImage, setCoverImage] = useState(null);
+    const imageRef = useRef();
+    const [nameImg1, setNameImg] = useState("");
+
     // const [cityOfcountry, setCityOfcountry] = useState(
     //     City.getCitiesOfCountry("VN")
     // );
@@ -24,6 +27,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const currentUser = JSON.parse(localStorage.getItem("profile"));
+
     let gender_ = ["Male", "Female", "Other"];
     let relationship_ = [
         "Married",
@@ -65,6 +69,7 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
     // console.log("đc ko");
     const onImageChange = (e) => {
         if (e.target.files && e.target.files[0]) {
+            setNameImg(e.target.files[0].name);
             let img = e.target.files[0];
             e.target.name = "profilePicture"
                 ? setProfileImage(img)
@@ -262,6 +267,10 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                         placeholder="Lives In"
                         onChange={handleChange}
                         value={formData.livesin}
+                        style={{
+                            border: "1px solid #c4c4c4",
+                            backgroundColor: "white",
+                        }}
                     />
 
                     {/* <Select
@@ -328,19 +337,30 @@ const ProfileModal = ({ modalOpened, setModalOpened, data }) => {
                         value={formData.relationship}
                     /> */}
                 </div>
-                <div>
+                <div style={{ alignItems: "center" }}>
                     Profile Image
                     <input
+                        style={{ display: "none" }}
                         type="file"
                         name="profilePicture"
+                        ref={imageRef}
                         onChange={onImageChange}
                     />
-                    Cover Image
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            imageRef.current.click();
+                        }}
+                    >
+                        Change Avatar
+                    </button>
+                    <span style={{ fontSize: "14px" }}>{nameImg1}</span>
+                    {/* Cover Image
                     <input
                         type="file"
                         name="coverPicture"
                         onChange={onImageChange}
-                    />
+                    /> */}
                 </div>
                 <button className="button infoButton" onClick={handleSubmit}>
                     Update

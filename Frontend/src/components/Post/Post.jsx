@@ -38,7 +38,7 @@ import Comment from "../../components/Comment/Comment";
 import { alertt_success } from "../../actions/AlertAction";
 import { backDropOn, backDropOFF } from "../../actions/backDropAction";
 
-export const Post = ({ data, location = null }) => {
+export const Post = ({ data, location = null, handleDeletePost = null }) => {
     let navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -93,78 +93,79 @@ export const Post = ({ data, location = null }) => {
         }
 
         let result = await updatePost(formdata);
-        console.log(result);
         data.title = title_;
         data.desc = desc_;
         data.image = result.data;
+
         handleCloseDiaLog();
         dispatch(alertt_success("Update post success"));
 
         return;
     };
 
-    const handleDeletePost = () => {
+    // const handleDeletePost = () => {
+    //     swal({
+    //         title: "Do you want to delete this post?",
+    //         icon: "warning",
+
+    //         buttons: true,
+    //         dangerMode: true,
+    //     }).then(async (btnAction) => {
+    //         if (btnAction) {
+    //             const result = await removePost(user.token, data._id); //id of userr contact
+    //             if (result.data) {
+    //                 dispatch(
+    //                     alertt_success(
+    //                         "You have just successfully deleted this post"
+    //                     )
+    //                 );
+    //                 navigate("/home");
+    //             }
+    //         } else {
+    //             dispatch(alertt_success("ngud"));
+    //         }
+    //     });
+    // };
+
+    const handleDeleteComment = (currentUser, data, handleClose1) => {
+        handleClose1();
         swal({
             title: "Do you want to delete this post?",
             icon: "warning",
 
             buttons: true,
             dangerMode: true,
-        }).then(async (btnAction) => {
-            if (btnAction) {
-                const result = await removePost(user.token, data._id); //id of userr contact
-                if (result.data) {
-                    dispatch(
-                        alertt_success(
-                            "You have just successfully deleted this post"
-                        )
-                    );
-                    navigate("/home");
-                }
-            } else {
-                dispatch(alertt_success("ngud"));
-            }
-        });
-    };
-
-    const handleDeleteComment = (currentUser, data) => {
-        handleClose();
-        swal({
-            title: "Do you want to delete this post?",
-            icon: "warning",
-
-            buttons: true,
-            dangerMode: true,
-        }).then(async (btnAction) => {
+        }).then((btnAction) => {
             if (btnAction) {
                 dispatch(backDropOn());
+                setTimeout(async () => {
+                    const result = await CommentAPI.removeComment(
+                        currentUser.token,
+                        data._id
+                    ); //id of userr contact
+                    if (result.data) {
+                        let listcommentTempt = listCmt.filter((value) => {
+                            if (value._id === data._id) {
+                                return false;
+                            } else {
+                                return true;
+                            }
+                        });
+                        setListCmt(listcommentTempt);
 
-                const result = await CommentAPI.removeComment(
-                    currentUser.token,
-                    data._id
-                ); //id of userr contact
-                console.log(result);
-                if (result.data) {
-                    let listcommentTempt = listCmt.filter((value) => {
-                        if (value._id === data._id) {
-                            return false;
-                        } else {
-                            return true;
-                        }
-                    });
-                    setListCmt(listcommentTempt);
+                        dispatch(backDropOFF());
 
-                    dispatch(backDropOFF());
-
-                    dispatch(
-                        alertt_success(
-                            "You have just successfully deleted this comment"
-                        )
-                    );
-                } else {
-                    dispatch(backDropOFF());
-                }
+                        dispatch(
+                            alertt_success(
+                                "You have just successfully deleted this comment"
+                            )
+                        );
+                    } else {
+                        dispatch(backDropOFF());
+                    }
+                }, 1000);
             } else {
+                setOpenDialog(false);
                 dispatch(backDropOFF());
             }
         });
@@ -240,14 +241,14 @@ export const Post = ({ data, location = null }) => {
     }, [data._id]);
 
     return (
-        <div
-            className="Post"
-            onClick={() => {
-                if (user.data._id !== data.userId || location !== "profile")
-                    sendToPost(data._id);
-            }}
-        >
-            <div className="card-post-header">
+        <div className="Post">
+            <div
+                className="card-post-header"
+                onClick={() => {
+                    if (user.data._id !== data.userId || location !== "profile")
+                        sendToPost(data._id);
+                }}
+            >
                 <div className="post-header">
                     <div
                         className="detail-post-header"
@@ -309,7 +310,11 @@ export const Post = ({ data, location = null }) => {
                                         className="btn-edipost"
                                         sx={{ p: 2 }}
                                         onClick={() => {
-                                            handleDeletePost();
+                                            handleDeletePost(
+                                                user.token,
+                                                data._id,
+                                                handleClose
+                                            );
                                         }}
                                     >
                                         Delete Post.
@@ -322,9 +327,22 @@ export const Post = ({ data, location = null }) => {
                     </div>
                 </div>
             </div>
-            <span>{data.title}</span>
-            <span style={{ fontSize: "14px", color: "#575454" }}>
-                {parse(data.desc)}
+            <span
+                onClick={() => {
+                    if (user.data._id !== data.userId || location !== "profile")
+                        sendToPost(data._id);
+                }}
+            >
+                {data.title}
+            </span>
+            <span
+                style={{ fontSize: "14px", color: "#575454" }}
+                onClick={() => {
+                    if (user.data._id !== data.userId || location !== "profile")
+                        sendToPost(data._id);
+                }}
+            >
+                {location === "postDetail" ? parse(data.desc) : <></>}
             </span>
 
             <img
@@ -340,7 +358,7 @@ export const Post = ({ data, location = null }) => {
                 }}
             />
 
-            <div className="postReact" onClick={() => sendToPost(data._id)}>
+            <div className="postReact">
                 <div>
                     <img
                         src={liked == 1 ? Like : NotLike}
@@ -359,7 +377,15 @@ export const Post = ({ data, location = null }) => {
                         {likes}
                     </p>
                 </div>
-                <div>
+                <div
+                    onClick={() => {
+                        if (
+                            user.data._id !== data.userId ||
+                            location !== "profile"
+                        )
+                            sendToPost(data._id);
+                    }}
+                >
                     <img
                         src={CommentImg}
                         alt=""
@@ -376,9 +402,9 @@ export const Post = ({ data, location = null }) => {
                         {listCmt.length}
                     </p>
                 </div>
-                <div>
+                {/* <div>
                     <img src={Share} alt="" />
-                </div>
+                </div> */}
             </div>
 
             {hideInputCmt && (

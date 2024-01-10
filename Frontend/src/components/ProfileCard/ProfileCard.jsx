@@ -35,6 +35,11 @@ export const ProfileCard = ({ location }) => {
     const [openImage, setOpenImage] = React.useState(false);
 
     const [numberFriend, setNumberFriend] = useState(0);
+    const [styleImageCover, setStyleImageCover] = useState({ height: "130px" });
+    const [styleAvatar, setStyleAvatar] = useState({
+        width: "6rem",
+        height: "6rem",
+    });
 
     let navigate = useNavigate();
 
@@ -183,12 +188,20 @@ export const ProfileCard = ({ location }) => {
                 setNumberFriend(respone.data.numberFriend);
             })
             .catch((err) => console.log(err));
+        if (location === "homePage") {
+            setStyleImageCover({ height: "130px" });
+            setStyleAvatar({ width: "6rem", height: "6rem" });
+        } else {
+            setStyleImageCover({});
+            setStyleAvatar({ width: "10rem", height: "10rem" });
+        }
     }, [otherUserInfor]);
 
     return (
         <div className="ProfileCard">
             <div className="ProfileImages">
                 <img
+                    style={styleImageCover}
                     src={
                         location === "homePage"
                             ? currentUser.data.coverPicture
@@ -201,6 +214,7 @@ export const ProfileCard = ({ location }) => {
                     alt=""
                 />
                 <img
+                    style={styleAvatar}
                     src={
                         location === "homePage"
                             ? currentUser.data.avatar
@@ -252,6 +266,10 @@ export const ProfileCard = ({ location }) => {
                     <div className="action-btn-contact">
                         {currentUser.data._id !== otherUserInfor._id ? (
                             <Button
+                                style={{
+                                    backgroundColor:
+                                        "linear-gradient(98.63deg, #f9a225 0%, #f95f35 100%);",
+                                }}
                                 variant="contained"
                                 onClick={handleFriend}
                                 value={otherUserInfor.statusFriend}

@@ -1,0 +1,644 @@
+[{
+  "_id": {
+    "$oid": "652e51b36a7654a9e4b83825"
+  },
+  "email": "pvphung.19it1@vku.udn.vn",
+  "firstName": "phung1",
+  "password": "$2b$07$lZH20yjY.YX5GIXvmbnkDuMwKWSPMptWgzn0UJb47eDkPBZI6upAq",
+  "avatar": "1702347932040-6812e100-1de5-430f-ad9b-286699c5622f-postpic2.jpg",
+  "gender": "Other",
+  "isActive": true,
+  "verifyToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmU1MWIzNmE3NjU0YTllNGI4MzgyNSIsImVtYWlsIjoicHZwaHVuZy4xOWl0MUB2a3UudWRuLnZuIiwiaWF0IjoxNjk3NjgyMTE4LCJleHAiOjE2OTc2ODU3MTh9.hyrVYlsv7pOA1dZ4cYKvxC6tTDXHk3MGewDVgIW_vPU",
+  "creatAt": {
+    "$numberLong": "1697534387039"
+  },
+  "updateAt": {
+    "$numberLong": "1704858391171"
+  },
+  "deleteAt": {
+    "$numberLong": "1697534387040"
+  },
+  "__v": 0,
+  "lastName": "Phan vip1",
+  "country": "Vietnam",
+  "livesin": "Dong hoi",
+  "relationship": "Engaged",
+  "workAt": "Photographer"
+},
+{
+  "_id": {
+    "$oid": "652e5424ff706677dd8e54da"
+  },
+  "email": "pvphung.19it1@sict.udn.vn",
+  "firstName": "phung",
+  "password": "$2b$07$FUaH0FQ7yTQb5WOBKBV13u/h5QqnNRK1xIRofM8YEJQsNgwR1oOGu",
+  "avatar": "avatar-default.png",
+  "gender": "Male",
+  "isActive": true,
+  "verifyToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmU1NDI0ZmY3MDY2NzdkZDhlNTRkYSIsImVtYWlsIjoicHZwaHVuZy4xOWl0MUBzaWN0LnVkbi52biIsImlhdCI6MTY5NzUzNTQ5OCwiZXhwIjoxNjk3NTM5MDk4fQ.vXEpGuh1GPRBvRl1IbWdHZ17MW2E-ZI3aUsmirM0Niw",
+  "creatAt": {
+    "$numberLong": "1697535012381"
+  },
+  "updateAt": {
+    "$numberLong": "1704858710223"
+  },
+  "deleteAt": {
+    "$numberLong": "1697535012381"
+  },
+  "__v": 0,
+  "lastName": "van",
+  "country": "Portugal",
+  "livesin": "undefined",
+  "relationship": "In a relationship",
+  "workAt": "Actor"
+},
+{
+  "_id": {
+    "$oid": "653b7479e7730bb5c5f6c5a9"
+  },
+  "email": "phanvanphung215@gmail.com",
+  "password": "$2b$07$dKhO25icagBVkLhqt.u4VOyzFH4ZrvxgTnPXG69RZbmf2i5In5FrK",
+  "avatar": "1704859315260-67633007-022b-4ca4-b3ba-1e067072030a-1666973722489-user.png",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1698395257449"
+  },
+  "updateAt": {
+    "$numberLong": "1704859315286"
+  },
+  "deleteAt": {
+    "$numberLong": "1698395257449"
+  },
+  "__v": 0,
+  "lastName": "van",
+  "firstName": "van",
+  "country": "Vietnam",
+  "livesin": "Quang Nam",
+  "relationship": "Divorced",
+  "workAt": "IT"
+},
+{
+  "_id": {
+    "$oid": "654059c4aefd2fe0fb325724"
+  },
+  "email": "phan@gmail.com",
+  "lastName": "đ",
+  "firstName": "fv",
+  "password": "$2b$07$FakSiBhDD4FaTAexRM2I.O4QYyrT5VVxr7yPNxbpEWR99OOBt8BJi",
+  "avatar": "avatar-default.png",
+  "gender": "Other",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1698716100806"
+  },
+  "updateAt": {
+    "$numberLong": "1704859702360"
+  },
+  "deleteAt": {
+    "$numberLong": "1698716100807"
+  },
+  "__v": 0,
+  "country": "Antarctica",
+  "livesin": "undefined",
+  "relationship": "Married",
+  "workAt": "Student"
+},
+{
+  "_id": {
+    "$oid": "65518f7737856cb2451bcb89"
+  },
+  "email": "phan1@gmail.com",
+  "lastName": "phan",
+  "firstName": "phung1",
+  "password": "$2b$07$aOqcDI1FQDQHNg30px6Kt.ljaiO6jTGssMxoXa6tCV6hdAKFij2Wi",
+  "avatar": "avatar-default.png",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699843959594"
+  },
+  "updateAt": {
+    "$numberLong": "1704859828080"
+  },
+  "deleteAt": {
+    "$numberLong": "1699843959595"
+  },
+  "__v": 0,
+  "country": "Vietnam",
+  "livesin": "Dong hoi",
+  "relationship": "Engaged",
+  "workAt": "Student"
+},
+{
+  "_id": {
+    "$oid": "65518f9137856cb2451bcb8c"
+  },
+  "email": "van1@gmail.com",
+  "lastName": "phan",
+  "firstName": "van1",
+  "password": "$2b$07$lKM78ah6kJ/.DtCvbpjQquCvAfD6Ywud0Fc/3Vw6p6xZLd2Z3taze",
+  "avatar": "avatar-default.png",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699843985512"
+  },
+  "updateAt": {
+    "$numberLong": "1704859965574"
+  },
+  "deleteAt": {
+    "$numberLong": "1699843985512"
+  },
+  "__v": 0,
+  "country": "Antigua And Barbuda",
+  "livesin": "Dong hoi",
+  "relationship": "Engaged",
+  "workAt": "Single"
+},
+{
+  "_id": {
+    "$oid": "65518fab37856cb2451bcb8f"
+  },
+  "email": "phan2@gmail.com",
+  "lastName": "phan",
+  "firstName": "phung2",
+  "password": "$2b$07$bslXoV/Y8U2sYiM7ca.nxOX7Z/O6Bh5m0WXC5C0f4Q4LJGtQ9GA/u",
+  "avatar": "1704860141267-801d9cc5-6f13-4aa6-b419-b7f878d8f6e3-1666780024028-user.png",
+  "gender": "Female",
+  "isActive": false,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844011741"
+  },
+  "updateAt": {
+    "$numberLong": "1704860141277"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844011741"
+  },
+  "__v": 0,
+  "country": "Brazil",
+  "livesin": "undefined",
+  "relationship": "Single",
+  "workAt": "Editor"
+},
+{
+  "_id": {
+    "$oid": "6551918a37856cb2451bcb92"
+  },
+  "email": "phan3@gmali.com",
+  "lastName": "phan",
+  "firstName": "phung3",
+  "password": "$2b$07$4OFzmmlnwemN52Vxtv4Mfu2TpwMyR8mQDPUWVSUln1GM.s/q2vbr2",
+  "avatar": "avatar-default.png",
+  "gender": "Other",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844490414"
+  },
+  "updateAt": {
+    "$numberLong": "1704860208332"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844490416"
+  },
+  "__v": 0,
+  "country": "Anguilla",
+  "livesin": "undefined",
+  "relationship": "Single",
+  "workAt": "IT"
+},
+{
+  "_id": {
+    "$oid": "6551919537856cb2451bcb95"
+  },
+  "email": "phan4@gmali.com",
+  "lastName": "phan",
+  "firstName": "phung4",
+  "password": "$2b$07$n04YtZ4JOML3eRl9Z.9Fx.BDFUV9tT0fCDpQ8tirEiHzPPgCBzVSC",
+  "avatar": "1704860982368-44598474-c2dc-46e2-bd28-4ef3dcc181d3-trungquandev_new-ava.png",
+  "gender": "Other",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844501329"
+  },
+  "updateAt": {
+    "$numberLong": "1704860982377"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844501329"
+  },
+  "__v": 0,
+  "country": "Antarctica",
+  "livesin": "undefined",
+  "relationship": "Engaged",
+  "workAt": "Teacher"
+},
+{
+  "_id": {
+    "$oid": "6551919c37856cb2451bcb98"
+  },
+  "email": "phan5@gmali.com",
+  "lastName": "phan",
+  "firstName": "phung5",
+  "password": "$2b$07$NbUE1wNbLFaox6HM.vvwgefDJ1rvgAtWG4J0jg05tCXyaUmzVlNC2",
+  "avatar": "1704861186517-fe0d8ad9-053a-45e7-bbaf-0bb75cacfe1b-1666600294493-imageFile.png",
+  "gender": "Male",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844508015"
+  },
+  "updateAt": {
+    "$numberLong": "1704861186523"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844508015"
+  },
+  "__v": 0,
+  "country": "Vietnam",
+  "livesin": "Da Nang",
+  "relationship": "Divorced",
+  "workAt": "Photographer"
+},
+{
+  "_id": {
+    "$oid": "655191be37856cb2451bcb9b"
+  },
+  "email": "van2@gmail.com",
+  "lastName": "phan",
+  "firstName": "van2",
+  "password": "$2b$07$F9AQyFUKrJLldiQBv3zHZ.TwKNyLWoJd2g9cFy.Jpg/czcVJOMdVi",
+  "avatar": "avatar-default.png",
+  "gender": "Male",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844542727"
+  },
+  "updateAt": {
+    "$numberLong": "1704563207108"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844542728"
+  },
+  "__v": 0,
+  "country": "Viet Nam",
+  "livesin": "HCM",
+  "relationship": "Single",
+  "workAt": "Actor"
+},
+{
+  "_id": {
+    "$oid": "655191ca37856cb2451bcb9f"
+  },
+  "email": "van3@gmail.com",
+  "lastName": "phan",
+  "firstName": "van3",
+  "password": "$2b$07$JHKu7.iAMIYRR3BHPVW0jOTBJ9O5yA8ZPoh64RHTlqAOFrPLItFPe",
+  "avatar": "avatar-default.png",
+  "gender": "Male",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844554591"
+  },
+  "updateAt": {
+    "$numberLong": "1704861598232"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844554591"
+  },
+  "__v": 0,
+  "country": "Japan",
+  "livesin": "undefined",
+  "relationship": "Engaged",
+  "workAt": "Chef"
+},
+{
+  "_id": {
+    "$oid": "655191d137856cb2451bcba2"
+  },
+  "email": "van4@gmail.com",
+  "lastName": "phan",
+  "firstName": "van4",
+  "password": "$2b$07$fHxC63XVG/fjZpc5YVqgGuK5cPtn/IH246AbP1FIZb0t2efmhH7BW",
+  "avatar": "1702345261633-68eafff2-4c9b-4ce5-82ab-6bd379a686a6-IMG_3896.jpg",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844561185"
+  },
+  "updateAt": {
+    "$numberLong": "1704562555284"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844561185"
+  },
+  "__v": 0,
+  "country": "undefined",
+  "livesin": "undefined",
+  "relationship": "Married",
+  "workAt": "Student"
+},
+{
+  "_id": {
+    "$oid": "655191d637856cb2451bcba5"
+  },
+  "email": "van5@gmail.com",
+  "lastName": "van van",
+  "firstName": "phung phan",
+  "password": "$2b$07$tbmYsd8B.RWfnRt4ZMiksOcXq4rg86sjcfFlwvHH6N2rO5jX9U.Sm",
+  "avatar": "1701870226697-1df1d840-6f13-490f-8bea-8ce454c3935c-1667010890585-cr7.jpg",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1699844566987"
+  },
+  "updateAt": {
+    "$numberLong": "1704861795843"
+  },
+  "deleteAt": {
+    "$numberLong": "1699844566987"
+  },
+  "__v": 0,
+  "country": "Benin",
+  "livesin": "Dong hoi",
+  "relationship": "Single",
+  "workAt": "IT"
+},
+{
+  "_id": {
+    "$oid": "658efdcb03959c7b57b848f1"
+  },
+  "email": "hvvu.20it11@vku.udn.vn",
+  "lastName": "vu",
+  "firstName": "van",
+  "password": "$2b$07$C5sEcMFR1E4iTrPEA6dwoe6GAWUyjAVid7WkNDIQWIKtvoi3TGhnm",
+  "avatar": "1703873882083-b656929a-9630-433c-b5d9-512cef3d00ce--16301198576252002110469.jpg",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OGVmZGNiMDM5NTljN2I1N2I4NDhmMSIsImVtYWlsIjoiaHZ2dS4yMGl0MTFAdmt1LnVkbi52biIsImlhdCI6MTcwMzg3MjE2NiwiZXhwIjoxNzAzODc1NzY2fQ.KkiiZSp1euNF_h1XggVorTBWyShdoDEPsrjlLD5KG1s",
+  "creatAt": {
+    "$numberLong": "1703869899511"
+  },
+  "updateAt": {
+    "$numberLong": "1704861912031"
+  },
+  "deleteAt": {
+    "$numberLong": "1703869899511"
+  },
+  "__v": 0,
+  "country": "Vietnam",
+  "livesin": "HaTinh",
+  "relationship": "In a relationship",
+  "workAt": "IT"
+},
+{
+  "_id": {
+    "$oid": "6598f4270ce65f9caf521e05"
+  },
+  "email": "duc1@gmail.com",
+  "lastName": "duc",
+  "firstName": "van",
+  "password": "$2b$07$9VaHPaEj2pv068nA93aTtuB3xpQrsGzfsemJUxL85Gsk4zb8nmiF.",
+  "avatar": "1704862370240-2560ee9c-2ba6-4578-8c96-2fbc36902aa3-4.jpg",
+  "gender": "Male",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704522791670"
+  },
+  "updateAt": {
+    "$numberLong": "1704862370247"
+  },
+  "deleteAt": {
+    "$numberLong": "1704522791672"
+  },
+  "__v": 0,
+  "country": "Argentina",
+  "livesin": "Dong hoi",
+  "relationship": "Engaged",
+  "workAt": "IT"
+},
+{
+  "_id": {
+    "$oid": "6598f9b30ce65f9caf521e67"
+  },
+  "email": "duc2@gmail.com",
+  "lastName": "duc2",
+  "firstName": "van",
+  "password": "$2b$07$qpc8fASRkEkQ21hK0cgDOuPZClto0CXyUbAbJEHAGQmqpvT0uBpD.",
+  "avatar": "1704783490439-eff899a3-0457-4066-9bb4-0ba97dbced40-postpic3.JPG",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704524211031"
+  },
+  "updateAt": {
+    "$numberLong": "1704862696760"
+  },
+  "deleteAt": {
+    "$numberLong": "1704524211031"
+  },
+  "__v": 0,
+  "country": "Vietnam",
+  "livesin": "Da Nang",
+  "relationship": "Single",
+  "workAt": "IT"
+},
+{
+  "_id": {
+    "$oid": "6598fa680ce65f9caf521e6c"
+  },
+  "email": "duc3@gmail.com",
+  "lastName": "duc3",
+  "firstName": "van",
+  "password": "$2b$07$boCkFq8DJgQ3nXrqDB718uA0.3PFHVjHfj63Wva6XrZ9MOdG6AVQG",
+  "avatar": "avatar-default.png",
+  "gender": "male",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704524392814"
+  },
+  "updateAt": {
+    "$numberLong": "1704524392814"
+  },
+  "deleteAt": {
+    "$numberLong": "1704524392814"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598fa8a0ce65f9caf521e71"
+  },
+  "email": "duc4@gmail.com",
+  "lastName": "duc4",
+  "firstName": "van",
+  "password": "$2b$07$7/ZQ0Hd8Alti9YY.A0OFa.klcDI/Ot.LAvWjlPe7eEijfKxwfzaoy",
+  "avatar": "avatar-default.png",
+  "gender": "Other",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704524426567"
+  },
+  "updateAt": {
+    "$numberLong": "1705002672651"
+  },
+  "deleteAt": {
+    "$numberLong": "1704524426567"
+  },
+  "__v": 0,
+  "country": "Belarus",
+  "livesin": "Da Nang",
+  "relationship": "Engaged",
+  "workAt": "IT"
+},
+{
+  "_id": {
+    "$oid": "6598fbaa58134c4ce94db3bb"
+  },
+  "email": "duc5@gmail.com",
+  "lastName": "duc5",
+  "firstName": "van",
+  "password": "$2b$07$evkIYMNXe5J2oukD2fXoOunZT9ChxtwL3rdsAr8eHf.3VTRiPt.km",
+  "avatar": "1704784100708-9e5879ad-44c8-4cac-8d24-ad5d3a58e303-409887030_383582654240342_4058718621083640538_n.jpg",
+  "gender": "Male",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704524714144"
+  },
+  "updateAt": {
+    "$numberLong": "1704784100719"
+  },
+  "deleteAt": {
+    "$numberLong": "1704524714146"
+  },
+  "__v": 0,
+  "country": "Viet Nam",
+  "livesin": "Ha Noi",
+  "relationship": "Engaged",
+  "workAt": "Photographer"
+},
+{
+  "_id": {
+    "$oid": "65990084f0ae4f8bc964b95f"
+  },
+  "email": "duc7@gmail.com",
+  "lastName": "duc7",
+  "firstName": "van",
+  "password": "$2b$07$K03kCUnM8rDuu5cumNR.ZumFW7upM5vdfESgO4QHLigkqe2ydkOKi",
+  "avatar": "1704908153642-0800ad98-3846-47b8-bee6-ee50565cd288-1666780024028-user.png",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704525956827"
+  },
+  "updateAt": {
+    "$numberLong": "1704908153675"
+  },
+  "deleteAt": {
+    "$numberLong": "1704525956827"
+  },
+  "__v": 0,
+  "country": "Argentina",
+  "livesin": "Ha Noi",
+  "relationship": "Single",
+  "workAt": "Editor"
+},
+{
+  "_id": {
+    "$oid": "659cf308ecdf41627a421344"
+  },
+  "email": "vy1@gmail.com",
+  "lastName": "phan",
+  "firstName": "Vy",
+  "password": "$2b$07$AtjsNqWZYOuQ0/XbmvXvm.y9fVEkHa4yQWz8E6sZcLDSJ6pxuw15m",
+  "avatar": "1704785296145-48579552-294b-4ea0-9971-25b92b46c49d-10.jpg",
+  "gender": "Female",
+  "isActive": false,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704784648724"
+  },
+  "updateAt": {
+    "$numberLong": "1704857460303"
+  },
+  "deleteAt": {
+    "$numberLong": "1704784648725"
+  },
+  "__v": 0,
+  "country": "Vietnam",
+  "livesin": "Dong hoi",
+  "relationship": "Married",
+  "workAt": "Student"
+},
+{
+  "_id": {
+    "$oid": "659d68e5cd6fc61071f0818e"
+  },
+  "email": "vy2@gmail.com",
+  "lastName": "phan",
+  "firstName": "vy2",
+  "password": "$2b$07$pFlIEskLkCRdCkeZyryRO.vmihJl4lzX/FZoaEfzQAmkIV.5vwzUK",
+  "avatar": "1704814889675-0fed7771-13fc-4da7-a7cd-24fefdc77244-postpic1.jpg",
+  "gender": "Other",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1704814821803"
+  },
+  "updateAt": {
+    "$numberLong": "1704814889708"
+  },
+  "deleteAt": {
+    "$numberLong": "1704814821803"
+  },
+  "__v": 0,
+  "country": "Viet Nam",
+  "livesin": "Quang Nam",
+  "relationship": "Married",
+  "workAt": "Actor"
+},
+{
+  "_id": {
+    "$oid": "65a0491b0a637d8f83f84d44"
+  },
+  "email": "vy3@gmail.com",
+  "lastName": "phan",
+  "firstName": "vy3",
+  "password": "$2b$07$507ig.VXj/faKk1Fdmcw3O.vBrgJGJ8BdkFl02e38aRunY9gVrJN.",
+  "avatar": "1705003350819-250f5cde-b401-4519-adcd-5d8bffbf97b3-9944.png-768x768.png",
+  "gender": "Female",
+  "isActive": true,
+  "verifyToken": null,
+  "creatAt": {
+    "$numberLong": "1705003291230"
+  },
+  "updateAt": {
+    "$numberLong": "1705003350828"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003291230"
+  },
+  "__v": 0,
+  "country": "Vietnam",
+  "livesin": "Ha Noi",
+  "relationship": "Single",
+  "workAt": "Student"
+}]

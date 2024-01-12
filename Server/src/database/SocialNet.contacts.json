@@ -1,0 +1,256 @@
+[{
+  "_id": {
+    "$oid": "655abcd2abcf0e11aaf8d6bf"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "contactId": "655191d637856cb2451bcba5",
+  "status": true,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1700445394288"
+  },
+  "updateAt": {
+    "$numberLong": "1700664026048"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6566f7807d7084b4cfb49df1"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "contactId": "65518fab37856cb2451bcb8f",
+  "status": true,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1701246848897"
+  },
+  "updateAt": {
+    "$numberLong": "1703861616866"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6576c09f74eefa66c030a2a1"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "contactId": "6551918a37856cb2451bcb92",
+  "status": true,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1702281375291"
+  },
+  "updateAt": {
+    "$numberLong": "1704860905580"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6581a9a31b3b1f3894fcab12"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "contactId": "655191d137856cb2451bcba2",
+  "status": true,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1702996387527"
+  },
+  "updateAt": {
+    "$numberLong": "1702996496331"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "658984612712dc5b9b6eec6a"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "contactId": "652e5424ff706677dd8e54da",
+  "status": true,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1703511137957"
+  },
+  "updateAt": {
+    "$numberLong": "1704858736723"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6599917d425cc969e623551e"
+  },
+  "userId": "6598fa8a0ce65f9caf521e71",
+  "contactId": "652e51b36a7654a9e4b83825",
+  "status": true,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1704563069141"
+  },
+  "updateAt": {
+    "$numberLong": "1704563159214"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e18f5cc5a8a8fbcae55ab"
+  },
+  "userId": "65518f7737856cb2451bcb89",
+  "contactId": "658efdcb03959c7b57b848f1",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1704859893945"
+  },
+  "updateAt": {
+    "$numberLong": "1704859893945"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1967cc5a8a8fbcae56d6"
+  },
+  "userId": "65518f9137856cb2451bcb8c",
+  "contactId": "652e51b36a7654a9e4b83825",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1704860007364"
+  },
+  "updateAt": {
+    "$numberLong": "1704860007364"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e19e0cc5a8a8fbcae58b2"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "contactId": "653b7479e7730bb5c5f6c5a9",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1704860128850"
+  },
+  "updateAt": {
+    "$numberLong": "1704860128850"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1cd7cc5a8a8fbcae5ed3"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "contactId": "652e5424ff706677dd8e54da",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1704860887496"
+  },
+  "updateAt": {
+    "$numberLong": "1704860887496"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1cd7cc5a8a8fbcae5ed8"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "contactId": "653b7479e7730bb5c5f6c5a9",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1704860887909"
+  },
+  "updateAt": {
+    "$numberLong": "1704860887909"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1cd8cc5a8a8fbcae5edd"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "contactId": "65518f7737856cb2451bcb89",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1704860888346"
+  },
+  "updateAt": {
+    "$numberLong": "1704860888346"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04f040a637d8f83f8558b"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "contactId": "652e51b36a7654a9e4b83825",
+  "status": true,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1705004804492"
+  },
+  "updateAt": {
+    "$numberLong": "1705044907089"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04f040a637d8f83f85590"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "contactId": "652e5424ff706677dd8e54da",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1705004804788"
+  },
+  "updateAt": {
+    "$numberLong": "1705004804788"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04f050a637d8f83f85595"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "contactId": "653b7479e7730bb5c5f6c5a9",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1705004805226"
+  },
+  "updateAt": {
+    "$numberLong": "1705004805226"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04f050a637d8f83f8559a"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "contactId": "654059c4aefd2fe0fb325724",
+  "status": false,
+  "deleteAt": null,
+  "createAt": {
+    "$numberLong": "1705004805952"
+  },
+  "updateAt": {
+    "$numberLong": "1705004805952"
+  },
+  "__v": 0
+}]

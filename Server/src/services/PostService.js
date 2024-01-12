@@ -1,13 +1,14 @@
 import bcrypt from "bcrypt";
 import fs from "fs-extra";
 import TfIdf from "node-tfidf";
-import tf from "@tensorflow/tfjs-node";
+import tf, { train } from "@tensorflow/tfjs-node";
 import "@tensorflow/tfjs-node";
 // import fs from 'fs';
 
 import PostModel from "../models/PostModel";
 import UserModel from "../models/UserModel";
 import ResearchModel from "../models/ResearchModel";
+import ViewedModel from "../models/ViewedModel";
 
 import ResearchService from "./ResearchService";
 import ContactService from "./ContactService";
@@ -97,8 +98,6 @@ let getPostsByFriend = (idUser) => {
     return new Promise(async (resolve, reject) => {
         try {
             let contacts = await ContactService.getListFriends(idUser);
-            console.log("dddd");
-            console.log(contacts);
             let idFriends = contacts.map((value) => {
                 return value._id;
             });
@@ -125,6 +124,25 @@ let getPostsByFriend = (idUser) => {
             });
 
             resolve(await Promise.all(result));
+        } catch (err) {
+            reject(err);
+        }
+    });
+};
+
+let getPostsByListfriend = (idUser) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let contacts = await ContactService.getListFriends(idUser);
+            console.log("dddd");
+            console.log(contacts);
+            let idFriends = contacts.map((value) => {
+                return value._id;
+            });
+
+            let posts = await PostModel.getPostsByFriend(idFriends);
+
+            resolve(posts);
         } catch (err) {
             reject(err);
         }
@@ -189,9 +207,8 @@ let getRealTime = (idUser) => {
         try {
             let research = await ResearchModel.getLimitByIdUser(idUser);
             let currentUser = await UserModel.findUserById(idUser);
-
+            let postFriend = await getPostsByListfriend(idUser);
             let dataset1 = await PostModel.getPostAll();
-
             let dataset = [];
             research.map((value) => {
                 dataset.push(value.contentSearch.toLowerCase());
@@ -202,25 +219,22 @@ let getRealTime = (idUser) => {
 
             let trainData1 = [];
             let data_ = [];
+            let data_idPost = [];
             dataset.map((value) => {
                 tfidf.tfidfs(value.split(" "), function (i, measure) {
                     // console.log("document #" + dataset[i] + " is " + measure);
                     if (measure > 0) {
-                        // console.log(dataset[i].title);
                         if (data_.indexOf(i) < 0) {
                             let dataa = {
                                 ...dataset1[i]._doc,
                                 similarities: measure,
                             };
                             data_.push(i);
-                            trainData1.push(dataa);
+                            // trainData1.push(dataa);
                         }
                     }
                 });
             });
-            // console.log(trainData1);
-
-            // let result = await Promise.all(train_model.prediction(dataset));
 
             const data1 = JSON.parse(fs.readFileSync("data1.json", "utf-8"));
 
@@ -238,19 +252,31 @@ let getRealTime = (idUser) => {
                 ],
             ]);
             const predictions1 = loadModel.predict(newData);
-            predictions1.dataSync().map((i) => {
-                if (data_.indexOf(Math.round(i)) < 0) {
-                    let dataa = {
-                        ...dataset1[Math.round(i)]._doc,
-                    };
-                    console.log(dataa);
+
+            predictions1.dataSync().map(async (i) => {
+                if (
+                    data_.indexOf(Math.round(i)) < 0 &&
+                    dataset1[Math.round(i)] &&
+                    Math.round(i) > 0
+                ) {
                     data_.push(Math.round(i));
-                    trainData1.push(dataa);
+                    trainData1.push(dataset1[Math.round(i)]);
+                    data_idPost.push(dataset1[Math.round(i)]._id);
                 }
             });
-            console.log("0000000000000000000");
+
+            postFriend.map((value) => {
+                if (data_idPost.indexOf(value._id) < 0) {
+                    trainData1.push(value);
+                    data_idPost.push(value._id);
+                }
+            });
             let result1 = trainData1.map(async (post) => {
                 let user = await UserModel.findUserById(post.userId);
+                let viewObject = await ViewedModel.getViewedPost({
+                    postId: post._id,
+                    userId: currentUser[0]._id,
+                });
                 return {
                     _id: post._id,
                     userId: user[0]._id,
@@ -265,9 +291,23 @@ let getRealTime = (idUser) => {
                     creatAt: post.creatAt,
                     updateAt: post.updateAt,
                     deleteAt: post.deleteAt,
+                    viewed: viewObject ? viewObject.view : 0,
                 };
             });
-            return resolve(await Promise.all(result1));
+            let final_result = await Promise.all(result1);
+            final_result = final_result.filter((value) => {
+                console.log("000000000000");
+                console.log(`${value.userId}`);
+                console.log(idUser);
+                if (`${value.userId}` === idUser) return false;
+                return true;
+            });
+            final_result.sort((a, b) => {
+                if (a.viewed > b.viewed) return 1;
+                else if (a.viewed < b.viewed) return -1;
+                else return 0;
+            });
+            return resolve(final_result);
         } catch (error) {
             console.log(error);
             return resolve(false);
@@ -278,6 +318,7 @@ export default {
     addNewPost,
     getPostbyIdUser,
     getPostsByFriend,
+    getPostsByListfriend,
     searchPost,
     getPostbyIdPost,
     removeById,

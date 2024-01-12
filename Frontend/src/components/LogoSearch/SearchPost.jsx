@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'
 
 import './LogoSearch.css'
 
-import * as PostAPI from "../../api/PostRequest" ; 
+import * as PostAPI from "../../api/PostRequest" ;
 import { convertTimestampToHumanTime } from '../../helpers/helper';
 
 const SearchPost = () => {
@@ -21,10 +21,10 @@ const SearchPost = () => {
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
-  const  userToken  = useSelector(state => state.authReducer.authData).token; 
+  const  userToken  = useSelector(state => state.authReducer.authData).token;
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
-  
+
   const [txtSearch, setTxtSearch] = React.useState("");
 
   const [posts, setPosts] = React.useState([]);
@@ -40,15 +40,14 @@ const SearchPost = () => {
   };
 
   const handleSearch = async() => {
-    console.log(userToken);
-    console.log(txtSearch) ; 
+
     let result = await PostAPI.searchPost(userToken, txtSearch);
-    console.log(result)
-    setPosts(result.data); 
+
+    setPosts(result.data);
   }
 
   const setValueInputSearch = (e) => {
-    
+
     setTxtSearch(e.target.value) ;
 
   }
@@ -88,7 +87,7 @@ const SearchPost = () => {
       >
         <DialogTitle id="scroll-dialog-title">
           <div className='search' >
-            
+
             <input type="text" placeholder='#Search Posts' className='input-search1' defaultValue={txtSearch} onChange={setValueInputSearch}/>
             <div className='s-icon' onClick={()=> handleSearch()}>
                 <UilSearch />
@@ -108,22 +107,22 @@ const SearchPost = () => {
                 <div className='btn-view-post-search'>
                   <Button variant="outlined"  onClick={()=> sendToPost(post._id) }>View</Button>
                 </div>
-  
+
               </div>
-            
-            </div>  
+
+            </div>
           ))}
-  
+
         </div>
 
         </DialogContent>
-        
+
       </Dialog>
     </>
-    
+
   )
 }
 
-export default SearchPost; 
+export default SearchPost;
 
 

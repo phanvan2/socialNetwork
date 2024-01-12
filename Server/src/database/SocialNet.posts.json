@@ -1,0 +1,2000 @@
+[{
+  "_id": {
+    "$oid": "6559cda1941efec65172d644"
+  },
+  "userId": "655191d137856cb2451bcba2",
+  "image": "1700384161460-9e2afc9c-3bda-416e-8d6b-3e5c567903d9-hinh-nen-may-tinh-de-thuong-chat.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1700384161528"
+  },
+  "updateAt": {
+    "$numberLong": "1700384161528"
+  },
+  "deleteAt": {
+    "$numberLong": "1700384161528"
+  },
+  "__v": 0,
+  "title": "fan one piece",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "656554fae719b49ddf7558fc"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "image": "1701139706242-a2eb3b23-8cef-44d3-8e8a-b04a63cfaf90-anh-dep-23.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1701139706426"
+  },
+  "updateAt": {
+    "$numberLong": "1701139706426"
+  },
+  "deleteAt": {
+    "$numberLong": "1701139706426"
+  },
+  "__v": 0,
+  "title": "kkkkkk",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "6573c295987282ccb277054d"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "image": "1703260807663-4ee08e44-38f8-48c9-ac6d-db332ac5e39c-imagebg-1.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1702085269554"
+  },
+  "updateAt": {
+    "$numberLong": "1703260807841"
+  },
+  "deleteAt": {
+    "$numberLong": "1702085269554"
+  },
+  "__v": 0,
+  "title": "cat cute",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "658970dbc9faabb1fd5181e3"
+  },
+  "userId": "655191d137856cb2451bcba2",
+  "image": "1703506138923-b73f5917-f9e8-4d3b-aa64-d16b5deaa63d-1621478187-Dad-Nang-C.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506139045"
+  },
+  "updateAt": {
+    "$numberLong": "1703506139045"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506139045"
+  },
+  "__v": 0,
+  "title": "Ho Chinh Minh monument in Quang Binh province",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "65897115c9faabb1fd518209"
+  },
+  "userId": "655191d137856cb2451bcba2",
+  "image": "1703506197941-aedc23a5-34a8-446d-9aa7-5651b99ee351-850dbf89d966ffcd43feb9ea148f6634.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506197957"
+  },
+  "updateAt": {
+    "$numberLong": "1703506197957"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506197957"
+  },
+  "__v": 0,
+  "title": "do you want to buy clothes",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "65897152c9faabb1fd518272"
+  },
+  "userId": "65518f9137856cb2451bcb8c",
+  "image": "1703506258746-2bdc2590-33cc-4160-8aa7-3089ca57097a-1621478187-Da-Nang-C.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506258761"
+  },
+  "updateAt": {
+    "$numberLong": "1703506258761"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506258761"
+  },
+  "__v": 0,
+  "title": "The campus of Vietnam-Korea University is beautiful",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "6589717cc9faabb1fd518297"
+  },
+  "userId": "65518f9137856cb2451bcb8c",
+  "image": "1703506300330-4b332c41-16ee-4d89-96c7-9f3615d5518d-Quang_Binh_-_1_-_THIEN_DUONG.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506300347"
+  },
+  "updateAt": {
+    "$numberLong": "1703506300347"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506300347"
+  },
+  "__v": 0,
+  "title": "Have you all been to Son Doong cave in Quang Binh province?",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "658971c1c9faabb1fd5182af"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "image": "1703506369371-6060bf89-b46f-4c8f-a315-e87a01e17bc8-shutterstock1303493764huge-1684471152139.jpeg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506369390"
+  },
+  "updateAt": {
+    "$numberLong": "1703506369390"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506369390"
+  },
+  "__v": 0,
+  "title": "Arrived in Hoi An, Da Nang",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "658971e9c9faabb1fd5182c1"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "image": "1703506409924-851e48b8-5e04-4e94-a5d3-0f4db0bd8307-thumbnail_1657768372.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506409932"
+  },
+  "updateAt": {
+    "$numberLong": "1705003013734"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506409932"
+  },
+  "__v": 0,
+  "title": "Love Bridge so Beautiful",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "6589721ac9faabb1fd5182ea"
+  },
+  "userId": "655191be37856cb2451bcb9b",
+  "image": "1703506458205-be9427c5-ce2f-4b74-8739-4d29d7ace0d8-táº£i xuá»ng.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506458221"
+  },
+  "updateAt": {
+    "$numberLong": "1703506458221"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506458221"
+  },
+  "__v": 0,
+  "title": "Danang University welcomes you",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "6589723fc9faabb1fd5182ec"
+  },
+  "userId": "655191be37856cb2451bcb9b",
+  "image": "1703506495528-21d6a4a8-09c1-479b-be35-fff1a1e967f6-VKU_tot-nghiep_0554-1024x680.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506495538"
+  },
+  "updateAt": {
+    "$numberLong": "1703506495538"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506495538"
+  },
+  "__v": 0,
+  "title": "Graduation ceremony of Vietnam Han University of Information and Communications Technology",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "658972f7c9faabb1fd5183e1"
+  },
+  "userId": "655191d637856cb2451bcba5",
+  "image": "1703506679046-0306b099-5431-4e26-9f2e-4d77de9b1b75-onepiece-d-14-0-852-1600-crop-16860486106902104191106.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506679059"
+  },
+  "updateAt": {
+    "$numberLong": "1703506679059"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506679059"
+  },
+  "__v": 0,
+  "title": "love onepiece",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "65897328c9faabb1fd518415"
+  },
+  "userId": "655191d637856cb2451bcba5",
+  "image": "1703506728230-4ba9e45f-0677-4172-98f1-78fa275040bd-stt-ban-quan-ao-hay-1.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506728249"
+  },
+  "updateAt": {
+    "$numberLong": "1703506728249"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506728249"
+  },
+  "__v": 0,
+  "title": "The shirt is so beautiful, everyone",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "65897338c9faabb1fd518417"
+  },
+  "userId": "655191d637856cb2451bcba5",
+  "image": "1703506744857-a2604f77-4aa4-4936-b15b-19006978b644--16301198576252002110469.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506744868"
+  },
+  "updateAt": {
+    "$numberLong": "1703506744868"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506744868"
+  },
+  "__v": 0,
+  "title": "football and siuuuuu",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "6589734ec9faabb1fd518419"
+  },
+  "userId": "655191d637856cb2451bcba5",
+  "image": "1703506766218-c3673dae-590c-4f62-8216-e13dcee54fa8-images.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703506766223"
+  },
+  "updateAt": {
+    "$numberLong": "1703506766223"
+  },
+  "deleteAt": {
+    "$numberLong": "1703506766223"
+  },
+  "__v": 0,
+  "title": "Love vku",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "658d9f12d904f3b46c8b4f52"
+  },
+  "userId": "652e51b36a7654a9e4b83825",
+  "image": "1703780114238-2f55f68f-5e6d-4a0d-b31c-c15bf74698f2-da-nang-ddocx-1694226826808.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1703780114269"
+  },
+  "updateAt": {
+    "$numberLong": "1703780114271"
+  },
+  "deleteAt": {
+    "$numberLong": "1703780114273"
+  },
+  "__v": 0,
+  "title": "I love VietName team",
+  "desc": ""
+},
+{
+  "_id": {
+    "$oid": "6598ccab5f2b6216915d9adc"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "Vì Sẻ, Én có thể làm tất cả :))",
+  "desc": "",
+  "image": "1704512683671-c1b122c3-73f6-4f4b-8c16-bd81f654be99-415059741_1027592485009937_8521334745292401126_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704512683839"
+  },
+  "updateAt": {
+    "$numberLong": "1704512683839"
+  },
+  "deleteAt": {
+    "$numberLong": "1704512683839"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598ccdf5f2b6216915d9afe"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "Ronaldo năm 2023 59 lần ra sân 54 bàn thắng(top 1) 15 kiến tạo",
+  "desc": "",
+  "image": "1704512735203-f701c8b1-a8ee-4a4b-8da3-a3a5d658c824-414675871_900197171486833_4625437888784424106_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704512735213"
+  },
+  "updateAt": {
+    "$numberLong": "1704512735213"
+  },
+  "deleteAt": {
+    "$numberLong": "1704512735213"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598cd035f2b6216915d9b00"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "Không có việc gì khó, chỉ sợ ... tiền không có:))",
+  "desc": "",
+  "image": "1704512771286-bd8f9353-1826-4318-bbd6-de73096e88b0-415023261_751772756984916_7364228759228801549_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704512771295"
+  },
+  "updateAt": {
+    "$numberLong": "1704512771295"
+  },
+  "deleteAt": {
+    "$numberLong": "1704512771295"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598ce745f2b6216915d9b24"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "WOW!! What a reception @alnassr_fc fans!  Now let’s get to work!",
+  "desc": "",
+  "image": "1704513140794-8ca9bafe-c136-4e4b-9269-593969072d08-323770520_850626432815196_2605177562149414486_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513140822"
+  },
+  "updateAt": {
+    "$numberLong": "1704513140822"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513140822"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598ce8f5f2b6216915d9b26"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "Best caption wins ",
+  "desc": "",
+  "image": "1704513167923-33b64d74-5662-46e8-897e-fe19c1f4fb3a-272051376_493910605428818_5195053478123251891_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513167938"
+  },
+  "updateAt": {
+    "$numberLong": "1704513167938"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513167938"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598ceca5f2b6216915d9b28"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "Ronaldo and Manchester United",
+  "desc": "<p>Everyone who knows me, knows about my never ending love for Manchester United. The years I spent in this club where absolutely amazing and the path we’ve made together is written in gold letters in the history of this great and amazing institution.</p><p>I can’t even start to explain my feelings right now, as I see my return to Old Trafford announced worldwide. It’s like a dream come true, after all the times that I went back to play against Man. United, and even as an opponent, to have always felt such love and respect from the supporters in the stands. This is absolutely 100% the stuff that dreams are made of!</p><p>My first domestic League, my first Cup, my first call to the Portuguese National team, my first Champions League, my first Golden Boot and my first Ballon d’Or, they were all born from this special connection between me and the Red Devils. History has been written in the past and history will be written once again! You have my word!</p><p>I’m right here!</p><p>I’m back where I belong!</p><p>Let’s make it happen once again!</p><p>PS - Sir Alex, this one is for you…</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t80/1.5/16/1f4aa_1f3fb.png\" alt=\"💪🏻\" width=\"16\" height=\"16\"><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t36/1.5/16/26bd.png\" alt=\"⚽️\" width=\"16\" height=\"16\"><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t11/1.5/16/1f3f4_e0067_e0062_e0065_e006e_e0067_e007f.png\" alt=\"🏴󠁧󠁢󠁥󠁮󠁧󠁿\" width=\"16\" height=\"16\"><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/tf3/1.5/16/2764.png\" alt=\"❤️\" width=\"16\" height=\"16\"><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t94/1.5/16/1f64f_1f3fb.png\" alt=\"🙏🏻\" width=\"16\" height=\"16\"></p>",
+  "image": "1704513226676-44c25b85-df1a-4993-b304-ea7dda6f6509-240668237_398642281622318_3608371847454031737_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513226697"
+  },
+  "updateAt": {
+    "$numberLong": "1704513296239"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513226698"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598cf7e5f2b6216915d9b8b"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "There’s so many different things to call Zoro!",
+  "desc": "",
+  "image": "1704513406618-b563450b-d322-4138-9b51-43411466f09e-411985199_761555819346815_3920760966299278923_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513406644"
+  },
+  "updateAt": {
+    "$numberLong": "1704513406649"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513406649"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598cfd55f2b6216915d9bce"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "Ace glow up from 2001 - 2022",
+  "desc": "",
+  "image": "1704513493868-25dc0bb3-981d-45d7-a52b-6080a19434d6-411985199_761555819346815_3920760966299278923_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513493885"
+  },
+  "updateAt": {
+    "$numberLong": "1704513493885"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513493885"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d0455f2b6216915d9c18"
+  },
+  "userId": "655191ca37856cb2451bcb9f",
+  "title": "Best Website Design for Student Information and Communication Technology",
+  "desc": "<p>[Chính thức bắt đầu cuộc thi BWD-2021 “Best Website Design for Student Information and Communication Technology” ]</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t92/1.5/16/1f4e2.png\" alt=\"📢\" width=\"16\" height=\"16\">Cuộc thi BWD-2021 “Best Website Design for Student Information and Communication Technology” chính thức bắt đầu, các thử thách và giải thưởng hấp dẫn đang chờ đợi các bạn.</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t9/1.5/16/1f3af.png\" alt=\"🎯\" width=\"16\" height=\"16\">THÔNG BÁO CUỘC THI THIẾT KẾ WEB ĐẸP, LẦN THỨ 3, NĂM 2021 BWD-2021</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t99/1.5/16/1f4a5.png\" alt=\"💥\" width=\"16\" height=\"16\">Đối tượng tham gia:</p><p>- Thành phần bắt buộc: Tất cả sinh viên đang học môn Công nghệ web trong học kỳ 2, năm học 2020-2021 tại trường Đại học Công nghệ Thông tin và Truyền thông Việt - Hàn</p><p>- Tất cả sinh viên thuộc Trường Đại học Công nghệ Thông tin và Truyền thông Việt – Hàn và các trường khác ở Khu vực Miền trung – Tây nguyên.</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t5/1.5/16/1f4cc.png\" alt=\"📌\" width=\"16\" height=\"16\">Quy định sản phẩm dự thi<img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t5/1.5/16/1f4cc.png\" alt=\"📌\" width=\"16\" height=\"16\">:</p><p>- Sản phẩm dự thi là một web tĩnh sử dụng các công nhệ như HTML5, CSS, CSS3, Javascript, Bootstrap, JQuery…để thiết kế. Các yêu cầu cụ thể theo quy định cúa Ban Tổ chức</p><p>- Website chứa thông tin đầy đủ về lĩnh vực được chọn.</p><p>- Các lĩnh vực/chủ đề phải phù hợp với thuần phong, mỹ tục Việt Nam không liên quan đến chính trị, tôn giáo, …</p><p>- Sử dụng ngôn ngữ Tiếng Việt hoặc Tiếng Anh</p><p>- Giao diện website phải là duy nhất, không vi phạm bản quyền và được thiết kế sau khi cuộc thi được phát động, nếu Ban Giám Khảo tìm thấy giao diện website của đội nào đã tồn tại trước khi cuộc thi chính thức bắt đầu thì đội dự thi sẽ bị loại.</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t5/1.5/16/1f4cc.png\" alt=\"📌\" width=\"16\" height=\"16\">Hình thức và cách thức đăng ký:</p><p>- Mỗi đội tuyển có từ 3-4 thành viên</p><p>- Đăng ký tham gia bằng cách gửi thông tin theo link đăng kí:</p><p><a href=\"https://l.facebook.com/l.php?u=https%3A%2F%2Fbit.ly%2FDangKyBWD-SICT2021%3Ffbclid%3DIwAR2wfJ5sRrthWTii9NjdgDyRAtSOrgkyWCCXlytAYLKpwt05ymDHk7bV8-s&amp;h=AT0BogZ1i_OQDkz4o92sIgrurRtt1H2JocWGwjEHrJuSvdib8w1PDnenQoqXjavnd5HzgcsXTydPbKDCCpZcBbeL281LepZcRjv0r2uCoyaKo3k7Q1OKSClFfSlFHtv2SLNW&amp;__tn__=-UK-R&amp;c[0]=AT0hf5aCntpH9_HCzU4PLDUT0qinNGIYP1E5lwMysQvV3z7ueULI4t8fM-rScxPUm6AFs0e6LnZN8jMPLIy5iFwXtufsrs-mDFRCR2BMmy4Y-ZEfcR9QjGDWC5n0J1-N-c882ik8POvWNw98B9PUhwTGFkthTCu85smlWl2Mzj2ieXDvwTBBnvCU04UOUsbFmCEIXqq8JFFM\">http://bit.ly/DangKyBWD-SICT2021</a></p><p>- Thông tin đăng ký gồm đủ các thông tin: Tên đội tuyển; Họ tên và lớp của các thành viên; Tên trường.</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t81/1.5/16/231a.png\" alt=\"⌚\" width=\"16\" height=\"16\">Thời gian đăng ký:</p><p>- Hạn cuối đăng ký:ngày 09/04/2021</p><p>- Vòng loại dự kiến: 17/05/2021 – 05/06/2021</p><p>- Vòng chung kết dự kiến: 05-10/07/2021</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t17/1.5/16/1f3c6.png\" alt=\"🏆\" width=\"16\" height=\"16\"> Giải thưởng</p><p>Các sinh viên tham gia học môn Công nghệ Web ở Học kỳ 2, năm học 2020-2021, có sản phẩm lọt vào vòng chung kết sẽ được xét công nhận điểm A đối với học phần Công nghệ Web năm học 2020-2021. Cụ thể như sau:</p><p>+ GiẢi xuất sắc, Giải nhất và Giải nhì: Công nhận điểm A+</p><p>+ Giải ba và Giải khuyến khích: Công nhận điểm A</p><p>Các sinh viên đạt giải được vinh danh tại lễ trao giải và nhận giấy chứng nhận của Ban tổ chức. Cụ thể:</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t17/1.5/16/1f3c6.png\" alt=\"🏆\" width=\"16\" height=\"16\">1 Giải Xuất sắc 10.000.000 đồng tiền mặt + Giấy chứng nhận</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/ted/1.5/16/1f947.png\" alt=\"🥇\" width=\"16\" height=\"16\">1 Giải nhất 5,000,000 đồng tiền mặt + Giấy chứng nhận</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t6e/1.5/16/1f948.png\" alt=\"🥈\" width=\"16\" height=\"16\">1 Giải nhì 3,000,000 đồng tiền mặt + Giấy chứng nhận</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/tef/1.5/16/1f949.png\" alt=\"🥉\" width=\"16\" height=\"16\">2 Giải ba 1,000,000 đồng tiền mặt + Giấy chứng nhận</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t96/1.5/16/1f3c5.png\" alt=\"🏅\" width=\"16\" height=\"16\">3 Giải Khuyến khích: 500,000 đồng tiền mặt + Giấy chứng nhận</p><p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t5/1.5/16/1f4cc.png\" alt=\"📌\" width=\"16\" height=\"16\">Thông tin liên hệ</p><p>Mọi chi tiết xin vui lòng liên hệ với Ban tổ chức theo địa chỉ: Khoa Khoa học máy tính, trường Đại học Công nghệ Thông tin và Truyền Thông, Đại học Đà Nẵng.</p><p>- Địa chỉ: Phòng V.B104, Khu đô thị Đại học Đà Nẵng, phường Hòa Quý, quận Ngũ Hành Sơn, Đà Nẵng.</p><p>- Email: cs@vku.udn.vn</p><p>- Fanpage: Khoa Khoa học máy tính - Trường ĐH CNTT &amp; TT Việt Hàn - ĐHĐN,</p>",
+  "image": "1704513604992-6a2b6a93-48de-47d2-9e5c-929cf9738345-image-3.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513605023"
+  },
+  "updateAt": {
+    "$numberLong": "1704513631612"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513605023"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d0af5f2b6216915d9cda"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "The student and the professor #MU",
+  "desc": "",
+  "image": "1704513711437-9a54b33f-46a1-461d-834b-7fb8abb2f955-348974288_1763410417388697_4467797091195885955_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513711467"
+  },
+  "updateAt": {
+    "$numberLong": "1704513711467"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513711467"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d0fa5f2b6216915d9cdc"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "bye C1 :( #foodball",
+  "desc": "",
+  "image": "1704513786633-51654b5f-1497-4b7d-8ef1-d64aeef48eca-332817406_1607824599656088_3631354444990429626_n.png",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513786647"
+  },
+  "updateAt": {
+    "$numberLong": "1704513786647"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513786647"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d11e5f2b6216915d9cde"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "Lewy once again failed against Bayern #foodball",
+  "desc": "",
+  "image": "1704513822683-a8dfcba9-28cf-4d69-8684-38aebc98c748-850dbf89d966ffcd43feb9ea148f6634.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513822690"
+  },
+  "updateAt": {
+    "$numberLong": "1704513822690"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513822690"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d1665f2b6216915d9cff"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "Fat #MARVEL Superheroes and Villains part 4",
+  "desc": "",
+  "image": "1704513894022-b080e412-c332-4561-b809-665642bcc9c9-323770520_850626432815196_2605177562149414486_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704513894085"
+  },
+  "updateAt": {
+    "$numberLong": "1704513894085"
+  },
+  "deleteAt": {
+    "$numberLong": "1704513894085"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d1dd5f2b6216915d9d01"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "These three DC characters beat three Marvel endgame leaders characters ",
+  "desc": "<p>These three DC characters beat three Marvel endgame leaders characters</p><p>1. Superman <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t4a/1.5/16/1f4af.png\" alt=\"💯\" width=\"16\" height=\"16\"></p><p>2. Blue Beetle <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t4a/1.5/16/1f4af.png\" alt=\"💯\" width=\"16\" height=\"16\"></p><p>3. Deathstroke <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t4a/1.5/16/1f4af.png\" alt=\"💯\" width=\"16\" height=\"16\"></p><p>These characters are the most powerful heroes that make DC stronger than Marvel.</p><p>Do you agree guys?</p><p>I am not agree with this anymore <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/tca/1.5/16/1f614.png\" alt=\"😔\" width=\"16\" height=\"16\"> <a href=\"https://www.facebook.com/hashtag/dceu?__eep__=6&amp;__cft__[0]=AZXfEuGtJug-_aS48AvZFxO8SPC-2NVWsG6ofLRCqZQ3PxyUqs1eCWlog6PIZ-km_w0kMqxzXtBukywFJ2q3zuaow6P5RV51coH82bzgnPmrWSTFqjYnfyLfLrNrNuP5bg4zcSPx6p1wWAb3n8n5u3Wop9cRh-NBNEmckwP98GkGKSDs8ncGzn2HKfrL7GWVW8w&amp;__tn__=*NK-R\">#dceu</a> <a href=\"https://www.facebook.com/hashtag/marvelcomics?__eep__=6&amp;__cft__[0]=AZXfEuGtJug-_aS48AvZFxO8SPC-2NVWsG6ofLRCqZQ3PxyUqs1eCWlog6PIZ-km_w0kMqxzXtBukywFJ2q3zuaow6P5RV51coH82bzgnPmrWSTFqjYnfyLfLrNrNuP5bg4zcSPx6p1wWAb3n8n5u3Wop9cRh-NBNEmckwP98GkGKSDs8ncGzn2HKfrL7GWVW8w&amp;__tn__=*NK-R\">#marvelcomics</a></p>",
+  "image": "1704514013184-a42a6baf-f59b-4f38-9e6a-a5efea3bb112-415059741_1027592485009937_8521334745292401126_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704514013255"
+  },
+  "updateAt": {
+    "$numberLong": "1704514035292"
+  },
+  "deleteAt": {
+    "$numberLong": "1704514013255"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d2795f2b6216915d9d33"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "All 3 in best marvel avengers iron Man ",
+  "desc": "",
+  "image": "1704514169676-232e7127-ed16-4611-a8ac-8ac495fb686b-850dbf89d966ffcd43feb9ea148f6634.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704514169731"
+  },
+  "updateAt": {
+    "$numberLong": "1704514169731"
+  },
+  "deleteAt": {
+    "$numberLong": "1704514169731"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d2a85f2b6216915d9d3d"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "Iron Man suit #Iron man",
+  "desc": "",
+  "image": "1704514216362-41922894-4a53-4026-a70e-96601e51808f-850dbf89d966ffcd43feb9ea148f6634.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704514216382"
+  },
+  "updateAt": {
+    "$numberLong": "1704514216382"
+  },
+  "deleteAt": {
+    "$numberLong": "1704514216382"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d2c65f2b6216915d9d3f"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "Avengers 4 Endgame : BATLLE WITHOUT Visual Effects !",
+  "desc": "",
+  "image": "1704514246346-81264533-9bda-4252-9de8-cfd43a7b48ca-409201758_228412286952317_1012326170325843079_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704514246412"
+  },
+  "updateAt": {
+    "$numberLong": "1704514246412"
+  },
+  "deleteAt": {
+    "$numberLong": "1704514246412"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d2ff5f2b6216915d9d41"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "Thor #marvel",
+  "desc": "",
+  "image": "1704514303836-8ef12fb0-7ab8-4160-a5f5-5f3a34bc615c-409887030_383582654240342_4058718621083640538_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704514303847"
+  },
+  "updateAt": {
+    "$numberLong": "1704514303847"
+  },
+  "deleteAt": {
+    "$numberLong": "1704514303847"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d3205f2b6216915d9d43"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "let's go",
+  "desc": "",
+  "image": "1704514336594-1de49f4e-647c-48f7-95b1-ae3a507db1ce-410178994_383591150906159_7600744655859781667_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704514336616"
+  },
+  "updateAt": {
+    "$numberLong": "1704514336616"
+  },
+  "deleteAt": {
+    "$numberLong": "1704514336616"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6598d3915f2b6216915d9d89"
+  },
+  "userId": "65518fab37856cb2451bcb8f",
+  "title": "Tết, Tết, Tết sắp đến rồi ... Lưu ngay lại để Tết bày mâm ngũ quả tại nhà nhé",
+  "desc": "",
+  "image": "1704514449867-13a0a919-d9b4-4bf1-a54f-70e15d96e410-416880980_753532360166577_4231080308285127907_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704514449908"
+  },
+  "updateAt": {
+    "$numberLong": "1704514449908"
+  },
+  "deleteAt": {
+    "$numberLong": "1704514449908"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659ceeb8ecdf41627a421042"
+  },
+  "userId": "6598f9b30ce65f9caf521e67",
+  "title": "Ronaldo won the title of best player of the month of the Saudi Pro League for the fourth time.",
+  "desc": "",
+  "image": "1704783544164-bb43d9a8-36b4-45eb-a674-ab1eeb759935-415073752_902958341210716_3546624881708006898_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704783544235"
+  },
+  "updateAt": {
+    "$numberLong": "1704783544237"
+  },
+  "deleteAt": {
+    "$numberLong": "1704783544237"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659cef17ecdf41627a421044"
+  },
+  "userId": "6598f9b30ce65f9caf521e67",
+  "title": "delicious food",
+  "desc": "",
+  "image": "1704783639623-42b33f87-896b-4b53-bfe0-917c0390922d-unit-46-topic-food.jpeg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704783639672"
+  },
+  "updateAt": {
+    "$numberLong": "1704783639673"
+  },
+  "deleteAt": {
+    "$numberLong": "1704783639673"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659cef63ecdf41627a421097"
+  },
+  "userId": "6598f9b30ce65f9caf521e67",
+  "title": "MOUTHWATERING HOME-COOKED MEALS",
+  "desc": "",
+  "image": "1704783715509-76b573ac-9ce5-4f2a-b78f-919d1bdcba3c-850dbf89d966ffcd43dfeb9ea148f6634.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704783715537"
+  },
+  "updateAt": {
+    "$numberLong": "1704783715537"
+  },
+  "deleteAt": {
+    "$numberLong": "1704783715537"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659cefd1ecdf41627a4210cf"
+  },
+  "userId": "6598f9b30ce65f9caf521e67",
+  "title": "Vietnam in the early days of 1990",
+  "desc": "",
+  "image": "1704783825709-316fa467-b206-4e38-9aeb-e47be6c9f0b6-850dbf89d966ffcd43dfeb9ea148f6634.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704783825731"
+  },
+  "updateAt": {
+    "$numberLong": "1704783825732"
+  },
+  "deleteAt": {
+    "$numberLong": "1704783825732"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659cf059ecdf41627a4210f5"
+  },
+  "userId": "6598f9b30ce65f9caf521e67",
+  "title": "Love the way Edogawa Conan flex :)) The dew is only a few hundred taels :))))",
+  "desc": "",
+  "image": "1704783961797-25513eeb-49d2-4b10-8b51-83a703784e9d-850dbf89d966ffcd43dfeb9ea148f6634.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704783961845"
+  },
+  "updateAt": {
+    "$numberLong": "1704783961845"
+  },
+  "deleteAt": {
+    "$numberLong": "1704783961845"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1b4acc5a8a8fbcae5bd2"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "????",
+  "desc": "",
+  "image": "1704860490086-21b230d6-fab2-467b-8161-ce0f0875723b-417717333_386140637398993_6346037968633574706_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860490163"
+  },
+  "updateAt": {
+    "$numberLong": "1704860490163"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860490163"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1b81cc5a8a8fbcae5c35"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "beautìulllll",
+  "desc": "",
+  "image": "1704860545255-5d718ac7-c6b1-46d4-aea3-4785d758743c-418443411_901900344826253_5749453263483508761_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860545272"
+  },
+  "updateAt": {
+    "$numberLong": "1704860545272"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860545272"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1ba4cc5a8a8fbcae5c6f"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "đẹp hết chỗ chê",
+  "desc": "",
+  "image": "1704860580157-ed6516c3-61ee-4b04-963f-e0c42201037b-da-nang-docx-1694226826808.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860580171"
+  },
+  "updateAt": {
+    "$numberLong": "1704860580171"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860580171"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1bd9cc5a8a8fbcae5c71"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "help code",
+  "desc": "",
+  "image": "1704860633174-e38174b7-4b9f-428c-bae9-3ed68efa7984-415963885_2610579819107937_5382347177800090476_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860633208"
+  },
+  "updateAt": {
+    "$numberLong": "1704860633208"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860633208"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1bffcc5a8a8fbcae5cb6"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "hungrryyyy",
+  "desc": "",
+  "image": "1704860671860-aa5fa989-9c6c-40b0-ac0f-89a67fffe5b0-unit-46-topic-food.jpeg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860671867"
+  },
+  "updateAt": {
+    "$numberLong": "1704860671867"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860671867"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1c31cc5a8a8fbcae5cb8"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "haizzzz",
+  "desc": "",
+  "image": "1704860721776-0eca605a-a169-4244-8264-880c4cf77e35-415871507_332830046227331_3352920082604106283_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860721786"
+  },
+  "updateAt": {
+    "$numberLong": "1704860721786"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860721786"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1c3dcc5a8a8fbcae5cba"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "dog cute ",
+  "desc": "",
+  "image": "1704860733825-030bab61-caf0-4faf-8218-b6034e25c282-táº£i xuá»ng (1).jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860733837"
+  },
+  "updateAt": {
+    "$numberLong": "1704860733837"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860733837"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1c4acc5a8a8fbcae5cbc"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "I like it",
+  "desc": "",
+  "image": "1704860746953-0672ceca-3789-437b-a556-5e7fd436d1b9-vku-1692719013676637353630.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860746965"
+  },
+  "updateAt": {
+    "$numberLong": "1704860746965"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860746965"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1c67cc5a8a8fbcae5cbe"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "hahahhâ",
+  "desc": "",
+  "image": "1704860775580-43bfe4b1-f53f-4b12-86fa-49195bf4dc4e-416241836_303872302654365_5413486261420470941_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860775592"
+  },
+  "updateAt": {
+    "$numberLong": "1704860775592"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860775592"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1c9fcc5a8a8fbcae5d1d"
+  },
+  "userId": "6551918a37856cb2451bcb92",
+  "title": "MU :(((",
+  "desc": "",
+  "image": "1704860831840-11ae6a5d-4a50-47a5-8f7d-f09195e6c2e7-415622365_737918241693836_7107452869733411876_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704860831849"
+  },
+  "updateAt": {
+    "$numberLong": "1704860831849"
+  },
+  "deleteAt": {
+    "$numberLong": "1704860831849"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1d5bcc5a8a8fbcae6033"
+  },
+  "userId": "6551919537856cb2451bcb95",
+  "title": "goattt",
+  "desc": "",
+  "image": "1704861019655-d10cec2f-6bad-490a-921c-01d9404bbb77-416293876_1102473597837634_3075650342924153981_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704861019663"
+  },
+  "updateAt": {
+    "$numberLong": "1704861019663"
+  },
+  "deleteAt": {
+    "$numberLong": "1704861019663"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e1e25cc5a8a8fbcae6145"
+  },
+  "userId": "6551919c37856cb2451bcb98",
+  "title": "siuuuuu",
+  "desc": "",
+  "image": "1704861221481-8da4a84a-2921-47fa-a2ec-ad4f57c7e4c4-240668237_398642281622318_3608371847454031737_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704861221492"
+  },
+  "updateAt": {
+    "$numberLong": "1704861221492"
+  },
+  "deleteAt": {
+    "$numberLong": "1704861221492"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e2016cc5a8a8fbcae6799"
+  },
+  "userId": "655191d137856cb2451bcba2",
+  "title": "TÂM SỰ VỚI CÁI GỐC CÂY",
+  "desc": "<p>Cây: sao anh lại cưa chúng tôi?</p><p>Người: tôi cưa anh để làm nội thất bàn ghế, giường tủ hoặc làm nhà.</p><p>Cây: tại sao cây rừng mất 10 đến cả trăm năm để sinh trường và nuôi sống biết bao sinh vật lại chỉ để con người \"ở, ngồi, nằm và trang trí\", đôi khi chỉ để làm củi nấu bếp?</p><p>Người: vì chúng tôi là chủ trái đất, chúng tôi thích làm gì chúng tôi làm.</p><p>Cây: con người có trước hay trái đất và cây cối có trước?</p><p>Người: trái đất và cây cối có trước.</p><p>Cây: vậy sao anh làm chủ trái đất được? Các anh cũng giống các loài vật khác, \"sống ký sinh\" vào trái đất thôi.</p><p>Người: vì chúng tôi là giống loài mạnh nhất, thông minh nhất. Nên chúng tôi tự cho phép mình làm những gì mình thích.</p><p>Cây: vậy các anh không nghĩ đến hậu quả mất cân bằng sinh thái, thiên tai bão lũ ah?</p><p>Người: tôi thấy chứ. Nhưng khi chúng tôi có tiền chúng tôi sẽ tự biết mua đồ bảo hộ.</p><p>Cây: chắc không? Trái đất bị ô nhiễm thì sẽ không có gì bảo hiểm được hết.</p><p>Người: không sao đâu. Tiền sẽ mua được hết. Chả phải chúng tôi đang xây dựng rất nhiều công viên nhân tạo ah?</p><p>Cây: Ok. Rất tuyệt nhưng anh chưa hiểu hết mẹ thiên nhiên rồi. Tiền là mạch máu nền kinh tế, cũng giống như nước là mạch máu của trái đất. Nếu tất cả cây rừng, các sinh vật bị tiêu diệt thì nguồn nước sẽ không được lọc, không khí không được điều hoà, tất cả sẽ nhiễm độc. 70% cơ thể con người là nước, con người cũng không nằm ngoài \"hệ sinh thái tự nhiên hay vòng tròn sinh mệnh\". Các thế hệ con cháu cơn người sẽ gánh hậu quả nặng nề. Tự nhiên sẽ \"trả đũa\" con người khi họ lơ là nhất.</p><p>Người: tôi có thể làm gì để thay đổi đây ?</p><p>Cây: biết đủ là được. Ít dùng đồ nội thất gỗ là được. Ít sử dụng sản phẩm khó phân hủy là được. Giúp đỡ người dân vùng ven rừng phát triển kinh tế nhờ du lịch sinh thái. Giáo dục con cái tôn trọng tự nhiên là được. Tìm hiểu về tự nhiên là được. Không xả rác bừa bãi là được. Không ăn thịt thú rừng là được . \"Thay đổi mình trước, thế giới theo sau\"</p><p>Người: ok.</p><p>........</p>",
+  "image": "1704861718108-78824312-2bee-4b23-889a-7cbf8e9b6936-416329827_3671724646406438_3106195904559212302_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704861718127"
+  },
+  "updateAt": {
+    "$numberLong": "1704861750220"
+  },
+  "deleteAt": {
+    "$numberLong": "1704861718127"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e2112cc5a8a8fbcae6bbc"
+  },
+  "userId": "658efdcb03959c7b57b848f1",
+  "title": "ahihi",
+  "desc": "",
+  "image": "1704861970818-76c58a3f-52ca-4351-99d4-f620e6669631-416231204_673388611669607_6244057207676031223_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704861970833"
+  },
+  "updateAt": {
+    "$numberLong": "1704861970833"
+  },
+  "deleteAt": {
+    "$numberLong": "1704861970833"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e2161cc5a8a8fbcae6bea"
+  },
+  "userId": "658efdcb03959c7b57b848f1",
+  "title": "VINFAST VF WILD!!",
+  "desc": "<p>Đẹp “mất ngủ” luôn các cụ mợ nhỉ? <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t5b/1.5/16/1f60d.png\" alt=\"😍\" width=\"16\" height=\"16\"><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t5b/1.5/16/1f60d.png\" alt=\"😍\" width=\"16\" height=\"16\"></p>",
+  "image": "1704862049546-51bdd035-6821-48c7-98f2-85e9ada31c8a-417827541_773979534767735_6055721501650408921_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862049570"
+  },
+  "updateAt": {
+    "$numberLong": "1704862075717"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862049570"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e21e1cc5a8a8fbcae6c41"
+  },
+  "userId": "658efdcb03959c7b57b848f1",
+  "title": "2001",
+  "desc": "",
+  "image": "1704862176950-47a91da2-813f-4e56-9f34-6c20e8424011-417236712_382890240984782_3036722115334950041_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862177012"
+  },
+  "updateAt": {
+    "$numberLong": "1704862177012"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862177012"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e2203cc5a8a8fbcae6c43"
+  },
+  "userId": "658efdcb03959c7b57b848f1",
+  "title": "Nuôi lớn lên không biết ai hơn ai đâu :))",
+  "desc": "",
+  "image": "1704862211923-0d4f6e8e-c25c-43ef-8b38-82999adbbaf6-416292858_911483920604836_359148252301258638_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862211941"
+  },
+  "updateAt": {
+    "$numberLong": "1704862211942"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862211942"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e224ecc5a8a8fbcae6c45"
+  },
+  "userId": "658efdcb03959c7b57b848f1",
+  "title": "Những lần Độ Mixi sang Nhật đóng live action :))))",
+  "desc": "",
+  "image": "1704862286812-6da7aafe-bbd3-4dfd-af7c-acbadcd6f9df-416867198_808365211305552_816717673156573952_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862286822"
+  },
+  "updateAt": {
+    "$numberLong": "1704862286822"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862286822"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e233dcc5a8a8fbcae6f96"
+  },
+  "userId": "6598f4270ce65f9caf521e05",
+  "title": "Đúng vậy",
+  "desc": "",
+  "image": "1704862525300-987e3a86-21f9-418e-8946-0152afcb3b3e-415505630_384595657561414_8145979672089131606_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862525316"
+  },
+  "updateAt": {
+    "$numberLong": "1704862525316"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862525316"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e236fcc5a8a8fbcae7018"
+  },
+  "userId": "6598f4270ce65f9caf521e05",
+  "title": "Ok rồi nha... 😆😆",
+  "desc": "",
+  "image": "1704862575220-24d4913c-9407-41b2-9b82-bb9c96dfc8d9-416201183_944122273848976_2546567024572217553_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862575227"
+  },
+  "updateAt": {
+    "$numberLong": "1704862575227"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862575227"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e238acc5a8a8fbcae701a"
+  },
+  "userId": "6598f4270ce65f9caf521e05",
+  "title": "Nực cười",
+  "desc": "",
+  "image": "1704862602269-b359b389-a36f-4e9f-abc4-f822473c196b-415291040_384593157561664_5701551521250830875_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862602275"
+  },
+  "updateAt": {
+    "$numberLong": "1704862602275"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862602275"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "659e23a4cc5a8a8fbcae701c"
+  },
+  "userId": "6598f4270ce65f9caf521e05",
+  "title": "Nhóc Marcelo",
+  "desc": "<p><img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t54/1.5/16/1f5e3.png\" alt=\"🗣\" width=\"16\" height=\"16\">Khi tôi 4 tuổi, tôi đòi hỏi mẹ mua cho một quả bóng nhưng mà mẹ nói, 'Không được đâu Marcelinho à, chúng ta không có điều kiện.'</p><p>Vì vậy, tôi đã đến một cửa hàng và hỏi chủ quán, 'Chú có thể bán cho cháu một quả bóng được không ạ? Cháu sẽ trả ơn khi cháu trở thành một cầu thủ bóng đá chuyên nghiệp! '</p><p>Chú ấy bắt đầu cười và nói, \"Nhóc Marcelo, cầm lấy đi và sau này chỉ cần nhớ trả tiền chú là được.\"</p><p>Vài năm sau, tôi quyết định quay lại cửa hàng của chú ấy và mua lại tất cả những quả bóng ở đó rồi đem tặng cho những đứa trẻ kém may mắn trong khu phố. \"</p>",
+  "image": "1704862628166-f7aefe79-5129-4a69-af6a-71f2ea8a94c2-416352936_122134004582044749_8502556306143740476_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1704862628173"
+  },
+  "updateAt": {
+    "$numberLong": "1704862643850"
+  },
+  "deleteAt": {
+    "$numberLong": "1704862628173"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0454b0a637d8f83f846ec"
+  },
+  "userId": "6598fa8a0ce65f9caf521e71",
+  "title": "Create stunning fantasy maps for your DnD games in minutes with our online map maker!",
+  "desc": "",
+  "image": "1705002315897-b1613063-1340-4672-8eb3-3e477ff01c73-197584771_23848216794720063_12284802915395385_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705002315956"
+  },
+  "updateAt": {
+    "$numberLong": "1705002315956"
+  },
+  "deleteAt": {
+    "$numberLong": "1705002315956"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a045750a637d8f83f84740"
+  },
+  "userId": "6598fa8a0ce65f9caf521e71",
+  "title": "Tóc anh Bảy ở Juve thì chất như nước cất ",
+  "desc": "",
+  "image": "1705002357595-da448ebf-5b8d-4abe-b3cc-9f56279571c4-419131305_764993158986580_6841741903876362876_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705002357609"
+  },
+  "updateAt": {
+    "$numberLong": "1705002357609"
+  },
+  "deleteAt": {
+    "$numberLong": "1705002357609"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0458f0a637d8f83f84742"
+  },
+  "userId": "6598fa8a0ce65f9caf521e71",
+  "title": "Đầu tháng hoan hỉ Không nên sử dụng cái này nha 🤣🤣",
+  "desc": "",
+  "image": "1705002383619-b44aecf2-5458-45a6-9c63-ef16f48d1182-418439392_383033797616707_4040752272384224906_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705002383654"
+  },
+  "updateAt": {
+    "$numberLong": "1705002383654"
+  },
+  "deleteAt": {
+    "$numberLong": "1705002383654"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a045c00a637d8f83f84744"
+  },
+  "userId": "6598fa8a0ce65f9caf521e71",
+  "title": "Thật vô nghĩa =))",
+  "desc": "",
+  "image": "1705002432209-06ef41fb-228b-4188-a222-ada564a6d015-408483129_122122493270087938_8434119031116121820_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705002432224"
+  },
+  "updateAt": {
+    "$numberLong": "1705002432224"
+  },
+  "deleteAt": {
+    "$numberLong": "1705002432224"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a046070a637d8f83f84746"
+  },
+  "userId": "6598fa8a0ce65f9caf521e71",
+  "title": "5 days",
+  "desc": "",
+  "image": "1705002503778-fcd86ac9-6523-4dd8-9bea-fc3944adc5aa-418733961_761688805999812_7618836992590767882_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705002503793"
+  },
+  "updateAt": {
+    "$numberLong": "1705002503793"
+  },
+  "deleteAt": {
+    "$numberLong": "1705002503793"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0461e0a637d8f83f84748"
+  },
+  "userId": "6598fa8a0ce65f9caf521e71",
+  "title": "Khi đi chơi vs lúc đi học! ",
+  "desc": "",
+  "image": "1705002525981-5ac2b33c-983c-4244-82a8-68a2910e1689-417702833_760650142770345_9070062779515737389_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705002526010"
+  },
+  "updateAt": {
+    "$numberLong": "1705002526010"
+  },
+  "deleteAt": {
+    "$numberLong": "1705002526010"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a048320a637d8f83f84bc7"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "title": "Khoảnh khắc ấy...",
+  "desc": "",
+  "image": "1705003058799-b97f936d-912e-4311-a74b-1bda323cf5b4-418729834_760385836130109_418711800724238494_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003058835"
+  },
+  "updateAt": {
+    "$numberLong": "1705003058835"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003058835"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a048520a637d8f83f84bc9"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "title": "Tôi khi có ai đó bảo thích mình:",
+  "desc": "",
+  "image": "1705003090235-f5ea9367-678c-487e-af69-f447c81bac4e-418274544_759991832836176_3462768429946091385_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003090258"
+  },
+  "updateAt": {
+    "$numberLong": "1705003090258"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003090258"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a048810a637d8f83f84c33"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "title": "Giỏi nhưng lạ lắm",
+  "desc": "",
+  "image": "1705003137159-89595332-a5de-433a-8505-f2ed0f6a4302-416657267_757983559703670_2017876301691949167_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003137166"
+  },
+  "updateAt": {
+    "$numberLong": "1705003137166"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003137166"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0489d0a637d8f83f84c35"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "title": "Tết mà thiếu sắc thì đúng là từ tiền lì xì thành tiền đình luôn 💋",
+  "desc": "",
+  "image": "1705003165950-238e488a-24cc-4a3a-b8ee-8b478c711bff-415956329_757617273073632_395617813290709576_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003165966"
+  },
+  "updateAt": {
+    "$numberLong": "1705003165966"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003165966"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a048b20a637d8f83f84c37"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "title": "Ai rồi cũng thay đổi =))",
+  "desc": "",
+  "image": "1705003186211-ac0508b1-fa45-4665-b17d-4dbcd58f5808-416604287_757445986424094_3139796290172843075_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003186217"
+  },
+  "updateAt": {
+    "$numberLong": "1705003186217"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003186217"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a048d20a637d8f83f84c39"
+  },
+  "userId": "653b7479e7730bb5c5f6c5a9",
+  "title": "Tôi gục ngã",
+  "desc": "",
+  "image": "1705003218974-f13efa23-53df-4e15-b351-983f6d9aedbc-415289799_754465623388797_1725043641504657938_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003218982"
+  },
+  "updateAt": {
+    "$numberLong": "1705003218982"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003218982"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a049d10a637d8f83f84e06"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Đường lên đỉnh Olympia",
+  "desc": "",
+  "image": "1705003473079-2bc800da-7b03-44cb-9de7-7748a51a86d3-413032242_751353633699996_7398752155518970935_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003473125"
+  },
+  "updateAt": {
+    "$numberLong": "1705003473125"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003473125"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a049e20a637d8f83f84e08"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Ăn vào để có sức mà thi",
+  "desc": "",
+  "image": "1705003490360-e3346322-d106-454a-b07e-aef7990053f1-412835791_749005533934806_4372866651815804587_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003490370"
+  },
+  "updateAt": {
+    "$numberLong": "1705003490370"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003490370"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04a020a637d8f83f84e0a"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "=)))",
+  "desc": "",
+  "image": "1705003522558-2697b7b5-16e7-4cc2-a1d2-251895ab77ce-418932071_1075273856955109_6231885250691070524_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003522569"
+  },
+  "updateAt": {
+    "$numberLong": "1705003522569"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003522569"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04a300a637d8f83f84e85"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Golang",
+  "desc": "<p>Bạn có thể chọn học bất kỳ ngôn ngữ lập trình nào. Nhưng mình khuyên bạn nên bắt đầu bằng Python. Bởi nó dễ học nhất, cộng đồng rộng lớn nhất, nhiều nguồn (lớp, tài liệu) học nhất. <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t55/1.5/16/1f44d.png\" alt=\"👍\" width=\"16\" height=\"16\"></p><p>Quan trọng là phải nắm được một ngôn ngữ lập trình là thế nào. Để sau đó bạn có thể học được bất kỳ ngôn ngữ nào khác một cách nhanh chóng.<img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/tc5/1.5/16/1f4aa.png\" alt=\"💪\" width=\"16\" height=\"16\"></p><p>Bạn có thể học để biết nhiều ngôn ngữ lập trình khác nhau. Nhưng bạn phải giỏi nhất một ngôn ngữ nào đó (giống như tiếng Việt là tiếng bạn giỏi nhất vậy). <img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/t27/1.5/16/1f600.png\" alt=\"😀\" width=\"16\" height=\"16\"></p><p>Mình bắt đầu học lập trình bằng Pascal ở lớp 11. Rồi đến C/C++, Java ở Đại học. Sau đó là Python, Golang. Từ khi đi làm lập trình cho đến giờ, mình vẫn trung thành với C++ làm thế mạnh nhất của mình.<img src=\"https://static.xx.fbcdn.net/images/emoji.php/v9/tc5/1.5/16/1f4aa.png\" alt=\"💪\" width=\"16\" height=\"16\"></p><p>Còn bạn thì sao? Bạn chọn ngôn ngữ lập trình nào làm thế mạnh cho mình? Vì sao?</p>",
+  "image": "1705003568306-73d539d1-1f57-44de-a934-a210e150c253-417372928_10160727997403046_6090071125750749536_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003568345"
+  },
+  "updateAt": {
+    "$numberLong": "1705003586936"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003568345"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04a8c0a637d8f83f84f27"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "VKU công bố phương hướng tuyển sinh năm 2024",
+  "desc": "",
+  "image": "1705003660212-75df646a-ec68-4fcb-9c3a-7996b908e14b-414122448_778711144253587_1793959575469661811_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003660220"
+  },
+  "updateAt": {
+    "$numberLong": "1705003660220"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003660220"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04ad80a637d8f83f84f29"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "VKU",
+  "desc": "",
+  "image": "1705003736273-1f129f00-8050-46b5-a028-f78f8caccfae-160083196_284069806486324_1162779558637547029_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003736300"
+  },
+  "updateAt": {
+    "$numberLong": "1705003736300"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003736300"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04afa0a637d8f83f84f2b"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "VKU - Giấc Mơ Miền Trung",
+  "desc": "",
+  "image": "1705003770234-cd1c94ef-154f-44c8-8e7d-2c289e5612ff-173823936_3905367982914844_6876286702815294589_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003770246"
+  },
+  "updateAt": {
+    "$numberLong": "1705003770247"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003770247"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04b1c0a637d8f83f84f2d"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "ĐẠI HỌC Ở VKU CÓ CHI ZUI?",
+  "desc": "",
+  "image": "1705003804473-5f78c40c-03e3-4067-b235-5ef73a96df0e-223037652_704571374275438_6884548485253444828_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003804480"
+  },
+  "updateAt": {
+    "$numberLong": "1705003804480"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003804480"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04b430a637d8f83f84fba"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Biến",
+  "desc": "",
+  "image": "1705003843723-8a4a6629-9d00-4555-868f-72facd47cbc3-418092508_695693832707685_7140448840893299877_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003843742"
+  },
+  "updateAt": {
+    "$numberLong": "1705003843742"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003843742"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04b5e0a637d8f83f84fbc"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Vội vàng",
+  "desc": "",
+  "image": "1705003870215-da1c7301-93f6-4126-9e90-3d5e155ea394-418938610_935175581306083_4116382536636937395_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003870237"
+  },
+  "updateAt": {
+    "$numberLong": "1705003870237"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003870237"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04b740a637d8f83f84fbe"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "1 câu nói xoay chuyển cả cục diện",
+  "desc": "",
+  "image": "1705003892726-723b467f-dc54-4be1-9d0a-12b2b56c828a-417109151_941660947329446_6852012172902191588_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003892736"
+  },
+  "updateAt": {
+    "$numberLong": "1705003892736"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003892736"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04ba70a637d8f83f85069"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Các loại ban công ",
+  "desc": "",
+  "image": "1705003943228-2aa6561d-c901-47c5-ac50-334dd5047925-418551806_388764640348598_7797560573799614716_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003943242"
+  },
+  "updateAt": {
+    "$numberLong": "1705003943242"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003943242"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04bb80a637d8f83f8506b"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Tình hình Real Madrid đầu mùa giải cho tới giờ ",
+  "desc": "",
+  "image": "1705003960358-fa795b62-188a-422c-a837-d81cc8ad8b69-416350416_122134943216079738_3155816520577319163_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003960364"
+  },
+  "updateAt": {
+    "$numberLong": "1705003960364"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003960364"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04bc80a637d8f83f8506d"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Quảng bình chờ bạn về..",
+  "desc": "",
+  "image": "1705003976257-a8442b4f-13da-42d9-9f8a-48623bc80bcf-418427297_902445058105115_8307865663066475867_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705003976270"
+  },
+  "updateAt": {
+    "$numberLong": "1705003976270"
+  },
+  "deleteAt": {
+    "$numberLong": "1705003976270"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04c310a637d8f83f8506f"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Nội dung cuộc hội thoại của Selena Gomez và Taylor Swift đang được netizen đoán qua khẩu hình của cả 2 ",
+  "desc": "",
+  "image": "1705004081470-e0e57c34-9aec-4ee2-aa7d-312d0332756a-418457917_691919899742906_6625252292752912288_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004081485"
+  },
+  "updateAt": {
+    "$numberLong": "1705004081485"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004081485"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04c550a637d8f83f85071"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Quên xoá lịch sử ",
+  "desc": "",
+  "image": "1705004117477-3e41ce8d-8aa4-4608-b129-b7af6018ee5a-418490689_798369475670946_608549447444663932_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004117486"
+  },
+  "updateAt": {
+    "$numberLong": "1705004117486"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004117486"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04c640a637d8f83f85073"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "HIỂU BIẾT NHIỀU DỄ SỐNG, LUÔN CHỦ ĐỘNG DỄ THÀNH",
+  "desc": "",
+  "image": "1705004132395-bd844880-ca50-40ef-8057-dd6179de0452-417191093_339021085620566_6974683680738333614_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004132399"
+  },
+  "updateAt": {
+    "$numberLong": "1705004132399"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004132399"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04c8d0a637d8f83f85075"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Anh em chọn phương án nào ",
+  "desc": "",
+  "image": "1705004173227-b5bb4ec5-0258-4810-9678-d85bce5e094b-416607364_311513478547036_7273585556310284404_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004173234"
+  },
+  "updateAt": {
+    "$numberLong": "1705004173234"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004173234"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04c9b0a637d8f83f85077"
+  },
+  "userId": "65a0491b0a637d8f83f84d44",
+  "title": "Những chàng trai bắt đầu thành võ sĩ",
+  "desc": "",
+  "image": "1705004187343-543a5667-6d0a-4956-891f-e45c19bd329d-416343566_321307744224439_2753045754033232657_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004187352"
+  },
+  "updateAt": {
+    "$numberLong": "1705004187352"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004187352"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04d0a0a637d8f83f852b6"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "title": "Bác đề xuất đúng thời điểm quá :))))",
+  "desc": "",
+  "image": "1705004298258-893fe542-86d0-4d7b-9eaa-e0a7bbd4e4ff-415977633_743079354522690_4045883306427710237_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004298277"
+  },
+  "updateAt": {
+    "$numberLong": "1705004298278"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004298278"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04d220a637d8f83f8530f"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "title": "Sao mài ác vậy Én ",
+  "desc": "",
+  "image": "1705004322295-3b342ebc-6ca8-4bb5-94c2-5684d0cc81c5-418447065_305047715870157_2694517371943706823_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004322307"
+  },
+  "updateAt": {
+    "$numberLong": "1705004322307"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004322307"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04d5d0a637d8f83f85311"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "title": "Chuyện tâm linh hông đùa được đâu",
+  "desc": "",
+  "image": "1705004381180-d07955ac-4ae8-44ac-82ed-051773aed362-416195454_778161594353162_5277925879772813350_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004381190"
+  },
+  "updateAt": {
+    "$numberLong": "1705004381190"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004381190"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04d770a637d8f83f85313"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "title": "K có coi thường. Ngta đang coi gương :)))",
+  "desc": "",
+  "image": "1705004407293-ac1b253e-b599-4787-803b-d64202155168-418725139_853003419957649_2141066921728287622_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004407311"
+  },
+  "updateAt": {
+    "$numberLong": "1705004407311"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004407311"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04d9d0a637d8f83f85315"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "title": "Như 2 giọt nước vậy ",
+  "desc": "",
+  "image": "1705004445475-70e13bfd-ea86-42ab-b695-fba0dd16fe8e-416310890_756216059874715_7565936684172255857_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004445494"
+  },
+  "updateAt": {
+    "$numberLong": "1705004445494"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004445494"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a04dc40a637d8f83f85381"
+  },
+  "userId": "659d68e5cd6fc61071f0818e",
+  "title": "Tết này chỉ mong được về Quảng Bình ",
+  "desc": "",
+  "image": "1705004484977-de0e73a3-a7a3-42a8-8460-65edc7faa83f-417796073_317092974653303_1843155794317153729_n.jpg",
+  "likes": [],
+  "creatAt": {
+    "$numberLong": "1705004484990"
+  },
+  "updateAt": {
+    "$numberLong": "1705004484990"
+  },
+  "deleteAt": {
+    "$numberLong": "1705004484990"
+  },
+  "__v": 0
+}]

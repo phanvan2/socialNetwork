@@ -69,7 +69,6 @@ const PostShare = (props) => {
             formData.append("post_image", image);
 
             addNewPost(formData).then((res) => {
-                console.log(res);
                 dispatch(backDropOFF());
             });
             reset();

@@ -19,7 +19,6 @@ export const logIn = (formData) => async (dispatch) => {
             });
         }
     } catch (error) {
-        console.log(error);
         dispatch({
             type: "AUTH_FAIL",
         });

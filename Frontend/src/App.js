@@ -11,10 +11,10 @@ import { approveRequestContactReceived } from "./sockets/approveRequestContactRe
 import { userOfflineOnline } from "./sockets/userOfflineOnline";
 
 import {
-  socketStore,
-  notificationStore,
-  friendsOnlineStore,
-  friendsStore,
+    socketStore,
+    notificationStore,
+    friendsOnlineStore,
+    friendsStore,
 } from "../src/store";
 import * as API from "./api/AuthRequest";
 
@@ -31,127 +31,133 @@ import { io } from "socket.io-client";
 import { logOut } from "./actions/AuthAction";
 
 const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 function App() {
-  const user = useSelector((state) => state.authReducer.authData);
-  const messsNoti = useSelector((state) => state.alertReducer.message);
-  const open = useSelector((state) => state.alertReducer.open);
+    const user = useSelector((state) => state.authReducer.authData);
+    const messsNoti = useSelector((state) => state.alertReducer.message);
+    const open = useSelector((state) => state.alertReducer.open);
 
-  const openBackDrop = useSelector((state) => state.backDropReducer.open);
+    const openBackDrop = useSelector((state) => state.backDropReducer.open);
 
-  const currentUser = JSON.parse(localStorage.getItem("profile"));
+    const currentUser = JSON.parse(localStorage.getItem("profile"));
 
-  const friends = friendsStore((state) => state.friends);
-  console.log(friends);
+    const friends = friendsStore((state) => state.friends);
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const setSocket = socketStore((state) => state.setSocket);
+    const setSocket = socketStore((state) => state.setSocket);
 
-  const setFriendsOnline = friendsOnlineStore(
-    (state) => state.setFriendsOnline
-  );
-  const addFriendOnline = friendsOnlineStore((state) => state.addFriendOnline);
-  const removeFriendOffline = friendsOnlineStore(
-    (state) => state.removeFriendOffline
-  );
+    const setFriendsOnline = friendsOnlineStore(
+        (state) => state.setFriendsOnline
+    );
+    const addFriendOnline = friendsOnlineStore(
+        (state) => state.addFriendOnline
+    );
+    const removeFriendOffline = friendsOnlineStore(
+        (state) => state.removeFriendOffline
+    );
 
-  const socket = io("http://localhost:5000", {
-    autoConnect: false,
-    auth: {
-      token: "ahihi",
-    },
-  });
-  const check_token = async () => {
-    if (currentUser) {
-      let check = await API.checkExpiredToken(currentUser.token);
-      if (!check.data.data) {
-        dispatch(logOut());
-      } else {
-      }
-    }
-  };
-  useEffect(() => {
-    check_token();
-    setSocket(socket);
-  }, []);
+    const socket = io("http://localhost:5000", {
+        autoConnect: false,
+        auth: {
+            token: "ahihi",
+        },
+    });
+    const check_token = async () => {
+        if (currentUser) {
+            let check = await API.checkExpiredToken(currentUser.token);
+            if (!check.data.data) {
+                dispatch(logOut());
+            } else {
+            }
+        }
+    };
+    useEffect(() => {
+        check_token();
+        setSocket(socket);
+    }, []);
 
-  initSocket(user);
-  getRequestFriend(
-    socket,
-    notificationStore((state) => state.addNotification),
-    dispatch
-  );
-  approveRequestContactReceived(
-    socket,
-    notificationStore((state) => state.addNotification),
-    dispatch
-  );
-  userOfflineOnline(
-    socket,
-    setFriendsOnline,
-    addFriendOnline,
-    removeFriendOffline
-  );
+    initSocket(user);
+    getRequestFriend(
+        socket,
+        notificationStore((state) => state.addNotification),
+        dispatch
+    );
+    approveRequestContactReceived(
+        socket,
+        notificationStore((state) => state.addNotification),
+        dispatch
+    );
+    userOfflineOnline(
+        socket,
+        setFriendsOnline,
+        addFriendOnline,
+        removeFriendOffline
+    );
 
-  return (
-    <div className="App">
-      <div className="blur" style={{ top: "-18%", right: "0" }}></div>
-      <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
-      <Routes>
-        <Route
-          path="/"
-          element={user ? <Navigate to="home" /> : <Navigate to="auth" />}
-        />
-        <Route
-          path="/home"
-          element={user ? <Home /> : <Navigate to="../auth" />}
-        />
-        <Route
-          path="/auth"
-          element={user ? <Navigate to="../home" /> : <Auth />}
-        />
-        <Route
-          path="/profile/:id"
-          element={user ? <Profile /> : <Navigate to="../auth" />}
-        />
-        <Route
-          path="/post/:idPost"
-          element={user ? <PostDetail /> : <Navigate to="../auth" />}
-        />
-        <Route
-          path="/chat/:id"
-          element={user ? <Chating /> : <Navigate to="../auth" />}
-        />
-        <Route
-          path="/chat"
-          element={user ? <Chating /> : <Navigate to="../auth" />}
-        />
-      </Routes>
+    return (
+        <div className="App">
+            <div className="blur" style={{ top: "-18%", right: "0" }}></div>
+            <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        user ? <Navigate to="home" /> : <Navigate to="auth" />
+                    }
+                />
+                <Route
+                    path="/home"
+                    element={user ? <Home /> : <Navigate to="../auth" />}
+                />
+                <Route
+                    path="/auth"
+                    element={user ? <Navigate to="../home" /> : <Auth />}
+                />
+                <Route
+                    path="/profile/:id"
+                    element={user ? <Profile /> : <Navigate to="../auth" />}
+                />
+                <Route
+                    path="/post/:idPost"
+                    element={user ? <PostDetail /> : <Navigate to="../auth" />}
+                />
+                <Route
+                    path="/chat/:id"
+                    element={user ? <Chating /> : <Navigate to="../auth" />}
+                />
+                <Route
+                    path="/chat"
+                    element={user ? <Chating /> : <Navigate to="../auth" />}
+                />
+            </Routes>
 
-      <Snackbar
-        open={open}
-        onClose={(event, reason) => {
-          if (reason === "clickaway") {
-            dispatch(alertt_off());
-            return;
-          }
-        }}
-      >
-        <Alert severity="success" sx={{ width: "100%" }}>
-          {messsNoti}
-        </Alert>
-      </Snackbar>
-      <Backdrop
-        sx={{ color: "#F99329", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-        open={openBackDrop}
-      >
-        <CircularProgress color="inherit" />
-      </Backdrop>
-    </div>
-  );
+            <Snackbar
+                open={open}
+                onClose={(event, reason) => {
+                    if (reason === "clickaway") {
+                        dispatch(alertt_off());
+                        return;
+                    }
+                }}
+            >
+                <Alert severity="success" sx={{ width: "100%" }}>
+                    {messsNoti}
+                </Alert>
+            </Snackbar>
+            <Backdrop
+                sx={{
+                    color: "#F99329",
+                    zIndex: (theme) => theme.zIndex.drawer + 1,
+                }}
+                open={openBackDrop}
+            >
+                <CircularProgress color="inherit" />
+            </Backdrop>
+        </div>
+    );
 }
 
 export default App;

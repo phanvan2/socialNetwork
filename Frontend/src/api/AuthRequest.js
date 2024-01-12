@@ -1,19 +1,19 @@
-import axios from "axios"
+import axios from "axios";
 
-const API = axios.create({baseURL : process.env.REACT_APP_API_URL})
+const API = axios.create({ baseURL: process.env.REACT_APP_API_URL });
 
-export const logIn = (formData) =>{
-    return API.post('/auth/login' , formData)
-}
+export const logIn = (formData) => {
+    return API.post("/auth/login", formData);
+};
 
-export const signUp = (formData) =>{
-    return API.post('/auth/register' , formData)
-}
+export const signUp = (formData) => {
+    return API.post("/auth/register", formData);
+};
 
 export const checkExpiredToken = (token) => {
-    return API.get(`/check/token/${token}`)
-}
+    return API.get(`/check/token/${token}`);
+};
 
 export const verifyEmail = (token) => {
-    return API.post(`/auth/request-active-Email`, {token: token})
-}
+    return API.post(`/auth/request-active-Email`, { token: token });
+};

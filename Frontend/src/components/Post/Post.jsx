@@ -230,7 +230,6 @@ export const Post = ({ data, location = null, handleDeletePost = null }) => {
         let result = await getInforLike(idPost, tokenUser);
 
         if (result) {
-            console.log(result);
             setLiked(result.data.checkLike);
             setLikes(result.data.quanityLike);
         }

@@ -102,7 +102,6 @@ export const ProfileCard = ({ location }) => {
                     currentUser.token,
                     id
                 ); //id of userr contact
-                console.log(data);
                 if (data.data) {
                     eBtn.target.innerText = STATUS_HANDLE_FRIEND.ADD_FRIEND;
                     eBtn.target.value = STATUS_HANDLE_FRIEND.ADD_FRIEND;

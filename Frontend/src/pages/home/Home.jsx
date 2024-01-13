@@ -23,26 +23,10 @@ export const Home = () => {
             }
         } catch (error) {}
     };
-    let isScrolledToBottom = () => {
-        let scrollTop =
-            window.scrollY ||
-            window.pageYOffset ||
-            document.documentElement.scrollTop;
-        let totalHeight = document.documentElement.scrollHeight;
-        let windowHeight = window.innerHeight;
-
-        return scrollTop >= totalHeight - windowHeight;
-    };
 
     useEffect(() => {
         getPostsByFriend();
-        window.addEventListener("scroll", function () {
-            if (isScrolledToBottom()) {
-                // xử lý lấy theem dữ liệu
 
-                console.log("Đã cuộn hết trang!");
-            }
-        });
         axios
             .get(process.env.REACT_APP_API_URL + `/user/${user._id}`)
             .then((res) => {

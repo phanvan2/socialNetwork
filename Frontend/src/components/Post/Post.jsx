@@ -219,7 +219,10 @@ export const Post = ({ data, location = null, handleDeletePost = null }) => {
     };
 
     let handleGetComment = async (idPost) => {
-        let result = await CommentAPI.getCommentsByIdPost(idPost);
+        let result = await CommentAPI.getCommentsByIdPost(
+            idPost,
+            listCmt.length
+        );
         setListCmt(result.data);
     };
     let handleGetQuanityLikes = async (idPost) => {
@@ -234,6 +237,7 @@ export const Post = ({ data, location = null, handleDeletePost = null }) => {
             setLikes(result.data.quanityLike);
         }
     };
+
     React.useEffect(() => {
         handleGetComment(data._id);
         handleGetQuanityLikes(data._id);

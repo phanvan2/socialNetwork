@@ -74,7 +74,10 @@ let initRouter = (app) => {
     router.post("/research/add-new-research", Research.addNewResearch);
 
     router.post("/comment/add-new", Comment.createNew);
-    router.get("/comment/get-by-idPost/:idPost", Comment.getCommentByPost);
+    router.get(
+        "/comment/get-by-idPost/:idPost/:skipNumber",
+        Comment.getCommentByPost
+    );
     router.put("/comment/updaet-by-idUser");
     router.delete("/comment/remove-by-id", Comment.removeCommentById);
 

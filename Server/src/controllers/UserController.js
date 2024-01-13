@@ -111,7 +111,7 @@ let sendAcitveEmail = async (req, res) => {
                     result.email,
                     transMail.subject,
                     transMail.template(
-                        `localhost:5000/auth/verifyEmail/${result_update.token}`
+                        `http://localhost:5000/auth/verifyEmail/${result_update.token}`
                     )
                 )
                     .then((success) => {
@@ -137,7 +137,9 @@ let verifyEmail = async (req, res) => {
     if (req.params.token_verify) {
         let result = await User.verifyEmail(req.params.token_verify);
         if (result)
-            res.send("<a href='http://localhost:3000/home'>go to home</a>");
+            res.send(
+                "<p>Please log in again to continue using <a href='http://localhost:3000/home'>go to home</a></p>"
+            );
         else {
             res.send({ data: false, message: transError.aciveEmail });
         }
